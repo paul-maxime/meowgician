@@ -7,10 +7,11 @@ public class Hero : KinematicBody2D
 
 	public Vector2 velocity = new Vector2();
 
-	public override void _Ready() {
-		GetNode<AnimationPlayer>("AnimationPlayer").Play("Walk");
+	public override void _Ready()
+	{
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
 	}
-	
+
 	public void GetInput()
 	{
 		velocity = new Vector2();
@@ -26,6 +27,15 @@ public class Hero : KinematicBody2D
 
 		if (Input.IsActionPressed("ui_up"))
 			velocity.y -= 1;
+
+		if (velocity != new Vector2())
+		{
+			GetNode<AnimationPlayer>("AnimationPlayer").Play("Walk");
+		}
+		else
+		{
+			GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
+		}
 
 		velocity = velocity.Normalized() * speed;
 	}
