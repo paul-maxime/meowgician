@@ -2,7 +2,7 @@ using Godot;
 
 public class PotionSpawner : Node2D
 {
-	private PackedScene potion = ResourceLoader.Load<PackedScene>("res://scenes/Potion.tscn");
+	private PackedScene potion = ResourceLoader.Load<PackedScene>("res://Scenes/Potion.tscn");
 
 	public override void _Ready()
 	{
