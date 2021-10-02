@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/cauldron/cauldron.png" type="Texture" id=1]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -30,8 +30,12 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 48 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+closed = false
+polygon = PoolVector2Array( -60, -20, -60, -28, -55.1923, -27.9315, -55.4025, -31.9258, -51.4083, -31.9258, -51.6185, -36.1303, -35.8513, -36.1039, -35.4312, -40.1245, 36.6757, -40.1245, 36.2552, -36.5507, 52.4425, -35.92, 52.2323, -32.7667, 57.0674, -32.7667, 56.647, -29.1929, 60.431, -29.4031, 60.431, -20.7839 )
 
 [node name="Cauldron" type="StaticBody2D"]
 
@@ -46,8 +50,12 @@ region_rect = Rect2( 0, 0, 96, 32 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 method_call_mode = 1
-anims/bubbling = SubResource( 2 )
+anims/bubbling = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 16 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -0.210224, 0.840912 )
+occluder = SubResource( 3 )
