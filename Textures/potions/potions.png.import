@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_potion.png-4acc346f029aedfcad26bc75fb355d44.stex"
+path="res://.import/potions.png-8c30ef16f433ff16921cda89812df7d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/potions/red_potion.png"
-dest_files=[ "res://.import/red_potion.png-4acc346f029aedfcad26bc75fb355d44.stex" ]
+source_file="res://Textures/potions/potions.png"
+dest_files=[ "res://.import/potions.png-8c30ef16f433ff16921cda89812df7d1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

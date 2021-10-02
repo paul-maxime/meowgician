@@ -11,8 +11,8 @@ public class Potion : RigidBody2D
 		float y = (float)Godot.GD.RandRange(-512 + 100, 0);
 		this.Position = new Vector2(x, y);
 
-		float textureX = (Godot.GD.Randi() % 5) * 16f;
-		float textureY = (Godot.GD.Randi() % 5) * 16f;
+		float textureX = (Godot.GD.Randi() % 4) * 16f;
+		float textureY = 0;
 
 		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(textureX, textureY, 16f, 16f);
 	}
