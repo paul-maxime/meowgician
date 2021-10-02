@@ -9,7 +9,7 @@ public class PotionSpawner : Node2D
 		for (int i = 0; i < 20; i++)
 		{
 			var potionInstance = potion.Instance();
-			potionInstance.AddToGroup("potions");
+			potionInstance.AddToGroup("selectable");
 			AddChild(potionInstance);
 		}
 	}
