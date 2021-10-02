@@ -5,6 +5,8 @@ public class Hero : KinematicBody2D
 {
 	[Export] public int speed = 200;
 
+	private bool hasPotion = false;
+
 	public Vector2 velocity = new Vector2();
 
 	public override void _Ready()
@@ -12,31 +14,57 @@ public class Hero : KinematicBody2D
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
 	}
 
-	private StaticBody2D GetClosestPotion()
+	private Node2D GetClosestItemSelectable()
 	{
-		var potions = GetTree().GetNodesInGroup("selectable");
-		if (potions.Count == 0)
+		Godot.Collections.Array items;
+		if (!hasPotion)
+		{
+			items = GetTree().GetNodesInGroup("potions");
+		}
+		else
+		{
+			items = new Godot.Collections.Array { GetNode<Node2D>("/root/Root/Cauldron") };
+		}
+
+		if (items.Count == 0)
 		{
 			return null;
 		}
-		StaticBody2D nearestPotion = (StaticBody2D)potions[0];
-		foreach (StaticBody2D potion in potions)
+		Node2D nearestItem = (Node2D)items[0];
+		foreach (Node2D item in items)
 		{
-			if (potion.GlobalPosition.DistanceTo(this.GlobalPosition) < nearestPotion.GlobalPosition.DistanceTo(this.GlobalPosition))
+			if (item.GlobalPosition.DistanceTo(this.GlobalPosition) < nearestItem.GlobalPosition.DistanceTo(this.GlobalPosition))
 			{
-				nearestPotion = potion;
+				nearestItem = item;
 			}
 		}
-		return nearestPotion;
+		return nearestItem;
 	}
 
-	private void HidePotionsOutline()
+	private void HideSelectablesOutline()
 	{
-		var potions = GetTree().GetNodesInGroup("selectable");
-		foreach (StaticBody2D potion in potions)
+		var items = GetTree().GetNodesInGroup("selectable");
+		foreach (Node2D item in items)
 		{
-			potion.GetNode<Sprite>("Outline").Visible = false;
+			item.GetNode<Sprite>("Outline").Visible = false;
 		}
+	}
+
+	private void PickPotion(Node2D potion)
+	{
+		hasPotion = true;
+		potion.GetNode<Sprite>("Outline").Visible = false;
+		potion.GetParent().RemoveChild(potion);
+		AddChild(potion);
+		potion.Name = "Potion";
+		potion.Position = new Vector2(0, -4 * 16);
+	}
+
+	private void DropPotion()
+	{
+		hasPotion = false;
+		var potion = GetNode<Potion>("Potion");
+		potion.QueueFree();
 	}
 
 	public override void _Input(InputEvent @event)
@@ -44,10 +72,17 @@ public class Hero : KinematicBody2D
 		base._Input(@event);
 		if (@event.IsActionPressed("ui_accept"))
 		{
-			var closestPotion = GetClosestPotion();
-			if (closestPotion != null && closestPotion.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
+			var closestItemSelectable = GetClosestItemSelectable();
+			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
 			{
-				closestPotion.QueueFree();
+				if (closestItemSelectable is Potion)
+				{
+					PickPotion(closestItemSelectable);
+				}
+				else
+				{
+					DropPotion();
+				}
 			}
 		}
 	}
@@ -71,11 +106,11 @@ public class Hero : KinematicBody2D
 		var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (velocity != new Vector2())
 		{
-			HidePotionsOutline();
-			var closestPotion = GetClosestPotion();
-			if (closestPotion != null && closestPotion.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
+			HideSelectablesOutline();
+			var closestItemSelectable = GetClosestItemSelectable();
+			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
 			{
-				closestPotion.GetNode<Sprite>("Outline").Visible = true;
+				closestItemSelectable.GetNode<Sprite>("Outline").Visible = true;
 			}
 			if (velocity.y > 0)
 			{
