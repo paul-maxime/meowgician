@@ -34,18 +34,14 @@ color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="Torch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 928, 32 )
-frame = 0
 
 [node name="Torch2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 96, 32 )
-frame = 0
 
 [node name="Torch3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 32, 480 )
 animation = "left"
-frame = 0
 
 [node name="Torch4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 992, 480 )
 animation = "right"
-frame = 0
