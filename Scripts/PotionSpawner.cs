@@ -6,7 +6,8 @@ public class PotionSpawner : Node2D
 
 	public override void _Ready()
 	{
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 100; i++)
+		{
 			AddChild(potion.Instance());
 		}
 	}
