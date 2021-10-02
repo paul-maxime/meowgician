@@ -5,7 +5,13 @@
 
 [node name="Root" type="Node2D"]
 
-[node name="HelloWorld" type="Label" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HelloWorld" type="Label" parent="CanvasLayer"]
 margin_left = 228.945
 margin_top = 62.9984
 margin_right = 305.945
