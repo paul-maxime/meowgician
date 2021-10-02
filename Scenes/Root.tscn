@@ -10,6 +10,8 @@
 anchor_mode = 0
 current = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="Walls" parent="." instance=ExtResource( 2 )]
 
 [node name="Potions" type="Node2D" parent="."]
