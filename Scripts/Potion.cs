@@ -3,7 +3,12 @@ using System;
 
 public class Potion : RigidBody2D
 {
-	private static Random Rand = new Random();
+	private static Color[] colors = {
+		new Color(.8f, .8f, 1f),
+		new Color(1f, .8f, .8f),
+		new Color(.8f, 1f, 1f),
+		new Color(.8f, 1f, .8f),
+	};
 
 	public override void _Ready()
 	{
@@ -11,10 +16,13 @@ public class Potion : RigidBody2D
 		float y = (float)Godot.GD.RandRange(100, 400);
 		this.Position = new Vector2(x, y);
 
-		float textureX = (Godot.GD.Randi() % 4) * 16f;
+		uint index = Godot.GD.Randi() % 4;
+
+		float textureX = index * 16f;
 		float textureY = 0;
 
 		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(textureX, textureY, 16f, 16f);
+		this.GetNode<Light2D>("Light2D").Color = colors[index];
 	}
 
 	public override void _InputEvent(Godot.Object viewport, InputEvent inputEvent, int shapeIdx)
