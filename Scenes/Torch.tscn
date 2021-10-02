@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Textures/LightMap.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/FlickeringLight.cs" type="Script" id=3]
 [ext_resource path="res://Scenes/FlameParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -49,7 +50,6 @@ animations = [ {
 
 [node name="Torch" type="AnimatedSprite"]
 scale = Vector2( 4, 4 )
-z_index = 1
 frames = SubResource( 7 )
 playing = true
 
@@ -61,3 +61,5 @@ script = ExtResource( 3 )
 
 [node name="FlameParticle" parent="." instance=ExtResource( 4 )]
 position = Vector2( -0.124634, -4.36209 )
+
+[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 5 )]

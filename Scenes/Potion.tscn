@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Textures/potions/potions.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Potion.cs" type="Script" id=2]
-[ext_resource path="res://Textures/LightMap.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0
@@ -12,8 +12,8 @@ input_pickable = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1 )
 scale = Vector2( 4, 4 )
+z_index = 1
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
@@ -22,9 +22,4 @@ region_rect = Rect2( 32, 0, 16, 16 )
 position = Vector2( 0, 0.58242 )
 shape = SubResource( 1 )
 
-[node name="Light2D" type="Light2D" parent="."]
-visible = false
-texture = ExtResource( 3 )
-texture_scale = 0.3
-energy = 1.5
-mode = 2
+[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 3 )]

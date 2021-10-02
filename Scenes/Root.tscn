@@ -8,6 +8,7 @@
 [ext_resource path="res://Scripts/Root.cs" type="Script" id=6]
 
 [node name="Root" type="Node2D"]
+position = Vector2( 0, 1 )
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -29,22 +30,22 @@ z_index = 2
 position = Vector2( 512, 300 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
+color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="Torch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 928, 32 )
-frame = 1
+frame = 0
 
 [node name="Torch2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 96, 32 )
-frame = 1
+frame = 0
 
 [node name="Torch3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 32, 480 )
 animation = "left"
-frame = 1
+frame = 0
 
 [node name="Torch4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 992, 480 )
 animation = "right"
-frame = 1
+frame = 0

@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Textures/cauldron/cauldron.png" type="Texture" id=1]
 [ext_resource path="res://Textures/cauldron/buble.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/FlickeringLight.cs" type="Script" id=3]
 [ext_resource path="res://Textures/LightMap.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 13 )
+extents = Vector2( 10, 5 )
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.266, 0.746, 1 )
@@ -49,3 +50,5 @@ scale_amount_random = 0.2
 color_ramp = SubResource( 2 )
 hue_variation = 0.12
 hue_variation_random = 0.45
+
+[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 5 )]
