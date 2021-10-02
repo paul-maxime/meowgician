@@ -12,7 +12,34 @@ public class Hero : KinematicBody2D
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
 	}
 
-	public void GetInput()
+	private Potion getClosestPotion()
+	{
+		var potions = GetTree().GetNodesInGroup("potions");
+		Potion nearestPotion = (Potion)potions[0];
+		foreach (Potion potion in potions)
+		{
+			if (potion.GlobalPosition.DistanceTo(this.GlobalPosition) < nearestPotion.GlobalPosition.DistanceTo(this.GlobalPosition))
+			{
+				nearestPotion = potion;
+			}
+		}
+		return nearestPotion;
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
+		if (@event.IsActionPressed("ui_accept"))
+		{
+			var closestPotion = getClosestPotion();
+			if (closestPotion.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
+			{
+				closestPotion.QueueFree();
+			}
+		}
+	}
+
+	public void GetVelocity()
 	{
 		velocity = new Vector2();
 
@@ -31,11 +58,11 @@ public class Hero : KinematicBody2D
 		var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (velocity != new Vector2())
 		{
-			if (velocity.y >= 0)
+			if (velocity.y > 0)
 			{
 				animationPlayer.Play("Walk");
 			}
-			else
+			else if (velocity.y < 0)
 			{
 				animationPlayer.Play("Walk back");
 			}
@@ -73,7 +100,7 @@ public class Hero : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta)
 	{
-		GetInput();
+		GetVelocity();
 		velocity = MoveAndSlide(velocity);
 	}
 }

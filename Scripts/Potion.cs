@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Potion : RigidBody2D
+public class Potion : StaticBody2D
 {
 	private static Color[] colors = {
 		new Color(.8f, .8f, 1f),
@@ -27,9 +27,9 @@ public class Potion : RigidBody2D
 
 	public override void _InputEvent(Godot.Object viewport, InputEvent inputEvent, int shapeIdx)
 	{
-		if (inputEvent is InputEventMouseButton buttonEvent && buttonEvent.ButtonIndex == (int)ButtonList.Left)
+		/*if (inputEvent is InputEventMouseButton buttonEvent && buttonEvent.ButtonIndex == (int)ButtonList.Left)
 		{
-			this.ApplyImpulse(Vector2.Zero, Vector2.Up * 800f);
-		}
+				this.ApplyImpulse(Vector2.Zero, Vector2.Up * 800f);
+		}*/
 	}
 }

@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0
 
-[node name="Potion" type="RigidBody2D"]
+[node name="Potion" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource( 2 )
 
@@ -23,6 +23,7 @@ position = Vector2( 0, 0.58242 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 texture = ExtResource( 3 )
 texture_scale = 0.3
 energy = 1.5
