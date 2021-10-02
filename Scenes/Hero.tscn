@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Hero.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.8332, 32.8382 )
+extents = Vector2( 16, 16 )
 
 [sub_resource type="Animation" id=2]
 length = 0.4
@@ -63,6 +63,7 @@ tracks/1/keys = {
 }
 
 [node name="Hero" type="KinematicBody2D"]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -74,7 +75,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 48, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.899094, -0.899078 )
+position = Vector2( 0, 16 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -8,7 +8,7 @@ public class Potion : RigidBody2D
 	public override void _Ready()
 	{
 		float x = (float)Godot.GD.RandRange(100, 1024 - 100);
-		float y = (float)Godot.GD.RandRange(-512 + 100, 0);
+		float y = (float)Godot.GD.RandRange(100, 400);
 		this.Position = new Vector2(x, y);
 
 		float textureX = (Godot.GD.Randi() % 4) * 16f;

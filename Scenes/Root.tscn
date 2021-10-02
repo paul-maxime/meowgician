@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PotionSpawner.cs" type="Script" id=1]
-[ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Hero.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=4]
 
 [node name="Root" type="Node2D"]
 
@@ -12,7 +12,7 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Walls" parent="." instance=ExtResource( 2 )]
+[node name="Map" parent="." instance=ExtResource( 4 )]
 
 [node name="Potions" type="Node2D" parent="."]
 script = ExtResource( 1 )
