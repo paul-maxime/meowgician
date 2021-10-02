@@ -15,6 +15,10 @@ public class Hero : KinematicBody2D
 	private Potion getClosestPotion()
 	{
 		var potions = GetTree().GetNodesInGroup("potions");
+		if (potions.Count == 0)
+		{
+			return null;
+		}
 		Potion nearestPotion = (Potion)potions[0];
 		foreach (Potion potion in potions)
 		{
@@ -32,7 +36,7 @@ public class Hero : KinematicBody2D
 		if (@event.IsActionPressed("ui_accept"))
 		{
 			var closestPotion = getClosestPotion();
-			if (closestPotion.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
+			if (closestPotion != null && closestPotion.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
 			{
 				closestPotion.QueueFree();
 			}
