@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Textures/cauldron/cauldron.png" type="Texture" id=1]
+[ext_resource path="res://Textures/LightMap.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/FlickeringLight.cs" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 1.5
@@ -58,3 +60,8 @@ shape = SubResource( 2 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
