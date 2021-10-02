@@ -7,6 +7,10 @@ public class Hero : KinematicBody2D
 
 	public Vector2 velocity = new Vector2();
 
+	public override void _Ready() {
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Walk");
+	}
+	
 	public void GetInput()
 	{
 		velocity = new Vector2();
