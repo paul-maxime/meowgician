@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 2000 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2000, 10 )
 
 [node name="Walls" type="Node2D"]
@@ -12,22 +12,22 @@ extents = Vector2( 2000, 10 )
 position = Vector2( 1024, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2( 0, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
 position = Vector2( 512, 600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 position = Vector2( 512, -300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
