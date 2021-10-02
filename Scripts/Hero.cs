@@ -39,6 +39,14 @@ public class Hero : KinematicBody2D
 			{
 				animationPlayer.Play("Walk back");
 			}
+			if (velocity.x > 0)
+			{
+				animationPlayer.Play("Walk right");
+			}
+			else if (velocity.x < 0)
+			{
+				animationPlayer.Play("Walk left");
+			}
 		}
 		else
 		{
@@ -49,6 +57,14 @@ public class Hero : KinematicBody2D
 			else if (animationPlayer.CurrentAnimation == "Walk back")
 			{
 				animationPlayer.Play("Idle back");
+			}
+			else if (animationPlayer.CurrentAnimation == "Walk left")
+			{
+				animationPlayer.Play("Idle left");
+			}
+			else if (animationPlayer.CurrentAnimation == "Walk right")
+			{
+				animationPlayer.Play("Idle right");
 			}
 		}
 

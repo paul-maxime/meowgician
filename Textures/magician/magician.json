@@ -46,6 +46,54 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 400
+   },
+   "magician 6.ase": {
+    "frame": { "x": 96, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 7.ase": {
+    "frame": { "x": 112, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 8.ase": {
+    "frame": { "x": 128, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 9.ase": {
+    "frame": { "x": 144, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 10.ase": {
+    "frame": { "x": 160, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 11.ase": {
+    "frame": { "x": 176, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
    }
  },
  "meta": {
@@ -53,13 +101,17 @@
   "version": "1.2.29",
   "image": "magician.png",
   "format": "RGBA8888",
-  "size": { "w": 96, "h": 16 },
+  "size": { "w": 192, "h": 16 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 0, "direction": "forward" },
    { "name": "Walk", "from": 1, "to": 2, "direction": "forward" },
    { "name": "Idle back", "from": 3, "to": 3, "direction": "forward" },
-   { "name": "Walk back", "from": 4, "to": 5, "direction": "forward" }
+   { "name": "Walk back", "from": 4, "to": 5, "direction": "forward" },
+   { "name": "Idle right", "from": 6, "to": 6, "direction": "forward" },
+   { "name": "Walk right", "from": 7, "to": 8, "direction": "forward" },
+   { "name": "Idle left", "from": 9, "to": 9, "direction": "forward" },
+   { "name": "Walk left", "from": 10, "to": 11, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
