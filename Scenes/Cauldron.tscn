@@ -31,16 +31,16 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 64, 48 )
+extents = Vector2( 15, 14 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 closed = false
-polygon = PoolVector2Array( -60, -20, -60, -28, -55.1923, -27.9315, -55.4025, -31.9258, -51.4083, -31.9258, -51.6185, -36.1303, -35.8513, -36.1039, -35.4312, -40.1245, 36.6757, -40.1245, 36.2552, -36.5507, 52.4425, -35.92, 52.2323, -32.7667, 57.0674, -32.7667, 56.647, -29.1929, 60.431, -29.4031, 60.431, -20.7839 )
+polygon = PoolVector2Array( -15, 2, -15, -3, -14, -3, -14, -4, -13, -4, -13, -5, -15, -5, -15, -7, -14, -7, -14, -8, -13, -8, -13, -9, -9, -9, -9, -10, 9, -10, 9, -9, 13, -9, 13, -8, 14, -8, 14, -7, 15, -7, 15, -5, 13, -5, 13, -4, 14, -4, 14, -3, 15, -3, 15, 2 )
 
 [node name="Cauldron" type="StaticBody2D"]
+scale = Vector2( 4, 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 hframes = 3
 frame = 1
@@ -53,9 +53,8 @@ autoplay = "bubbling"
 anims/bubbling = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 1 )
 shape = SubResource( 2 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( -0.210224, 0.840912 )
 occluder = SubResource( 3 )
