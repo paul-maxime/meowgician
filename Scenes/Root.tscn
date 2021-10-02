@@ -1,11 +1,21 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/PotionSpawner.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=2]
 
 [node name="Root" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="HelloWorld" type="Label" parent="."]
+margin_left = 228.945
+margin_top = 62.9984
+margin_right = 305.945
+margin_bottom = 76.9984
 text = "Hello, world"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Walls" parent="." instance=ExtResource( 2 )]
+
+[node name="Potions" type="Node2D" parent="."]
+script = ExtResource( 1 )
