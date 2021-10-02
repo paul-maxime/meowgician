@@ -22,4 +22,4 @@ script = ExtResource( 1 )
 position = Vector2( 93.5046, 72.8257 )
 
 [node name="Cauldron" parent="." instance=ExtResource( 2 )]
-position = Vector2( 447.7, 298.467 )
+position = Vector2( 512, 300 )
