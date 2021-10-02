@@ -22,18 +22,44 @@
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 400
+   },
+   "magician 3.ase": {
+    "frame": { "x": 48, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 1
+   },
+   "magician 4.ase": {
+    "frame": { "x": 64, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
+   },
+   "magician 5.ase": {
+    "frame": { "x": 80, "y": 0, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 400
    }
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.2.29-x64",
+  "version": "1.2.29",
   "image": "magician.png",
   "format": "RGBA8888",
-  "size": { "w": 48, "h": 16 },
+  "size": { "w": 96, "h": 16 },
   "scale": "1",
   "frameTags": [
    { "name": "Idle", "from": 0, "to": 0, "direction": "forward" },
-   { "name": "Walk", "from": 1, "to": 2, "direction": "forward" }
+   { "name": "Walk", "from": 1, "to": 2, "direction": "forward" },
+   { "name": "Idle back", "from": 3, "to": 3, "direction": "forward" },
+   { "name": "Walk back", "from": 4, "to": 5, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
