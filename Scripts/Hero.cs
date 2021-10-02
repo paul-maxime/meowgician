@@ -28,13 +28,28 @@ public class Hero : KinematicBody2D
 		if (Input.IsActionPressed("ui_up"))
 			velocity.y -= 1;
 
+		var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (velocity != new Vector2())
 		{
-			GetNode<AnimationPlayer>("AnimationPlayer").Play("Walk");
+			if (velocity.y >= 0)
+			{
+				animationPlayer.Play("Walk");
+			}
+			else
+			{
+				animationPlayer.Play("Walk back");
+			}
 		}
 		else
 		{
-			GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
+			if (animationPlayer.CurrentAnimation == "Walk")
+			{
+				animationPlayer.Play("Idle");
+			}
+			else if (animationPlayer.CurrentAnimation == "Walk back")
+			{
+				animationPlayer.Play("Idle back");
+			}
 		}
 
 		velocity = velocity.Normalized() * speed;

@@ -28,4 +28,4 @@ texture = ExtResource( 5 )
 shadow_enabled = true
 
 [node name="Cauldron" parent="." instance=ExtResource( 2 )]
-position = Vector2( 447.7, 298.467 )
+position = Vector2( 512, 300 )
