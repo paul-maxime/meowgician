@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shiny_rpg_potions_16x16.png-4dd726ba06505c77fa0b2aa529f23006.stex"
+path="res://.import/tilesetformattedupdate1_16x16.png-885863d578f170810af998170fc0f21e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/shiny_rpg_potions_16x16.png"
-dest_files=[ "res://.import/shiny_rpg_potions_16x16.png-4dd726ba06505c77fa0b2aa529f23006.stex" ]
+source_file="res://Textures/tilesetformattedupdate1_16x16.png"
+dest_files=[ "res://.import/tilesetformattedupdate1_16x16.png-885863d578f170810af998170fc0f21e.stex" ]
 
 [params]
 
