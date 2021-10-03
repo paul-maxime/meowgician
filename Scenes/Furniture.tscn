@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/furnitures/furnitures.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 8 )
 
 [node name="Furniture" type="Node2D"]
 
@@ -32,30 +33,10 @@ position = Vector2( 0, 8 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 1 )
 
-[node name="Bed" type="RigidBody2D" parent="." groups=[
-"shakable",
-]]
-position = Vector2( 104.216, 136.324 )
-mode = 1
-mass = 3.0
-linear_damp = 1.0
-
-[node name="DynamicLayerUpdater" parent="Bed" instance=ExtResource( 2 )]
-
-[node name="Sprite" type="Sprite" parent="Bed"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 64, 64, 16, 32 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
-scale = Vector2( 4, 4 )
-shape = SubResource( 1 )
-
 [node name="Table" type="RigidBody2D" parent="." groups=[
 "shakable",
 ]]
-position = Vector2( 832.658, 423.411 )
+position = Vector2( 600, 110 )
 mode = 1
 linear_damp = 1.0
 
@@ -63,11 +44,31 @@ linear_damp = 1.0
 
 [node name="Sprite" type="Sprite" parent="Table"]
 scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 64, 32, 32, 32 )
+region_rect = Rect2( -0.374489, 9.42561, 32.6421, 22.8752 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, -10 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 2 )
+
+[node name="Board" type="RigidBody2D" parent="." groups=[
+"shakable",
+]]
+position = Vector2( 600, 30 )
+mode = 1
+linear_damp = 1.0
+
+[node name="DynamicLayerUpdater" parent="Board" instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="Board"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( -0.196388, 40.9754, 32.3374, 22.1595 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board"]
+position = Vector2( 0, -10 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 2 )
