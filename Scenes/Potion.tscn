@@ -6,24 +6,30 @@
 [ext_resource path="res://Textures/potions/outline.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.70057
-height = 0.598862
+radius = 5.0
+height = 1.0
 
-[node name="Potion" type="StaticBody2D"]
-scale = Vector2( 4, 4 )
+[node name="Potion" type="RigidBody2D" groups=[
+"shakable",
+]]
 input_pickable = true
+mode = 1
 script = ExtResource( 2 )
 
 [node name="Outline" type="Sprite" parent="."]
 visible = false
+scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
+scale = Vector2( 4, 4 )
 shape = SubResource( 1 )
 
 [node name="DynamicLayerUpdater" parent="." instance=ExtResource( 3 )]

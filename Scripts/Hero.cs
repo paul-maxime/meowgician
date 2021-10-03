@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public class Hero : KinematicBody2D
 {
@@ -50,13 +49,15 @@ public class Hero : KinematicBody2D
 		}
 	}
 
-	private void PickPotion(Node2D potion)
+	private void PickPotion(RigidBody2D potion)
 	{
 		hasPotion = true;
+		potion.RemoveFromGroup("shakable");
 		potion.GetNode<Sprite>("Outline").Visible = false;
 		potion.GetParent().RemoveChild(potion);
 		AddChild(potion);
 		potion.Name = "Potion";
+		potion.Mode = RigidBody2D.ModeEnum.Static;
 		potion.Position = new Vector2(0, -4 * 16);
 	}
 
@@ -67,6 +68,17 @@ public class Hero : KinematicBody2D
 		potion.QueueFree();
 	}
 
+	private void DropPotionOnGround()
+	{
+		hasPotion = false;
+		var potion = GetNode<Potion>("Potion");
+		potion.AddToGroup("shakable");
+		potion.GetNode<Sprite>("Outline").Visible = true;
+		potion.GetParent().RemoveChild(potion);
+		GetNode("/root/Root/Potions").AddChild(potion);
+		potion.Position = this.Position + new Vector2(0, -4 * 16);
+	}
+
 	public override void _Input(InputEvent @event)
 	{
 		base._Input(@event);
@@ -75,14 +87,18 @@ public class Hero : KinematicBody2D
 			var closestItemSelectable = GetClosestItemSelectable();
 			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
 			{
-				if (closestItemSelectable is Potion)
+				if (closestItemSelectable is Potion potion)
 				{
-					PickPotion(closestItemSelectable);
+					PickPotion(potion);
 				}
 				else
 				{
 					DropPotion();
 				}
+			}
+			else if (hasPotion)
+			{
+				DropPotionOnGround();
 			}
 		}
 	}
@@ -155,6 +171,6 @@ public class Hero : KinematicBody2D
 	public override void _PhysicsProcess(float delta)
 	{
 		GetVelocity();
-		velocity = MoveAndSlide(velocity);
+		velocity = MoveAndSlide(velocity, infiniteInertia: false);
 	}
 }

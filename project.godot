@@ -27,6 +27,7 @@ enabled=PoolStringArray( "res://addons/AsepriteAnimSetter/plugin.cfg" )
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/default_gravity_vector=Vector2( 0, 0 )
 
 [rendering]
 

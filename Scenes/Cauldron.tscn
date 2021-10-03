@@ -7,8 +7,8 @@
 [ext_resource path="res://Textures/cauldron/outline.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 5 )
+[sub_resource type="CapsuleShape2D" id=1]
+height = 10.0
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.266, 0.746, 1 )
@@ -27,6 +27,7 @@ region_rect = Rect2( 0, 0, 96, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]

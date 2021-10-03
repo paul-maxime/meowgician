@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/PotionSpawner.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Cauldron.tscn" type="PackedScene" id=2]
@@ -6,16 +6,26 @@
 [ext_resource path="res://Scenes/Map.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Root.cs" type="Script" id=6]
+[ext_resource path="res://Scenes/Furniture.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Earthquake.cs" type="Script" id=8]
+[ext_resource path="res://Textures/bg.png" type="Texture" id=9]
 
 [node name="Root" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+position = Vector2( 512, 288 )
+rotating = true
 current = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="Sprite" parent="BackgroundLayer"]
+z_index = -1
+texture = ExtResource( 9 )
+centered = false
 
 [node name="Map" parent="." instance=ExtResource( 4 )]
 
@@ -32,16 +42,27 @@ position = Vector2( 512, 300 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
-[node name="Torch" parent="." instance=ExtResource( 5 )]
+[node name="Furniture" parent="." instance=ExtResource( 7 )]
+
+[node name="Torches" type="Node2D" parent="."]
+
+[node name="Torch" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 928, 32 )
+frame = 1
 
-[node name="Torch2" parent="." instance=ExtResource( 5 )]
+[node name="Torch2" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 96, 32 )
+frame = 1
 
-[node name="Torch3" parent="." instance=ExtResource( 5 )]
+[node name="Torch3" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 32, 480 )
 animation = "left"
+frame = 1
 
-[node name="Torch4" parent="." instance=ExtResource( 5 )]
+[node name="Torch4" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 992, 480 )
 animation = "right"
+frame = 1
+
+[node name="Earthquake" type="Node" parent="."]
+script = ExtResource( 8 )
