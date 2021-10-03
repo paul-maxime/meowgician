@@ -101,7 +101,7 @@ script = ExtResource( 3 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 0.037, -12 )
-amount = 5
+amount = 10
 lifetime = 1.5
 lifetime_randomness = 0.01
 texture = ExtResource( 2 )
@@ -116,8 +116,7 @@ linear_accel = 5.64
 scale_amount = 0.2
 scale_amount_random = 0.2
 color_ramp = SubResource( 2 )
-hue_variation = 0.75
-hue_variation_random = 0.7
+hue_variation_random = 0.3
 
 [node name="DynamicLayerUpdater" parent="." instance=ExtResource( 6 )]
 
