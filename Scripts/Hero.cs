@@ -4,7 +4,7 @@ public class Hero : KinematicBody2D
 {
 	[Export] public int speed = 200;
 
-	private bool hasPotion = false;
+	private Godot.Collections.Array<Potion> potions = new Godot.Collections.Array<Potion> { };
 
 	public Vector2 velocity = new Vector2();
 
@@ -15,14 +15,14 @@ public class Hero : KinematicBody2D
 
 	private Node2D GetClosestItemSelectable()
 	{
-		Godot.Collections.Array items;
-		if (!hasPotion)
+		Godot.Collections.Array items = new Godot.Collections.Array { };
+		if (potions.Count < 4)
 		{
 			items = GetTree().GetNodesInGroup("potions");
 		}
-		else
+		if (potions.Count > 0)
 		{
-			items = new Godot.Collections.Array { GetNode<Node2D>("/root/Root/Cauldron") };
+			items.Add(GetNode<Node2D>("/root/Root/Cauldron"));
 		}
 
 		if (items.Count == 0)
@@ -49,33 +49,31 @@ public class Hero : KinematicBody2D
 		}
 	}
 
-	private void PickPotion(RigidBody2D potion)
+	private void PickPotion(Potion potion)
 	{
-		hasPotion = true;
+		potions.Add(potion);
+		potion.RemoveFromGroup("potions");
 		potion.RemoveFromGroup("shakable");
 		potion.GetNode<Sprite>("Outline").Visible = false;
-		potion.GetParent().RemoveChild(potion);
-		AddChild(potion);
 		potion.Name = "Potion";
-		potion.Mode = RigidBody2D.ModeEnum.Static;
-		potion.Position = new Vector2(0, -4 * 16);
 	}
 
 	private void DropPotion()
 	{
-		hasPotion = false;
-		var potion = GetNode<Potion>("Potion");
-		potion.QueueFree();
+		foreach (Potion potion in potions)
+		{
+			potion.QueueFree();
+		}
+		potions = new Godot.Collections.Array<Potion> { };
 	}
 
 	private void DropPotionOnGround()
 	{
-		hasPotion = false;
-		var potion = GetNode<Potion>("Potion");
+		var potion = potions[potions.Count - 1];
+		potions.Remove(potion);
+		potion.AddToGroup("potions");
 		potion.AddToGroup("shakable");
 		potion.GetNode<Sprite>("Outline").Visible = true;
-		potion.GetParent().RemoveChild(potion);
-		GetNode("/root/Root/Potions").AddChild(potion);
 		potion.Position = this.Position + new Vector2(0, -4 * 16);
 	}
 
@@ -96,7 +94,7 @@ public class Hero : KinematicBody2D
 					DropPotion();
 				}
 			}
-			else if (hasPotion)
+			else if (potions.Count > 0)
 			{
 				DropPotionOnGround();
 			}
@@ -172,5 +170,11 @@ public class Hero : KinematicBody2D
 	{
 		GetVelocity();
 		velocity = MoveAndSlide(velocity, infiniteInertia: false);
+		for (int i = 0; i < potions.Count; i++)
+		{
+			var potion = potions[i];
+			var target = i == 0 ? (Node2D)this : (Node2D)potions[i - 1];
+			potion.MoveAndSlide(potion.Position.DirectionTo(target.Position) * speed);
+		}
 	}
 }

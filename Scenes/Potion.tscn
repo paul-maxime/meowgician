@@ -9,11 +9,10 @@
 radius = 5.0
 height = 1.0
 
-[node name="Potion" type="RigidBody2D" groups=[
+[node name="Potion" type="KinematicBody2D" groups=[
 "shakable",
 ]]
 input_pickable = true
-mode = 1
 script = ExtResource( 2 )
 
 [node name="Outline" type="Sprite" parent="."]

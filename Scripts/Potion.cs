@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Potion : RigidBody2D
+public class Potion : KinematicBody2D
 {
 	public override void _Ready()
 	{
