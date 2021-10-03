@@ -19,7 +19,11 @@ public class Hero : KinematicBody2D
 		if (potions.Count < 4)
 		{
 			items = GetTree().GetNodesInGroup("potions");
-			items.Add(GetNode<Node2D>("/root/Root/Furniture/FireTable"));
+			FireTable fireTable = GetNode<FireTable>("/root/Root/Furniture/FireTable");
+			if (!fireTable.isWorking)
+			{
+				items.Add(fireTable);
+			}
 		}
 		if (potions.Count > 0)
 		{
@@ -86,6 +90,7 @@ public class Hero : KinematicBody2D
 			var closestItemSelectable = GetClosestItemSelectable();
 			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
 			{
+				HideSelectablesOutline();
 				if (closestItemSelectable is Potion potion)
 				{
 					PickPotion(potion);
