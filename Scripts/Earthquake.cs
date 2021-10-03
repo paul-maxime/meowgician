@@ -89,19 +89,10 @@ public class Earthquake : Node
 	{
 		base._PhysicsProcess(delta);
 
-		foreach (var (kinematicBody, randomVector) in movedKinematics)
+		foreach (var (kinematicBody, force) in movedKinematics)
 		{
 			if (!Godot.Object.IsInstanceValid(kinematicBody)) continue;
-			Vector2 movement;
-			if (Direction == Vector2.Zero)
-			{
-				movement = randomVector * delta * 25 * Intensity;
-			}
-			else
-			{
-				movement = Direction * delta * 50 * Intensity;
-			}
-			kinematicBody.MoveAndCollide(movement);
+			kinematicBody.MoveAndCollide(force * delta);
 		}
 	}
 
@@ -113,11 +104,11 @@ public class Earthquake : Node
 		
 		float quakeType = GD.Randf();
 
-		if (quakeType < 0.6f) // Quake everywhere
+		if (quakeType < 0.5f) // Quake everywhere
 		{
 			Direction = Vector2.Zero;
 		}
-		else if (quakeType < 0.8f) // Slide left
+		else if (quakeType < 0.75f) // Slide left
 		{
 			float angle = (float)GD.RandRange(-Math.PI / 4, Math.PI / 4);
 			Direction = Vector2.Left.Rotated(angle);
@@ -142,12 +133,12 @@ public class Earthquake : Node
 		}
 	}
 
-	private IEnumerable<PhysicsBody2D> GetShakableBodies()
+	private IEnumerable<KinematicBody2D> GetShakableBodies()
 	{
 		var entities = GetTree().GetNodesInGroup("shakable");
 		foreach (var entity in entities)
 		{
-			yield return (PhysicsBody2D)entity;
+			yield return (KinematicBody2D)entity;
 		}
 	}
 
@@ -155,24 +146,17 @@ public class Earthquake : Node
 	{
 		foreach (var entity in GetShakableBodies())
 		{
-			if (entity is RigidBody2D rigidBody)
+			Vector2 force;
+			if (Direction == Vector2.Zero)
 			{
-				rigidBody.Mode = RigidBody2D.ModeEnum.Character;
-				Vector2 impulse;
-				if (Direction == Vector2.Zero)
-				{
-					impulse = RandomVector() * 20 * Intensity;
-				}
-				else
-				{
-					impulse = Direction * 100 * Intensity;
-				}
-				rigidBody.ApplyCentralImpulse(impulse);
+				force = RandomVector();
 			}
-			else if (entity is KinematicBody2D kinematicBody)
+			else
 			{
-				movedKinematics.Add((kinematicBody, RandomVector()));
+				force = Direction * 5;
 			}
+			force *= Intensity * (entity.GetParent().Name == "Furniture" ? 1 : 10);
+			movedKinematics.Add((entity, force));
 		}
 	}
 
@@ -183,13 +167,6 @@ public class Earthquake : Node
 
 	private void EndMovement()
 	{
-		foreach (var entity in GetShakableBodies())
-		{
-			if (entity is RigidBody2D rigidBody)
-			{
-				rigidBody.Mode = RigidBody2D.ModeEnum.Static;
-			}
-		}
 		movedKinematics.Clear();
 	}
 }
