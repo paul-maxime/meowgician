@@ -16,6 +16,7 @@ public class Cauldron : StaticBody2D
 
 	private CPUParticles2D particles;
 	private Sprite sprite;
+	private Vector2 initialPosition;
 
 	public void TryToDrop(Array<Potion> potions)
 	{
@@ -66,12 +67,19 @@ public class Cauldron : StaticBody2D
 			AddChild(plusSign);
 		}
 		GenerateNeededPotions();
+
+		initialPosition = this.Position;
 	}
 
 	public override void _Process(float delta)
 	{
 		base._Process(delta);
 		Instability += delta / 60f;
+
+		if (instability > 0.5f)
+		{
+			Position = initialPosition + new Vector2((float)GD.RandRange(-(Instability - 0.5f) * 8, (Instability - 0.5f) * 8), 0);
+		}
 	}
 
 	private void SetInstability(float value)
@@ -80,7 +88,7 @@ public class Cauldron : StaticBody2D
 		instability = value;
 
 		particles.Lifetime = Mathf.Lerp(1.5f, 0.2f, instability);
-		particles.InitialVelocity = Mathf.Lerp(3.5f, 135f, instability);
+		particles.InitialVelocity = Mathf.Lerp(3.5f, 135f, Math.Max(0f, instability - 0.1f) * 10f / 9f);
 		particles.ScaleAmount = Mathf.Lerp(0.2f, 0.5f, instability);
 
 		if (Math.Floor(previousLevel * 100f) != Math.Floor(instability * 100f))
