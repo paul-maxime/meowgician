@@ -166,21 +166,21 @@ public class Hero : KinematicBody2D
 		}
 		else
 		{
-			if (animationPlayer.CurrentAnimation == "Walk")
+			if (animationPlayer.CurrentAnimation == "WalkRight")
 			{
-				animationPlayer.Play("Idle");
+				animationPlayer.Play("IdleRight");
 			}
-			else if (animationPlayer.CurrentAnimation == "Walk back")
+			else if (animationPlayer.CurrentAnimation == "WalkLeft")
 			{
-				animationPlayer.Play("Idle back");
+				animationPlayer.Play("IdleLeft");
 			}
-			else if (animationPlayer.CurrentAnimation == "Walk left")
+			else if (animationPlayer.CurrentAnimation == "WalkLeft")
 			{
-				animationPlayer.Play("Idle left");
+				animationPlayer.Play("IdleLeft");
 			}
-			else if (animationPlayer.CurrentAnimation == "Walk right")
+			else if (animationPlayer.CurrentAnimation == "WalkRight")
 			{
-				animationPlayer.Play("Idle right");
+				animationPlayer.Play("IdleRight");
 			}
 		}
 
