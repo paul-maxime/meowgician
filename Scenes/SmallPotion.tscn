@@ -6,10 +6,10 @@
 [ext_resource path="res://Scripts/SmallPotion.cs" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.0
-height = 1.0
+radius = 5.3
+height = 2.10398
 
-[node name="SmallPotion" type="KinematicBody2D"]
+[node name="SmallPotion" type="StaticBody2D"]
 scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 4 )
 
@@ -19,13 +19,13 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 12 )
+position = Vector2( -0.108604, 0.597961 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 1 )
 

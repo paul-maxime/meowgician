@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class SmallPotion : KinematicBody2D
+public class SmallPotion : StaticBody2D
 {
 	private uint index;
 

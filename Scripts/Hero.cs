@@ -147,19 +147,19 @@ public class Hero : KinematicBody2D
 			{
 				closestItemSelectable.GetNode<Sprite>("Outline").Visible = true;
 			}
-			if (velocity.y > 0)
-			{
-				animationPlayer.Play("WalkRight");
-			}
-			else if (velocity.y < 0)
-			{
-				animationPlayer.Play("WalkLeft");
-			}
 			if (velocity.x > 0)
 			{
 				animationPlayer.Play("WalkRight");
 			}
 			else if (velocity.x < 0)
+			{
+				animationPlayer.Play("WalkLeft");
+			}
+			else if (velocity.y > 0)
+			{
+				animationPlayer.Play("WalkRight");
+			}
+			else if (velocity.y < 0)
 			{
 				animationPlayer.Play("WalkLeft");
 			}
