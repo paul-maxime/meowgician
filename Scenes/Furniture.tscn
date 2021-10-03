@@ -44,8 +44,13 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( -0.196388, 40.9754, 32.3374, 22.1595 )
 
-[node name="Table" type="StaticBody2D" parent="."]
+[node name="Table" type="RigidBody2D" parent="." groups=[
+"shakable",
+]]
 position = Vector2( 600, 110 )
+mode = 1
+mass = 2.0
+linear_damp = 1.0
 
 [node name="DynamicLayerUpdater" parent="Table" instance=ExtResource( 2 )]
 
