@@ -7,11 +7,4 @@ public class MortarTable : Table
 	{
 		potionIndex = 3;
 	}
-
-	public override void Interact()
-	{
-		GetNode<AnimationPlayer>("AnimationPlayer").Play("Working");
-		GetNode<Timer>("Timer").Start();
-		isWorking = true;
-	}
 }
