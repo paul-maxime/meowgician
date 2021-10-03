@@ -6,6 +6,7 @@
 scale = Vector2( 4, 4 )
 
 [node name="BackgroundLayer" type="TileMap" parent="."]
+position = Vector2( 0.25, 0 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
