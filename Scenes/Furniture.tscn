@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Textures/furnitures/fire_table.png" type="Texture" id=4]
 [ext_resource path="res://Textures/furnitures/fire_table_outline.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/FireTable.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/MortarTable.cs" type="Script" id=7]
+[ext_resource path="res://Textures/furnitures/mortar_table.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
@@ -99,6 +101,62 @@ tracks/1/keys = {
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 8 )
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [node name="Furniture" type="Node2D"]
 
@@ -195,4 +253,43 @@ texture = ExtResource( 5 )
 wait_time = 2.0
 one_shot = true
 
+[node name="MortarTable" type="RigidBody2D" parent="." groups=[
+"selectable",
+"shakable",
+]]
+position = Vector2( 208, 416 )
+mode = 1
+mass = 2.0
+linear_damp = 1.0
+script = ExtResource( 7 )
+
+[node name="DynamicLayerUpdater" parent="MortarTable" instance=ExtResource( 2 )]
+
+[node name="Sprite" type="Sprite" parent="MortarTable"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MortarTable"]
+anims/Idle = SubResource( 7 )
+anims/Working = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MortarTable"]
+position = Vector2( 0, 8 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 6 )
+
+[node name="Outline" type="Sprite" parent="MortarTable"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="MortarTable"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
+[connection signal="timeout" from="MortarTable/Timer" to="MortarTable" method="_on_Timer_timeout"]

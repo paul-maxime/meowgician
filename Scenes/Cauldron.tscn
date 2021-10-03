@@ -7,6 +7,7 @@
 [ext_resource path="res://Textures/cauldron/outline.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Cauldron.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/NeededPotions.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 10.0
@@ -129,3 +130,4 @@ texture = ExtResource( 5 )
 autoplay = "FireOn"
 anims/FireOff = SubResource( 3 )
 anims/FireOn = SubResource( 4 )
+[node name="NeededPotions" parent="." instance=ExtResource( 8 )]

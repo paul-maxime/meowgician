@@ -1,6 +1,7 @@
 using Godot;
+using System;
 
-public class FireTable : Table
+public class MortarTable : Table
 {
 	public override void Interact()
 	{
