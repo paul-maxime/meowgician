@@ -92,7 +92,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 14 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
 range_item_cull_mask = 7
