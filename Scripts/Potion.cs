@@ -4,6 +4,10 @@ using System;
 public class Potion : KinematicBody2D
 {
 	public bool isOnTable = true;
+	private Eye leftEye;
+	private Eye rightEye;
+	private Earthquake earthquake;
+
 	public void init(Vector2 position, uint index)
 	{
 		this.CollisionLayer = 0;
@@ -13,13 +17,23 @@ public class Potion : KinematicBody2D
 	}
 
 	public override void _Ready()
-	{ }
-
-	public override void _InputEvent(Godot.Object viewport, InputEvent inputEvent, int shapeIdx)
 	{
-		/*if (inputEvent is InputEventMouseButton buttonEvent && buttonEvent.ButtonIndex == (int)ButtonList.Left)
+		earthquake = GetNode<Earthquake>("/root/Root/Earthquake");
+		leftEye = GetNode<Eye>("Sprite/Eyes/IrisLeft");
+		rightEye = GetNode<Eye>("Sprite/Eyes/IrisRight");
+	}
+
+	public void UpdateEyes(Vector2 direction, float delta)
+	{
+		if (earthquake.IsShaking)
 		{
-				this.ApplyImpulse(Vector2.Zero, Vector2.Up * 800f);
-		}*/
+			leftEye.WoobleRandomly(delta * earthquake.Intensity);
+			rightEye.WoobleRandomly(delta * earthquake.Intensity);
+		}
+		else
+		{
+			leftEye.LookAtDirection(direction);
+			rightEye.LookAtDirection(direction);
+		}
 	}
 }

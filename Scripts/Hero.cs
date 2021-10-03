@@ -212,12 +212,7 @@ public class Hero : KinematicBody2D
 			Vector2 direction = potion.Position.DirectionTo(target.Position);
 
 			potion.MoveAndSlide(direction * speed, infiniteInertia: false);
-
-			var pupilLeft = potion.GetNode<Node2D>("Sprite/Eyes/IrisLeft/PupilLeft");
-			var pupilRight = potion.GetNode<Node2D>("Sprite/Eyes/IrisRight/PupilRight");
-
-			pupilLeft.Position = direction;
-			pupilRight.Position = direction;
+			potion.UpdateEyes(direction, delta);
 		}
 	}
 }
