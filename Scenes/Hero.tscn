@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 29 )
+extents = Vector2( 16, 24 )
 
 [sub_resource type="Animation" id=2]
 length = 0.1
@@ -139,7 +139,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 48, 96 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -4, 16 )
+position = Vector2( 0, 16 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

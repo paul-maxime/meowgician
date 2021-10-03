@@ -25,9 +25,12 @@ public class Hero : KinematicBody2D
 		{
 			selectableItems.Add(GetNode<Node2D>("/root/Root/Cauldron"));
 		}
-		foreach (var table in GetTree().GetNodesInGroup("table"))
+		foreach (Table table in GetTree().GetNodesInGroup("table"))
 		{
-			selectableItems.Add(table);
+			if (!table.isWorking)
+			{
+				selectableItems.Add(table);
+			}
 		}
 
 		if (selectableItems.Count == 0)
