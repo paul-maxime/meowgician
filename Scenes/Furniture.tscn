@@ -193,5 +193,6 @@ texture = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="FireTable"]
 wait_time = 2.0
+one_shot = true
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
