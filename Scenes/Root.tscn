@@ -49,9 +49,11 @@ color = Color( 0.376471, 0.376471, 0.376471, 1 )
 
 [node name="Torch" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 928, 32 )
+frame = 0
 
 [node name="Torch2" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 96, 32 )
+frame = 0
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 5 )]
 position = Vector2( 32, 480 )
