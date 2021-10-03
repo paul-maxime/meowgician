@@ -91,6 +91,7 @@ public class Earthquake : Node
 
 		foreach (var (kinematicBody, randomVector) in movedKinematics)
 		{
+			if (!Godot.Object.IsInstanceValid(kinematicBody)) continue;
 			Vector2 movement;
 			if (Direction == Vector2.Zero)
 			{
