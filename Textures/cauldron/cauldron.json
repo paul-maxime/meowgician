@@ -16,7 +16,15 @@
     "duration": 500
    },
    "cauldron 2.ase": {
-    "frame": { "x": 64, "y": 0, "w": 32, "h": 32 },
+    "frame": { "x": 0, "y": 32, "w": 32, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
+    "sourceSize": { "w": 32, "h": 32 },
+    "duration": 500
+   },
+   "cauldron 3.ase": {
+    "frame": { "x": 32, "y": 32, "w": 32, "h": 32 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 32 },
@@ -26,17 +34,20 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.2.29",
+  "version": "1.2.29-x64",
   "image": "cauldron.png",
   "format": "RGBA8888",
-  "size": { "w": 96, "h": 32 },
+  "size": { "w": 64, "h": 64 },
   "scale": "1",
   "frameTags": [
-   { "name": "bubbling", "from": 0, "to": 2, "direction": "forward" }
+   { "name": "FireOff", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "FireOn", "from": 1, "to": 3, "direction": "forward" }
   ],
   "layers": [
-   { "name": "Cauldron", "opacity": 255, "blendMode": "normal" },
-   { "name": "Bubbles", "opacity": 255, "blendMode": "normal" }
+   { "name": "base", "opacity": 255, "blendMode": "normal" },
+   { "name": "wood", "opacity": 255, "blendMode": "normal" },
+   { "name": "shading", "opacity": 255, "blendMode": "normal" },
+   { "name": "fire", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]
