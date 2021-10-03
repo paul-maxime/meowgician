@@ -160,13 +160,10 @@ tracks/1/keys = {
 
 [node name="Furniture" type="Node2D"]
 
-[node name="Bookshelf" type="RigidBody2D" parent="." groups=[
+[node name="Bookshelf" type="KinematicBody2D" parent="." groups=[
 "shakable",
 ]]
 position = Vector2( 841.944, 74.5943 )
-mode = 1
-mass = 2.0
-linear_damp = 1.0
 
 [node name="DynamicLayerUpdater" parent="Bookshelf" instance=ExtResource( 2 )]
 
@@ -192,13 +189,10 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( -0.196388, 40.9754, 32.3374, 22.1595 )
 
-[node name="Table" type="RigidBody2D" parent="." groups=[
+[node name="Table" type="KinematicBody2D" parent="." groups=[
 "shakable",
 ]]
 position = Vector2( 600, 110 )
-mode = 1
-mass = 2.0
-linear_damp = 1.0
 
 [node name="DynamicLayerUpdater" parent="Table" instance=ExtResource( 2 )]
 
@@ -213,14 +207,11 @@ position = Vector2( 0, -10 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 2 )
 
-[node name="FireTable" type="RigidBody2D" parent="." groups=[
+[node name="FireTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
 ]]
 position = Vector2( 256, 128 )
-mode = 1
-mass = 2.0
-linear_damp = 1.0
 script = ExtResource( 6 )
 
 [node name="DynamicLayerUpdater" parent="FireTable" instance=ExtResource( 2 )]
@@ -253,14 +244,11 @@ texture = ExtResource( 5 )
 wait_time = 2.0
 one_shot = true
 
-[node name="MortarTable" type="RigidBody2D" parent="." groups=[
+[node name="MortarTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
 ]]
 position = Vector2( 208, 416 )
-mode = 1
-mass = 2.0
-linear_damp = 1.0
 script = ExtResource( 7 )
 
 [node name="DynamicLayerUpdater" parent="MortarTable" instance=ExtResource( 2 )]

@@ -1,6 +1,6 @@
 using Godot;
 
-public abstract class Table : RigidBody2D
+public abstract class Table : KinematicBody2D
 {
 	private PackedScene potion = ResourceLoader.Load<PackedScene>("res://Scenes/Potion.tscn");
 
