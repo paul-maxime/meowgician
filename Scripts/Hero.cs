@@ -216,8 +216,8 @@ public class Hero : KinematicBody2D
 			var pupilLeft = potion.GetNode<Node2D>("Sprite/Eyes/IrisLeft/PupilLeft");
 			var pupilRight = potion.GetNode<Node2D>("Sprite/Eyes/IrisRight/PupilRight");
 
-			pupilLeft.Position = direction * 8;
-			pupilRight.Position = direction * 8;
+			pupilLeft.Position = direction;
+			pupilRight.Position = direction;
 		}
 	}
 }
