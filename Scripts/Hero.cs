@@ -66,6 +66,8 @@ public class Hero : KinematicBody2D
 			var globalPosition = potion.GlobalPosition;
 			potion.Position = globalPosition;
 			potion.isOnTable = false;
+			potion.CollisionLayer = 1;
+			potion.CollisionMask = 1;
 			potion.GetParent().RemoveChild(potion);
 			potion.AddToGroup("Shakable");
 			GetParent().AddChild(potion);
