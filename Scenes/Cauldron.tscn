@@ -78,6 +78,7 @@ scale = Vector2( 4, 4 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 2
@@ -91,8 +92,11 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, 16 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
+range_item_cull_mask = 7
+shadow_enabled = true
 script = ExtResource( 3 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
