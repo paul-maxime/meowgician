@@ -1,10 +1,11 @@
 using Godot;
+using Godot.Collections;
 
 public class Hero : KinematicBody2D
 {
 	[Export] public int speed = 200;
 
-	private Godot.Collections.Array<Potion> potions = new Godot.Collections.Array<Potion> { };
+	private Array<Potion> potions = new Array<Potion> { };
 
 	public Vector2 velocity = new Vector2();
 
@@ -15,7 +16,7 @@ public class Hero : KinematicBody2D
 
 	private Node2D GetClosestItemSelectable()
 	{
-		Godot.Collections.Array items = new Godot.Collections.Array { };
+		Array items = new Array { };
 		if (potions.Count < 4)
 		{
 			items = GetTree().GetNodesInGroup("potions");
@@ -79,13 +80,13 @@ public class Hero : KinematicBody2D
 		potion.Name = "Potion";
 	}
 
-	private void DropPotion()
+	public void DropPotions()
 	{
 		foreach (Potion potion in potions)
 		{
 			potion.QueueFree();
 		}
-		potions = new Godot.Collections.Array<Potion> { };
+		potions = new Array<Potion> { };
 	}
 
 	private void DropPotionOnGround()
@@ -110,9 +111,9 @@ public class Hero : KinematicBody2D
 				{
 					PickPotion(potion);
 				}
-				else if (closestItemSelectable is Cauldron)
+				else if (closestItemSelectable is Cauldron cauldron)
 				{
-					DropPotion();
+					cauldron.TryToDrop(potions);
 				}
 				else if (closestItemSelectable is Table table)
 				{

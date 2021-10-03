@@ -6,13 +6,15 @@ public abstract class Table : KinematicBody2D
 
 	public bool isWorking = false;
 
+	public uint potionIndex;
+
 	public abstract void Interact();
 
 	public void _on_Timer_timeout()
 	{
 		isWorking = false;
 		var potionInstance = potion.Instance<Potion>();
-		potionInstance.init(new Vector2(0, 0), 0);
+		potionInstance.init(new Vector2(0, 0), potionIndex);
 		potionInstance.AddToGroup("potions");
 		potionInstance.AddToGroup("selectable");
 		AddChild(potionInstance);

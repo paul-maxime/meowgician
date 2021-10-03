@@ -3,6 +3,7 @@
 [ext_resource path="res://Textures/background/background.tres" type="TileSet" id=1]
 
 [node name="Map" type="Node2D"]
+position = Vector2( 1, 0 )
 scale = Vector2( 4, 4 )
 
 [node name="BackgroundLayer" type="TileMap" parent="."]

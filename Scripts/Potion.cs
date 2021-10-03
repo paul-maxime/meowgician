@@ -7,13 +7,15 @@ public class Potion : KinematicBody2D
 	private Eye leftEye;
 	private Eye rightEye;
 	private Earthquake earthquake;
+	public uint color;
 
-	public void init(Vector2 position, uint index)
+	public void init(Vector2 position, uint color)
 	{
 		this.CollisionLayer = 0;
 		this.CollisionMask = 0;
+		this.color = color;
 		this.Position = position;
-		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(index * 16f, 0, 16f, 16f);
+		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(color * 16f, 0, 16f, 16f);
 	}
 
 	public override void _Ready()

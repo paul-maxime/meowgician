@@ -101,10 +101,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.101, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 2, 3, 2, 3, 4, 3 ]
+"values": [ 0, 2, 3, 4, 3 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -134,6 +134,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 3
+frame = 5
 region_enabled = true
 region_rect = Rect2( 0, 0, 48, 96 )
 
