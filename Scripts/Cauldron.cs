@@ -34,6 +34,7 @@ public class Cauldron : StaticBody2D
 		if (copyPotions.Count == 0)
 		{
 			GetParent().GetNode<Hero>("Hero").DropPotions();
+			GenerateNeededPotions();
 		}
 	}
 
@@ -43,7 +44,7 @@ public class Cauldron : StaticBody2D
 		for (int i = 0; i < numberOfPotions; i++)
 		{
 			SmallPotion potion = (SmallPotion)smallPotion.Instance();
-			potion.init(new Vector2(minX + i * 7 + 3, 1f), Godot.GD.Randi() % 2 == 0 ? (uint)1 : 3);
+			potion.init(new Vector2(minX + i * 7 + 3, 1f), Godot.GD.Randi() % 4);
 			AddChild(potion);
 			neededPotions.Add(potion);
 		}
