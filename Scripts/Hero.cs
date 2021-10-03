@@ -152,19 +152,19 @@ public class Hero : KinematicBody2D
 			}
 			if (velocity.y > 0)
 			{
-				animationPlayer.Play("Walk");
+				animationPlayer.Play("WalkRight");
 			}
 			else if (velocity.y < 0)
 			{
-				animationPlayer.Play("Walk back");
+				animationPlayer.Play("WalkLeft");
 			}
 			if (velocity.x > 0)
 			{
-				animationPlayer.Play("Walk right");
+				animationPlayer.Play("WalkRight");
 			}
 			else if (velocity.x < 0)
 			{
-				animationPlayer.Play("Walk left");
+				animationPlayer.Play("WalkLeft");
 			}
 		}
 		else
