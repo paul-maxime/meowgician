@@ -11,10 +11,11 @@ public abstract class Table : KinematicBody2D
 	public void _on_Timer_timeout()
 	{
 		isWorking = false;
-		var potionInstance = potion.Instance();
+		var potionInstance = potion.Instance<Potion>();
+		potionInstance.init(new Vector2(0, 0), 0);
 		potionInstance.AddToGroup("potions");
 		potionInstance.AddToGroup("selectable");
-		GetNode("/root/Root/Potions").AddChild(potionInstance);
+		AddChild(potionInstance);
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
 	}
 }

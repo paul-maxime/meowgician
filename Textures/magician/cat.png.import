@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire_table_outline.png-3a9d6d7aed9e35417b78812d28dc1cba.stex"
+path="res://.import/cat.png-3434fb5dfca0326830d3fa3e86ca97b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/furnitures/fire_table_outline.png"
-dest_files=[ "res://.import/fire_table_outline.png-3a9d6d7aed9e35417b78812d28dc1cba.stex" ]
+source_file="res://Textures/magician/cat.png"
+dest_files=[ "res://.import/cat.png-3434fb5dfca0326830d3fa3e86ca97b2.stex" ]
 
 [params]
 

@@ -61,6 +61,15 @@ public class Hero : KinematicBody2D
 
 	private void PickPotion(Potion potion)
 	{
+		if (potion.isOnTable)
+		{
+			var globalPosition = potion.GlobalPosition;
+			potion.Position = globalPosition;
+			potion.isOnTable = false;
+			potion.GetParent().RemoveChild(potion);
+			potion.AddToGroup("Shakable");
+			GetParent().AddChild(potion);
+		}
 		potions.Add(potion);
 		potion.RemoveFromGroup("potions");
 		potion.GetNode<Sprite>("Outline").Visible = false;
@@ -140,19 +149,19 @@ public class Hero : KinematicBody2D
 			}
 			if (velocity.y > 0)
 			{
-				animationPlayer.Play("Walk");
+				animationPlayer.Play("WalkRight");
 			}
 			else if (velocity.y < 0)
 			{
-				animationPlayer.Play("Walk back");
+				animationPlayer.Play("WalkLeft");
 			}
 			if (velocity.x > 0)
 			{
-				animationPlayer.Play("Walk right");
+				animationPlayer.Play("WalkRight");
 			}
 			else if (velocity.x < 0)
 			{
-				animationPlayer.Play("Walk left");
+				animationPlayer.Play("WalkLeft");
 			}
 		}
 		else
