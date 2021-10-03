@@ -63,7 +63,6 @@ public class Hero : KinematicBody2D
 	{
 		potions.Add(potion);
 		potion.RemoveFromGroup("potions");
-		potion.RemoveFromGroup("shakable");
 		potion.GetNode<Sprite>("Outline").Visible = false;
 		potion.Name = "Potion";
 	}
@@ -82,9 +81,7 @@ public class Hero : KinematicBody2D
 		var potion = potions[potions.Count - 1];
 		potions.Remove(potion);
 		potion.AddToGroup("potions");
-		potion.AddToGroup("shakable");
 		potion.GetNode<Sprite>("Outline").Visible = true;
-		potion.Position = this.Position + new Vector2(0, -4 * 16);
 	}
 
 	public override void _Input(InputEvent @event)
@@ -184,12 +181,22 @@ public class Hero : KinematicBody2D
 	public override void _PhysicsProcess(float delta)
 	{
 		GetVelocity();
+		foreach (var potion in potions)
+		{
+			potion.CollisionLayer = 2;
+			potion.CollisionMask = 2;
+		}
 		velocity = MoveAndSlide(velocity, infiniteInertia: false);
+		foreach (var potion in potions)
+		{
+			potion.CollisionLayer = 1;
+			potion.CollisionMask = 1;
+		}
 		for (int i = 0; i < potions.Count; i++)
 		{
 			var potion = potions[i];
 			var target = i == 0 ? (Node2D)this : (Node2D)potions[i - 1];
-			potion.MoveAndSlide(potion.Position.DirectionTo(target.Position) * speed);
+			potion.MoveAndSlide(potion.Position.DirectionTo(target.Position) * speed, infiniteInertia: false);
 		}
 	}
 }
