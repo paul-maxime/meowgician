@@ -59,7 +59,7 @@ public class Hero : KinematicBody2D
 		if (potion.isOnTable)
 		{
 			var globalPosition = potion.GlobalPosition;
-			potion.Position = globalPosition;
+			potion.Position = Position;
 			potion.isOnTable = false;
 			potion.CollisionLayer = 1;
 			potion.CollisionMask = 1;
