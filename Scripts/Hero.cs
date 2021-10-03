@@ -75,6 +75,7 @@ public class Hero : KinematicBody2D
 		potions.Add(potion);
 		potion.RemoveFromGroup("potions");
 		potion.GetNode<Sprite>("Outline").Visible = false;
+		potion.GetNode<Node2D>("Sprite/Eyes").Visible = true;
 		potion.Name = "Potion";
 	}
 
@@ -93,6 +94,7 @@ public class Hero : KinematicBody2D
 		potions.Remove(potion);
 		potion.AddToGroup("potions");
 		potion.GetNode<Sprite>("Outline").Visible = true;
+		potion.GetNode<Node2D>("Sprite/Eyes").Visible = false;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -207,7 +209,15 @@ public class Hero : KinematicBody2D
 		{
 			var potion = potions[i];
 			var target = i == 0 ? (Node2D)this : (Node2D)potions[i - 1];
-			potion.MoveAndSlide(potion.Position.DirectionTo(target.Position) * speed, infiniteInertia: false);
+			Vector2 direction = potion.Position.DirectionTo(target.Position);
+
+			potion.MoveAndSlide(direction * speed, infiniteInertia: false);
+
+			var pupilLeft = potion.GetNode<Node2D>("Sprite/Eyes/IrisLeft/PupilLeft");
+			var pupilRight = potion.GetNode<Node2D>("Sprite/Eyes/IrisRight/PupilRight");
+
+			pupilLeft.Position = direction * 8;
+			pupilRight.Position = direction * 8;
 		}
 	}
 }

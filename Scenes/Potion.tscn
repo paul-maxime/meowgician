@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Textures/potions/potions.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Potion.cs" type="Script" id=2]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/potions/outline.png" type="Texture" id=4]
+[ext_resource path="res://Textures/eyes/iris.png" type="Texture" id=5]
+[ext_resource path="res://Textures/eyes/pupil.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.0
 height = 1.0
 
 [node name="Potion" type="KinematicBody2D"]
+z_as_relative = false
 input_pickable = true
 script = ExtResource( 2 )
 
@@ -23,6 +26,28 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
+
+[node name="Eyes" type="Node2D" parent="Sprite"]
+visible = false
+scale = Vector2( 0.25, 0.25 )
+
+[node name="IrisLeft" type="Sprite" parent="Sprite/Eyes"]
+position = Vector2( -7.2, 12 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="PupilLeft" type="Sprite" parent="Sprite/Eyes/IrisLeft"]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+
+[node name="IrisRight" type="Sprite" parent="Sprite/Eyes"]
+position = Vector2( 8.8, 12 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="PupilRight" type="Sprite" parent="Sprite/Eyes/IrisRight"]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 12 )
