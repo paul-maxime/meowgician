@@ -16,32 +16,29 @@ public class Hero : KinematicBody2D
 
 	private Node2D GetClosestItemSelectable()
 	{
-		Array items = new Array { };
+		Array selectableItems = new Array { };
 		if (potions.Count < 4)
 		{
-			items = GetTree().GetNodesInGroup("potions");
-			FireTable fireTable = GetNode<FireTable>("/root/Root/Furniture/FireTable");
-			if (!fireTable.isWorking)
-			{
-				items.Add(fireTable);
-			}
-			MortarTable mortarTable = GetNode<MortarTable>("/root/Root/Furniture/MortarTable");
-			if (!mortarTable.isWorking)
-			{
-				items.Add(mortarTable);
-			}
+			selectableItems = GetTree().GetNodesInGroup("potions");
 		}
 		if (potions.Count > 0)
 		{
-			items.Add(GetNode<Node2D>("/root/Root/Cauldron"));
+			selectableItems.Add(GetNode<Node2D>("/root/Root/Cauldron"));
+		}
+		foreach (Table table in GetTree().GetNodesInGroup("table"))
+		{
+			if (!table.isWorking)
+			{
+				selectableItems.Add(table);
+			}
 		}
 
-		if (items.Count == 0)
+		if (selectableItems.Count == 0)
 		{
 			return null;
 		}
-		Node2D nearestItem = (Node2D)items[0];
-		foreach (Node2D item in items)
+		Node2D nearestItem = (Node2D)selectableItems[0];
+		foreach (Node2D item in selectableItems)
 		{
 			if (item.GlobalPosition.DistanceTo(this.GlobalPosition) < nearestItem.GlobalPosition.DistanceTo(this.GlobalPosition))
 			{
@@ -65,7 +62,7 @@ public class Hero : KinematicBody2D
 		if (potion.isOnTable)
 		{
 			var globalPosition = potion.GlobalPosition;
-			potion.Position = globalPosition;
+			potion.Position = Position;
 			potion.isOnTable = false;
 			potion.CollisionLayer = 1;
 			potion.CollisionMask = 1;

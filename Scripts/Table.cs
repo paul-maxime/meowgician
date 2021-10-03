@@ -8,7 +8,12 @@ public abstract class Table : KinematicBody2D
 
 	public uint potionIndex;
 
-	public abstract void Interact();
+	public virtual void Interact()
+	{
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Working");
+		GetNode<Timer>("Timer").Start();
+		isWorking = true;
+	}
 
 	public void _on_Timer_timeout()
 	{

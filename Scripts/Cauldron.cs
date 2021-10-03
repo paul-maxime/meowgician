@@ -43,7 +43,7 @@ public class Cauldron : StaticBody2D
 		for (int i = 0; i < numberOfPotions; i++)
 		{
 			SmallPotion potion = (SmallPotion)smallPotion.Instance();
-			potion.init(new Vector2(minX + i * 7 + 3, 0f), Godot.GD.Randi() % 2 == 0 ? (uint)1 : 3);
+			potion.init(new Vector2(minX + i * 7 + 3, 1f), Godot.GD.Randi() % 2 == 0 ? (uint)1 : 3);
 			AddChild(potion);
 			neededPotions.Add(potion);
 		}
@@ -62,7 +62,7 @@ public class Cauldron : StaticBody2D
 		for (int i = 1; i < numberOfPotions; i++)
 		{
 			MathOperator plusSign = mathOperator.Instance<MathOperator>();
-			plusSign.Position = new Vector2(minX + i * 7, 0);
+			plusSign.Position = new Vector2(minX + i * 7 - 0.5f, 2f);
 			AddChild(plusSign);
 		}
 		GenerateNeededPotions();
