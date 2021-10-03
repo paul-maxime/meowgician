@@ -19,6 +19,7 @@ public class Hero : KinematicBody2D
 		if (potions.Count < 4)
 		{
 			items = GetTree().GetNodesInGroup("potions");
+			items.Add(GetNode<Node2D>("/root/Root/Furniture/FireTable"));
 		}
 		if (potions.Count > 0)
 		{
@@ -89,9 +90,13 @@ public class Hero : KinematicBody2D
 				{
 					PickPotion(potion);
 				}
-				else
+				else if (closestItemSelectable is Cauldron)
 				{
 					DropPotion();
+				}
+				else if (closestItemSelectable is FireTable fireTable)
+				{
+					fireTable.Interact();
 				}
 			}
 			else if (potions.Count > 0)
