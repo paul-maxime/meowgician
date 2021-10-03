@@ -61,6 +61,14 @@ public class Hero : KinematicBody2D
 
 	private void PickPotion(Potion potion)
 	{
+		if (potion.isOnTable)
+		{
+			var globalPosition = potion.GlobalPosition;
+			potion.Position = globalPosition;
+			potion.isOnTable = false;
+			potion.GetParent().RemoveChild(potion);
+			GetParent().AddChild(potion);
+		}
 		potions.Add(potion);
 		potion.RemoveFromGroup("potions");
 		potion.RemoveFromGroup("shakable");

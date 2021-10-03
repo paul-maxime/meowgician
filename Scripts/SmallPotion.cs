@@ -5,7 +5,8 @@ public class SmallPotion : KinematicBody2D
 {
 	private uint index;
 
-	public void init(float x, float y, uint index) {
+	public void init(float x, float y, uint index)
+	{
 		this.Position = new Vector2(x, y);
 		this.index = index;
 	}

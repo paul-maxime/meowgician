@@ -3,19 +3,15 @@ using System;
 
 public class Potion : KinematicBody2D
 {
-	public override void _Ready()
+	public bool isOnTable = true;
+	public void init(Vector2 position, uint index)
 	{
-		float x = (float)Godot.GD.RandRange(100, 1024 - 100);
-		float y = (float)Godot.GD.RandRange(100, 400);
-		this.Position = new Vector2(x, y);
-
-		uint index = Godot.GD.Randi() % 4;
-
-		float textureX = index * 16f;
-		float textureY = 0;
-
-		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(textureX, textureY, 16f, 16f);
+		this.Position = position;
+		this.GetNode<Sprite>("Sprite").RegionRect = new Rect2(index * 16f, 0, 16f, 16f);
 	}
+
+	public override void _Ready()
+	{ }
 
 	public override void _InputEvent(Godot.Object viewport, InputEvent inputEvent, int shapeIdx)
 	{
