@@ -8,7 +8,7 @@ public class PotionSpawner : Node2D
 	{
 		for (int i = 0; i < 2; i++)
 		{
-			var potionInstance = potion.Instance();
+			Potion potionInstance = potion.Instance<Potion>();
 			potionInstance.AddToGroup("potions");
 			potionInstance.AddToGroup("selectable");
 			AddChild(potionInstance);

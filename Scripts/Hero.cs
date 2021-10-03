@@ -24,6 +24,11 @@ public class Hero : KinematicBody2D
 			{
 				items.Add(fireTable);
 			}
+			MortarTable mortarTable = GetNode<MortarTable>("/root/Root/Furniture/MortarTable");
+			if (!mortarTable.isWorking)
+			{
+				items.Add(mortarTable);
+			}
 		}
 		if (potions.Count > 0)
 		{
@@ -99,9 +104,9 @@ public class Hero : KinematicBody2D
 				{
 					DropPotion();
 				}
-				else if (closestItemSelectable is FireTable fireTable)
+				else if (closestItemSelectable is Table table)
 				{
-					fireTable.Interact();
+					table.Interact();
 				}
 			}
 			else if (potions.Count > 0)
