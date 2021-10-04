@@ -35,6 +35,7 @@ public class Cauldron : StaticBody2D
 		if (copyPotions.Count == 0)
 		{
 			GetParent().GetNode<Hero>("Hero").DropPotions();
+			Instability = Instability - 0.5f;
 			GenerateNeededPotions();
 		}
 	}
@@ -85,6 +86,10 @@ public class Cauldron : StaticBody2D
 
 	private void SetInstability(float value)
 	{
+		if (value < 0)
+		{
+			value = 0;
+		}
 		float previousLevel = instability;
 		instability = value;
 
