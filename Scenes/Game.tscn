@@ -10,7 +10,7 @@
 [ext_resource path="res://Scripts/Game.cs" type="Script" id=8]
 [ext_resource path="res://Textures/bg.png" type="Texture" id=9]
 [ext_resource path="res://Sounds/music/bensound-jazzyfrenchy.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Scripts/GameOver.cs" type="Script" id=11]
+[ext_resource path="res://Scripts/EndScreen.cs" type="Script" id=11]
 [ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=12]
 [ext_resource path="res://Scripts/MusicPlayer.cs" type="Script" id=13]
 [ext_resource path="res://Sounds/Blast-SoundBible.com-2068539061.ogg" type="AudioStream" id=14]
@@ -53,19 +53,19 @@ color = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="Torch" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 928, 32 )
+frame = 1
 
 [node name="Torch2" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 96, 32 )
+frame = 1
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 56, 480 )
 animation = "left"
-frame = 1
 
 [node name="Torch4" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 968, 480 )
 animation = "right"
-frame = 1
 
 [node name="Earthquake" type="Node" parent="."]
 script = ExtResource( 7 )
@@ -80,13 +80,13 @@ volume_db = -18.0
 autoplay = true
 script = ExtResource( 13 )
 
-[node name="GameOver" type="Node" parent="."]
+[node name="EndScreen" type="Node" parent="."]
 pause_mode = 2
 script = ExtResource( 11 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="GameOver"]
+[node name="CanvasLayer" type="CanvasLayer" parent="EndScreen"]
 
-[node name="ColorRect" type="ColorRect" parent="GameOver/CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="EndScreen/CanvasLayer"]
 visible = false
 margin_right = 2000.0
 margin_bottom = 1000.0
@@ -94,9 +94,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="GameOver/CanvasLayer/ColorRect"]
+[node name="Tween" type="Tween" parent="EndScreen/CanvasLayer/ColorRect"]
 
-[node name="Label" type="Label" parent="GameOver/CanvasLayer"]
+[node name="LabelGameOver" type="Label" parent="EndScreen/CanvasLayer"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
@@ -115,9 +115,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="GameOver/CanvasLayer/Label"]
+[node name="Tween" type="Tween" parent="EndScreen/CanvasLayer/LabelGameOver"]
 
-[node name="RestartRect" type="ColorRect" parent="GameOver/CanvasLayer"]
+[node name="LabelWin" type="Label" parent="EndScreen/CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 12 )
+text = "Congrats!
+
+You helped the meowgician to restore his powers!
+
+Hold the action button to play again."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="EndScreen/CanvasLayer/LabelWin"]
+
+[node name="RestartRect" type="ColorRect" parent="EndScreen/CanvasLayer"]
 visible = false
 margin_right = 2000.0
 margin_bottom = 1000.0
@@ -126,5 +147,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioBoom" type="AudioStreamPlayer" parent="GameOver"]
+[node name="AudioBoom" type="AudioStreamPlayer" parent="EndScreen"]
 stream = ExtResource( 14 )

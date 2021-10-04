@@ -45,7 +45,14 @@ public class Cauldron : StaticBody2D
 			}
 			GetParent().GetNode<Hero>("Hero").DropPotions();
 			Instability = Instability - 0.5f;
-			GenerateNeededPotions();
+			if (numberOfPotions == 4)
+			{
+				GetNode<EndScreen>("/root/Game/EndScreen").Win();
+			}
+			else
+			{
+				GenerateNeededPotions();
+			}
 		}
 	}
 
@@ -133,7 +140,7 @@ public class Cauldron : StaticBody2D
 
 		if (instability >= 1.0f)
 		{
-			GetNode<GameOver>("/root/Game/GameOver").Lose();
+			GetNode<EndScreen>("/root/Game/EndScreen").Lose();
 		}
 	}
 

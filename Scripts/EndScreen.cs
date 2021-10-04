@@ -1,8 +1,8 @@
 using Godot;
 
-public class GameOver : Node
+public class EndScreen : Node
 {
-	public bool IsGameOver { get; private set; }
+	public bool IsDisplayed { get; private set; }
 
 	private float holdToRetry = 0.0f;
 	private ColorRect restartRect;
@@ -17,7 +17,7 @@ public class GameOver : Node
 	{
 		base._Process(delta);
 
-		if (!IsGameOver)
+		if (!IsDisplayed)
 		{
 			return;
 		}
@@ -48,12 +48,21 @@ public class GameOver : Node
 
 	public void Lose()
 	{
-		IsGameOver = true;
+		IsDisplayed = true;
 		GetTree().Paused = true;
 		FadeoutScreen();
-		FadeinLabel();
+		FadeinLabel("GameOver");
 		restartRect.Visible = true;
 		GetNode<AudioStreamPlayer>("AudioBoom").Play();
+	}
+
+	public void Win()
+	{
+		IsDisplayed = true;
+		GetTree().Paused = true;
+		FadeoutScreen();
+		FadeinLabel("Win");
+		restartRect.Visible = true;
 	}
 
 	private void FadeoutScreen()
@@ -65,10 +74,10 @@ public class GameOver : Node
 		tween.Start();
 	}
 
-	private void FadeinLabel()
+	private void FadeinLabel(string labelName)
 	{
-		var label = GetNode<Label>("CanvasLayer/Label");
-		var tween = GetNode<Tween>("CanvasLayer/Label/Tween");
+		var label = GetNode<Label>("CanvasLayer/Label" + labelName);
+		var tween = GetNode<Tween>("CanvasLayer/Label" + labelName + "/Tween");
 		label.Visible = true;
 		tween.InterpolateProperty(label, new NodePath("modulate"), new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), 3.0f);
 		tween.Start();
