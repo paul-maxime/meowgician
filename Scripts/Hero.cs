@@ -206,10 +206,21 @@ public class Hero : KinematicBody2D
 		for (int i = 0; i < potions.Count; i++)
 		{
 			var potion = potions[i];
-			var target = i == 0 ? (Node2D)this : (Node2D)potions[i - 1];
+			var target = i == 0 ? (KinematicBody2D)this : (KinematicBody2D)potions[i - 1];
 			Vector2 direction = potion.Position.DirectionTo(target.Position);
 
+			for (int j = i + 1; j < potions.Count; j++)
+			{
+				potions[j].CollisionLayer = 2;
+				potions[j].CollisionMask = 2;
+			}
 			potion.MoveAndSlide(direction * speed, infiniteInertia: false);
+			for (int j = i + 1; j < potions.Count; j++)
+			{
+				potions[j].CollisionLayer = 1;
+				potions[j].CollisionMask = 1;
+			}
+
 			potion.UpdateEyes(direction, delta);
 		}
 	}
