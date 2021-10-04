@@ -133,7 +133,7 @@ public class Cauldron : StaticBody2D
 		ingredientGenerators = new Array<IngredientGenerator>{
 			GetParent().GetNode<IngredientGenerator>("Furniture/Window"),
 			GetParent().GetNode<IngredientGenerator>("Furniture/Plant"),
-			GetParent().GetNode<IngredientGenerator>("Furniture/Plant2"),
+			GetParent().GetNode<IngredientGenerator>("Furniture/Aquarium"),
 			GetParent().GetNode<IngredientGenerator>("Furniture/Plant3")
 		};
 		sprite = GetNode<Sprite>("Sprite");
