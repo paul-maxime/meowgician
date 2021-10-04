@@ -4,7 +4,7 @@ public class SmallPotion : Node2D
 {
 	public uint color;
 
-	public void init(Vector2 position, uint color)
+	public void Init(Vector2 position, uint color)
 	{
 		this.color = color;
 		this.Position = position;

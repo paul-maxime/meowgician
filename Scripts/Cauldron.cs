@@ -107,13 +107,13 @@ public class Cauldron : StaticBody2D
 		{
 			if (i > 0)
 			{
-				MathOperator plusSign = mathOperator.Instance<MathOperator>();
+				Node2D plusSign = mathOperator.Instance<Node2D>();
 				plusSign.Position = new Vector2(delta, -2.0f);
 				speechBubble.AddChild(plusSign);
 				delta += 3.7f;
 			}
 			var potion = smallPotion.Instance<SmallPotion>();
-			potion.init(new Vector2(delta, -2.0f), tables[i].potionIndex);
+			potion.Init(new Vector2(delta, -2.0f), tables[i].potionIndex);
 			speechBubble.AddChild(potion);
 			neededPotions.Add(potion);
 			delta += 3.7f;

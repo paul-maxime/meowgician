@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/potions/potions.png" type="Texture" id=2]
 [ext_resource path="res://Textures/potions/outline.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/SmallPotion.cs" type="Script" id=4]
@@ -20,5 +19,3 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
-
-[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 1 )]

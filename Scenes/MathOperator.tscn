@@ -1,40 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/ui/text.png" type="Texture" id=2]
 
-[sub_resource type="CSharpScript" id=1]
-resource_name = "MathOperator"
-script/source = "using Godot;
-using System;
-
-public class MathOperator : StaticBody2D
-{
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = \"text\";
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        
-    }
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
-}
-"
-
-[node name="MathOperator" type="Node2D"]
-scale = Vector2( 0.25, 0.25 )
-script = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite"]
+light_mask = 4
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
-
-[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 1 )]
