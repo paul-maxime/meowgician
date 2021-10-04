@@ -1,0 +1,150 @@
+{ "frames": {
+   "plant 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 1.ase": {
+    "frame": { "x": 16, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 2.ase": {
+    "frame": { "x": 32, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 3.ase": {
+    "frame": { "x": 48, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 4.ase": {
+    "frame": { "x": 64, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 5.ase": {
+    "frame": { "x": 80, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 6.ase": {
+    "frame": { "x": 96, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 7.ase": {
+    "frame": { "x": 112, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 8.ase": {
+    "frame": { "x": 128, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 9.ase": {
+    "frame": { "x": 144, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 10.ase": {
+    "frame": { "x": 160, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 11.ase": {
+    "frame": { "x": 176, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 12.ase": {
+    "frame": { "x": 192, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 13.ase": {
+    "frame": { "x": 208, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 14.ase": {
+    "frame": { "x": 224, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   },
+   "plant 15.ase": {
+    "frame": { "x": 240, "y": 0, "w": 16, "h": 32 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 32 },
+    "sourceSize": { "w": 16, "h": 32 },
+    "duration": 200
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.29-x64",
+  "image": "plant.png",
+  "format": "RGBA8888",
+  "size": { "w": 256, "h": 32 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "IdleGrown", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "IdleEmpty", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "Growing", "from": 2, "to": 15, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "pot", "opacity": 255, "blendMode": "normal" },
+   { "name": "flower", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
