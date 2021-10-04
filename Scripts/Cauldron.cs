@@ -48,23 +48,28 @@ public class Cauldron : StaticBody2D
 			}
 			GetParent().GetNode<Hero>("Hero").DropPotions();
 			Instability = Instability - 0.5f;
-			if (numberOfPotions == 1)
+			if (numberOfPotions == 4)
 			{
-				Instability = 0;
-				confettiParticles.Emitting = true;
-				bubbleParticles.Emitting = false;
-				GetNode<Node2D>("SpeachBubble").Visible = false;
-				GetNode<AudioStreamPlayer2D>("AudioBubbles").Stop();
-				GetNode<AudioStreamPlayer>("/root/Game/MusicPlayer").Stop();
-				GetNode<AudioStreamPlayer>("ConfettiParticles/AudioStreamPlayer").Play();
-				GetNode<AnimationPlayer>("AnimationPlayer").Play("FireOff");
-				confettiTimer.Start();
+				WinGame();
 			}
 			else
 			{
 				GenerateNeededPotions();
 			}
 		}
+	}
+
+	private void WinGame()
+	{
+		Instability = 0;
+		confettiParticles.Emitting = true;
+		bubbleParticles.Emitting = false;
+		GetNode<Node2D>("SpeachBubble").Visible = false;
+		GetNode<AudioStreamPlayer2D>("AudioBubbles").Stop();
+		GetNode<AudioStreamPlayer>("/root/Game/MusicPlayer").Stop();
+		GetNode<AudioStreamPlayer>("ConfettiParticles/AudioStreamPlayer").Play();
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("FireOff");
+		confettiTimer.Start();
 	}
 
 	private void ConfettiTimer_Timeout()
