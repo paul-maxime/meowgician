@@ -67,7 +67,7 @@ public class Hero : KinematicBody2D
 				nearestDistance = itemDistance;
 			}
 		}
-		if (nearestItem is Cauldron || nearestItem is Table)
+		if (nearestItem is Cauldron || nearestItem is Table || (nearestItem is Potion potion && potion.isOnTable))
 		{
 			if (nearestDistance > 100)
 			{
