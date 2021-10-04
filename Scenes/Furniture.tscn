@@ -1053,6 +1053,7 @@ anims/Waiting = SubResource( 16 )
 position = Vector2( 288, 32 )
 script = ExtResource( 22 )
 ingredientIndex = 2
+pickupAnimation = true
 
 [node name="Sprite" type="Sprite" parent="Window"]
 scale = Vector2( 4, 4 )

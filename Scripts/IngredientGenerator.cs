@@ -8,6 +8,8 @@ public class IngredientGenerator : KinematicBody2D
 	private Timer timer;
 	[Export]
 	public uint ingredientIndex;
+	[Export]
+	public bool pickupAnimation = false;
 
 	public void Activate()
 	{
@@ -28,12 +30,20 @@ public class IngredientGenerator : KinematicBody2D
 		{
 			animationPlayerOutline.Stop();
 		}
-		animationPlayer.Play("Leaving");
 		var ingredientInstance = ingredient.Instance<Ingredient>();
 		ingredientInstance.Init(new Vector2(0, 4 * -16f), ingredientIndex);
 		var hero = GetNode<Hero>("/root/Game/Hero");
 		hero.AddChild(ingredientInstance);
 		hero.ingredient = ingredientInstance;
+
+		if (pickupAnimation)
+		{
+			animationPlayer.Play("Leaving");
+		}
+		else
+		{
+			WaitAndAppear();
+		}
 	}
 
 	private void WaitAndAppear()
