@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/397355__plasterbrain__tada-fanfare-a.ogg-babef44d498466e9ef3bf088c2a4feb4.oggstr"
+
+[deps]
+
+source_file="res://Sounds/397355__plasterbrain__tada-fanfare-a.ogg"
+dest_files=[ "res://.import/397355__plasterbrain__tada-fanfare-a.ogg-babef44d498466e9ef3bf088c2a4feb4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

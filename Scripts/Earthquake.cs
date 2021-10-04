@@ -24,7 +24,7 @@ public class Earthquake : Node
 	public override void _Ready()
 	{
 		Intensity = 0.5f;
-		TimeUntilNextShake = 30.0f;
+		TimeUntilNextShake = 20.0f;
 
 		camera = GetNode<Camera2D>("/root/Game/Camera2D");
 		soundPlayer = GetNode<AudioStreamPlayer>("SoundPlayer");
@@ -48,7 +48,7 @@ public class Earthquake : Node
 		TimeUntilNextShake -= delta;
 		if (TimeUntilNextShake <= 0)
 		{
-			TimeUntilNextShake = Math.Max(10.0f, 30.0f - Intensity);
+			TimeUntilNextShake = Math.Max(10.0f, 30.0f - Intensity * 5.0f);
 			Intensity += 0.2f;
 			StartShaking();
 		}
@@ -155,11 +155,11 @@ public class Earthquake : Node
 			Vector2 force;
 			if (Direction == Vector2.Zero)
 			{
-				force = RandomVector();
+				force = RandomVector() * 5;
 			}
 			else
 			{
-				force = Direction * 5;
+				force = Direction * 10;
 			}
 			force *= Intensity * (entity.GetParent().Name == "Furniture" ? 1 : 10);
 			movedKinematics.Add((entity, force));

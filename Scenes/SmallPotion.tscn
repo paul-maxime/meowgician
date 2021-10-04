@@ -15,6 +15,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 4
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 region_enabled = true

@@ -15,9 +15,12 @@ public class Cauldron : StaticBody2D
 	private float minX;
 	private float maxX;
 
-	private CPUParticles2D particles;
+	private CPUParticles2D bubbleParticles;
+	private CPUParticles2D confettiParticles;
 	private Sprite sprite;
 	private Vector2 initialPosition;
+
+	private Timer confettiTimer = new Timer { WaitTime = 3.0f };
 
 	public void TryToDrop(Array<Potion> potions)
 	{
@@ -45,15 +48,28 @@ public class Cauldron : StaticBody2D
 			}
 			GetParent().GetNode<Hero>("Hero").DropPotions();
 			Instability = Instability - 0.5f;
-			if (numberOfPotions == 4)
+			if (numberOfPotions == 1)
 			{
-				GetNode<EndScreen>("/root/Game/EndScreen").Win();
+				Instability = 0;
+				confettiParticles.Emitting = true;
+				bubbleParticles.Emitting = false;
+				GetNode<Node2D>("SpeachBubble").Visible = false;
+				GetNode<AudioStreamPlayer2D>("AudioBubbles").Stop();
+				GetNode<AudioStreamPlayer>("/root/Game/MusicPlayer").Stop();
+				GetNode<AudioStreamPlayer>("ConfettiParticles/AudioStreamPlayer").Play();
+				GetNode<AnimationPlayer>("AnimationPlayer").Play("FireOff");
+				confettiTimer.Start();
 			}
 			else
 			{
 				GenerateNeededPotions();
 			}
 		}
+	}
+
+	private void ConfettiTimer_Timeout()
+	{
+		GetNode<EndScreen>("/root/Game/EndScreen").Win();
 	}
 
 	private void GenerateNeededPotions()
@@ -81,7 +97,6 @@ public class Cauldron : StaticBody2D
 		}
 	}
 
-
 	public override void _Ready()
 	{
 		tables = new Array<Table>{
@@ -90,7 +105,8 @@ public class Cauldron : StaticBody2D
 			GetParent().GetNode<Table>("Furniture/BookTable"),
 			GetParent().GetNode<Table>("Furniture/CoffeeTable")
 		};
-		particles = GetNode<CPUParticles2D>("CPUParticles2D");
+		bubbleParticles = GetNode<CPUParticles2D>("BubbleParticles");
+		confettiParticles = GetNode<CPUParticles2D>("ConfettiParticles");
 		sprite = GetNode<Sprite>("Sprite");
 
 		var speachBubbleSprite = GetNode<Sprite>("SpeachBubble/Sprite");
@@ -103,6 +119,9 @@ public class Cauldron : StaticBody2D
 		initialPosition = this.Position;
 
 		Instability = 0;
+
+		AddChild(confettiTimer);
+		confettiTimer.Connect("timeout", this, "ConfettiTimer_Timeout");
 	}
 
 	public override void _Process(float delta)
@@ -125,17 +144,17 @@ public class Cauldron : StaticBody2D
 		float previousLevel = instability;
 		instability = value;
 
-		particles.Lifetime = Mathf.Lerp(1.5f, 0.1f, instability);
-		particles.InitialVelocity = Mathf.Lerp(3.5f, 135f, Math.Max(0f, instability - 0.1f) * 10f / 9f);
-		particles.ScaleAmount = Mathf.Lerp(0.2f, 0.5f, instability);
+		bubbleParticles.Lifetime = Mathf.Lerp(1.5f, 0.1f, instability);
+		bubbleParticles.InitialVelocity = Mathf.Lerp(3.5f, 135f, Math.Max(0f, instability - 0.1f) * 10f / 9f);
+		bubbleParticles.ScaleAmount = Mathf.Lerp(0.2f, 0.5f, instability);
 
 		if (Math.Floor(previousLevel * 100f) != Math.Floor(instability * 100f))
 		{
 			sprite.Modulate = ModulatedColor;
 
 			Color color = ParticlesColor;
-			particles.ColorRamp.SetColor(1, color);
-			particles.ColorRamp.SetColor(2, color);
+			bubbleParticles.ColorRamp.SetColor(1, color);
+			bubbleParticles.ColorRamp.SetColor(2, color);
 		}
 
 		if (instability >= 1.0f)

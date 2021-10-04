@@ -50,8 +50,8 @@ public class EndScreen : Node
 	{
 		IsDisplayed = true;
 		GetTree().Paused = true;
-		FadeoutScreen();
-		FadeinLabel("GameOver");
+		FadeinLabel("GameOver", 3.0f);
+		FadeoutScreen(new Color(1, 1, 1, 1), new Color(0.2f, 0, 0, 0.8f), 3.0f);
 		restartRect.Visible = true;
 		GetNode<AudioStreamPlayer>("AudioBoom").Play();
 	}
@@ -60,26 +60,27 @@ public class EndScreen : Node
 	{
 		IsDisplayed = true;
 		GetTree().Paused = true;
-		FadeoutScreen();
-		FadeinLabel("Win");
+		FadeoutScreen(new Color(1, 1, 1, 0), new Color(0, 0.2f, 0, 0.5f), 2.0f);
+		FadeinLabel("Win", 2.0f);
 		restartRect.Visible = true;
 	}
 
-	private void FadeoutScreen()
+	private void FadeoutScreen(Color from, Color color, float delay)
 	{
 		var colorRect = GetNode<ColorRect>("CanvasLayer/ColorRect");
 		var tween = GetNode<Tween>("CanvasLayer/ColorRect/Tween");
+		colorRect.Color = from;
 		colorRect.Visible = true;
-		tween.InterpolateProperty(colorRect, new NodePath("color"), new Color(1, 1, 1, 1), new Color(0.2f, 0, 0, 0.8f), 3.0f);
+		tween.InterpolateProperty(colorRect, new NodePath("color"), from, color, delay);
 		tween.Start();
 	}
 
-	private void FadeinLabel(string labelName)
+	private void FadeinLabel(string labelName, float delay)
 	{
-		var label = GetNode<Label>("CanvasLayer/Label" + labelName);
-		var tween = GetNode<Tween>("CanvasLayer/Label" + labelName + "/Tween");
+		var label = GetNode<Label>($"CanvasLayer/Label{labelName}");
+		var tween = GetNode<Tween>($"CanvasLayer/Label{labelName}/Tween");
 		label.Visible = true;
-		tween.InterpolateProperty(label, new NodePath("modulate"), new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), 3.0f);
+		tween.InterpolateProperty(label, new NodePath("modulate"), new Color(1, 1, 1, 0), new Color(1, 1, 1, 1), delay);
 		tween.Start();
 	}
 }
