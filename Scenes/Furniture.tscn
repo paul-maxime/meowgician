@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Textures/furnitures/window.png" type="Texture" id=21]
 [ext_resource path="res://Scripts/Window.cs" type="Script" id=22]
 [ext_resource path="res://Textures/furnitures/window_outline.png" type="Texture" id=23]
+[ext_resource path="res://Textures/furnitures/plant.png" type="Texture" id=24]
+[ext_resource path="res://Textures/furnitures/plant_outline.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
@@ -112,7 +114,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 16, 8 )
+extents = Vector2( 7, 5 )
 
 [sub_resource type="Animation" id=6]
 length = 0.1
@@ -284,6 +286,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=12]
 length = 2.8
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -294,7 +297,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ]
+"values": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -322,7 +325,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ 1 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -338,6 +341,89 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=14]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 2.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -364,7 +450,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=18]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -391,7 +477,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=19]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -419,10 +505,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 32.0039, 32.0036 )
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=21]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -673,6 +759,36 @@ volume_db = 9.0
 max_distance = 300.0
 script = ExtResource( 16 )
 
+[node name="Plant" type="KinematicBody2D" parent="." groups=[
+"selectable",
+"shakable",
+]]
+position = Vector2( 924, 284 )
+
+[node name="DynamicLayerUpdater" parent="Plant" instance=ExtResource( 2 )]
+
+[node name="Outline" type="Sprite" parent="Plant"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
+
+[node name="Sprite" type="Sprite" parent="Plant"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 24 )
+hframes = 16
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant"]
+position = Vector2( 0, 44 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
+anims/Growing = SubResource( 12 )
+anims/IdleEmpty = SubResource( 13 )
+anims/IdleGrown = SubResource( 14 )
+
 [node name="Window" type="StaticBody2D" parent="." groups=[
 "selectable",
 ]]
@@ -688,14 +804,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 96, 96 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 12 )
-anims/Empty = SubResource( 13 )
-anims/Leaving = SubResource( 14 )
-anims/Throwing = SubResource( 15 )
-anims/Waiting = SubResource( 16 )
+anims/Arriving = SubResource( 15 )
+anims/Empty = SubResource( 16 )
+anims/Leaving = SubResource( 17 )
+anims/Throwing = SubResource( 18 )
+anims/Waiting = SubResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
-shape = SubResource( 17 )
+shape = SubResource( 20 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
@@ -710,7 +826,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
-anims/Waiting = SubResource( 18 )
+anims/Waiting = SubResource( 21 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
