@@ -926,6 +926,7 @@ script = ExtResource( 16 )
 
 [node name="Board" parent="CoffeeTable" instance=ExtResource( 28 )]
 IngredientType1 = 4
+IngredientType2 = 2
 
 [node name="ApparitionAnimation" parent="CoffeeTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
