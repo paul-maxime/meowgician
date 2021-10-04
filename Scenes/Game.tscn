@@ -38,7 +38,7 @@ centered = false
 [node name="Map" parent="." instance=ExtResource( 4 )]
 
 [node name="Hero" parent="." instance=ExtResource( 5 )]
-position = Vector2( 500, 200 )
+position = Vector2( 400, 200 )
 z_index = 2
 
 [node name="Cauldron" parent="." instance=ExtResource( 2 )]
