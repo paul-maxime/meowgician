@@ -28,6 +28,7 @@
 [ext_resource path="res://Textures/furnitures/aquarium.png" type="Texture" id=26]
 [ext_resource path="res://Textures/furnitures/aquarium_outline.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/TableBoard.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/ApparitionAnimation.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
@@ -838,6 +839,9 @@ IngredientType1 = 3
 IngredientType2 = 1
 OutputPotionType = 1
 
+[node name="ApparitionAnimation" parent="FireTable" instance=ExtResource( 26 )]
+position = Vector2( 0, 20 )
+
 [node name="CoffeeTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
@@ -888,6 +892,9 @@ script = ExtResource( 16 )
 [node name="Board" parent="CoffeeTable" instance=ExtResource( 28 )]
 IngredientType1 = 0
 
+[node name="ApparitionAnimation" parent="CoffeeTable" instance=ExtResource( 26 )]
+position = Vector2( 0, 20 )
+
 [node name="BookTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
@@ -909,7 +916,6 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
 hframes = 3
 vframes = 3
-frame = 1
 region_enabled = true
 region_rect = Rect2( 0, 0, 96, 96 )
 
@@ -941,6 +947,9 @@ IngredientType1 = 0
 IngredientType2 = 1
 OutputPotionType = 0
 
+[node name="ApparitionAnimation" parent="BookTable" instance=ExtResource( 26 )]
+position = Vector2( 0, 20 )
+
 [node name="MortarTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
@@ -970,7 +979,7 @@ anims/Idle = SubResource( 10 )
 anims/Working = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MortarTable"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 15.2826 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 5 )
 
@@ -993,6 +1002,9 @@ script = ExtResource( 16 )
 IngredientType1 = 2
 IngredientType2 = 3
 OutputPotionType = 3
+
+[node name="ApparitionAnimation" parent="MortarTable" instance=ExtResource( 26 )]
+position = Vector2( 0, 20 )
 
 [node name="Plant" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1054,6 +1066,7 @@ anims/Arriving = SubResource( 17 )
 anims/Empty = SubResource( 18 )
 anims/Leaving = SubResource( 19 )
 anims/Throwing = SubResource( 20 )
+anims/Waiting = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
 position = Vector2( 0, 4 )
