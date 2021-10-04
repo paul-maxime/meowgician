@@ -153,3 +153,5 @@ anims/WalkRight = SubResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 6 )
+
+[node name="WalkAudioPlayer" type="AudioStreamPlayer" parent="."]

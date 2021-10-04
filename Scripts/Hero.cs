@@ -13,8 +13,13 @@ public class Hero : KinematicBody2D
 
 	public Vector2 velocity = new Vector2();
 
+	private AudioStreamPlayer walkAudioPlayer;
+
 	public override void _Ready()
-	{ }
+	{
+		base._Ready();
+		walkAudioPlayer = GetNode<AudioStreamPlayer>("WalkAudioPlayer");
+	}
 
 	private Node2D GetClosestItemSelectable()
 	{
@@ -194,7 +199,7 @@ public class Hero : KinematicBody2D
 			velocity.y -= 1;
 
 		var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		if (velocity != new Vector2())
+		if (velocity != Vector2.Zero)
 		{
 			if (velocity.x > 0)
 			{
@@ -211,6 +216,10 @@ public class Hero : KinematicBody2D
 			else if (velocity.y < 0)
 			{
 				animationPlayer.Play("WalkLeft");
+			}
+			if (!walkAudioPlayer.Playing)
+			{
+				walkAudioPlayer.Play();
 			}
 		}
 		else
@@ -230,6 +239,10 @@ public class Hero : KinematicBody2D
 			else if (animationPlayer.CurrentAnimation == "WalkRight")
 			{
 				animationPlayer.Play("IdleRight");
+			}
+			if (walkAudioPlayer.Playing)
+			{
+				walkAudioPlayer.Stop();
 			}
 		}
 

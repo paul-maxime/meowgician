@@ -4,8 +4,10 @@ using System;
 
 public class Cauldron : StaticBody2D
 {
+	private static int GameoverCount = 0;
+
 	public float Instability { get => instability; set => SetInstability(value); }
-	public bool InstabilityStarted { get; set; }
+	public bool InstabilityStarted { get; set; } = true;
 	private float instability;
 
 	private PackedScene smallPotion = ResourceLoader.Load<PackedScene>("res://Scenes/SmallPotion.tscn");
@@ -67,6 +69,7 @@ public class Cauldron : StaticBody2D
 
 	private void WinGame()
 	{
+		GameoverCount = 0;
 		Instability = 0;
 		confettiParticles.Emitting = true;
 		bubbleParticles.Emitting = false;
@@ -162,7 +165,7 @@ public class Cauldron : StaticBody2D
 
 		if (InstabilityStarted)
 		{
-			Instability += delta / 120f;
+			Instability += delta / (90f + GameoverCount * 30f);
 		}
 		if (instability > 0.5f)
 		{
@@ -195,6 +198,7 @@ public class Cauldron : StaticBody2D
 		if (instability >= 1.0f)
 		{
 			GetNode<EndScreen>("/root/Game/EndScreen").Lose();
+			GameoverCount += 1;
 		}
 	}
 
