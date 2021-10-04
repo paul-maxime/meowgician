@@ -4,7 +4,7 @@
 
 [node name="SmallIngredient" type="Sprite"]
 light_mask = 4
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )

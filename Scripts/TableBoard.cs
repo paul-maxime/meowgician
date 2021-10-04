@@ -15,7 +15,7 @@ public class TableBoard : Sprite
 	{
 		Sprite ingredient1 = smallIngredient.Instance<Sprite>();
 		ingredient1.Position = new Vector2(-8.0f, -3.0f);
-		ingredient1.RegionRect = new Rect2(IngredientType1 % 2 * 16, IngredientType1 / 2 * 16, 16, 16);
+		ingredient1.RegionRect = new Rect2(IngredientType1 * 16, 0, 16, 16);
 		AddChild(ingredient1);
 
 		Sprite plusOperator = mathOperator.Instance<Sprite>();
@@ -25,7 +25,7 @@ public class TableBoard : Sprite
 
 		Sprite ingredient2 = smallIngredient.Instance<Sprite>();
 		ingredient2.Position = new Vector2(0.0f, -3.0f);
-		ingredient2.RegionRect = new Rect2(IngredientType2 % 2 * 16, IngredientType2 / 2 * 16, 16, 16);
+		ingredient2.RegionRect = new Rect2(IngredientType2 * 16, 0, 16, 16);
 		AddChild(ingredient2);
 
 		Sprite eqOperator = mathOperator.Instance<Sprite>();
