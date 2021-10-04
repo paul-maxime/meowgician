@@ -1,0 +1,43 @@
+{ "frames": {
+   "spider_outline 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 34, "h": 34 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 34, "h": 34 },
+    "sourceSize": { "w": 34, "h": 34 },
+    "duration": 200
+   },
+   "spider_outline 1.ase": {
+    "frame": { "x": 34, "y": 0, "w": 34, "h": 34 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 34, "h": 34 },
+    "sourceSize": { "w": 34, "h": 34 },
+    "duration": 200
+   },
+   "spider_outline 2.ase": {
+    "frame": { "x": 68, "y": 0, "w": 34, "h": 34 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 34, "h": 34 },
+    "sourceSize": { "w": 34, "h": 34 },
+    "duration": 200
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.29",
+  "image": "spider_outline.png",
+  "format": "RGBA8888",
+  "size": { "w": 102, "h": 34 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "Waiting", "from": 0, "to": 2, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Outline", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
