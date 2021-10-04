@@ -1,6 +1,5 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=63 format=2]
 
-[ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/furnitures/furnitures.png" type="Texture" id=3]
 [ext_resource path="res://Textures/furnitures/fire_table.png" type="Texture" id=4]
@@ -31,9 +30,6 @@
 [ext_resource path="res://Scenes/ApparitionAnimation.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Textures/furnitures/spider.png" type="Texture" id=30]
 [ext_resource path="res://Textures/furnitures/spider_outline.png" type="Texture" id=31]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 10 )
 
 [sub_resource type="Animation" id=2]
 length = 2.25
@@ -826,29 +822,11 @@ tracks/1/keys = {
 
 [node name="Furniture" type="Node2D"]
 
-[node name="Bookshelf" type="KinematicBody2D" parent="." groups=[
-"shakable",
-]]
-position = Vector2( 841.944, 74.5943 )
-
-[node name="DynamicLayerUpdater" parent="Bookshelf" instance=ExtResource( 2 )]
-
-[node name="Sprite" type="Sprite" parent="Bookshelf"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 48, 96, 32, 32 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf"]
-position = Vector2( 0, 8 )
-scale = Vector2( 4, 4 )
-shape = SubResource( 1 )
-
 [node name="FireTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
 ]]
-position = Vector2( 160, 96 )
+position = Vector2( 140, 100 )
 script = ExtResource( 6 )
 
 [node name="DynamicLayerUpdater" parent="FireTable" instance=ExtResource( 2 )]
@@ -905,7 +883,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 728, 396 )
+position = Vector2( 884, 400 )
 script = ExtResource( 10 )
 
 [node name="DynamicLayerUpdater" parent="CoffeeTable" instance=ExtResource( 2 )]
@@ -958,7 +936,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 692, 112 )
+position = Vector2( 884, 100 )
 script = ExtResource( 5 )
 
 [node name="DynamicLayerUpdater" parent="BookTable" instance=ExtResource( 2 )]
@@ -1013,7 +991,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 160, 384 )
+position = Vector2( 140, 400 )
 script = ExtResource( 7 )
 
 [node name="DynamicLayerUpdater" parent="MortarTable" instance=ExtResource( 2 )]
@@ -1069,7 +1047,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 884, 284 )
+position = Vector2( 748, 232 )
 script = ExtResource( 22 )
 ingredientIndex = 1
 
@@ -1150,7 +1128,7 @@ anims/Waiting = SubResource( 33 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 584, 412 )
+position = Vector2( 556, 104 )
 script = ExtResource( 22 )
 ingredientIndex = 2
 
@@ -1191,7 +1169,7 @@ anims/Waiting = SubResource( 28 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 388, 396 )
+position = Vector2( 132, 224 )
 script = ExtResource( 22 )
 ingredientIndex = 4
 
