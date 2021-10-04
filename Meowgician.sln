@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LD49", "LD49.csproj", "{39E926AB-FAC7-469F-971D-5BBFD2D6FB83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meowgician", "Meowgician.csproj", "{39E926AB-FAC7-469F-971D-5BBFD2D6FB83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
