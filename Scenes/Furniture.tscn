@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -508,6 +508,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 32, 28 )
 
 [sub_resource type="Animation" id=21]
 length = 2.8
@@ -1049,6 +1052,8 @@ anims/Leaving = SubResource( 19 )
 anims/Throwing = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2( 0, 4 )
+shape = SubResource( 31 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
