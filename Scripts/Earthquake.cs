@@ -24,7 +24,7 @@ public class Earthquake : Node
 		Intensity = 0.5f;
 		TimeUntilNextShake = 10.0f;
 
-		camera = GetNode<Camera2D>("/root/Root/Camera2D");
+		camera = GetNode<Camera2D>("/root/Game/Camera2D");
 	}
 
 	public override void _Process(float delta)

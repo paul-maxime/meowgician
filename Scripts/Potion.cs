@@ -20,7 +20,7 @@ public class Potion : KinematicBody2D
 
 	public override void _Ready()
 	{
-		earthquake = GetNode<Earthquake>("/root/Root/Earthquake");
+		earthquake = GetNode<Earthquake>("/root/Game/Earthquake");
 		leftEye = GetNode<Eye>("Sprite/Eyes/IrisLeft");
 		rightEye = GetNode<Eye>("Sprite/Eyes/IrisRight");
 	}

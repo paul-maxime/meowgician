@@ -23,7 +23,7 @@ public class Hero : KinematicBody2D
 		}
 		if (potions.Count > 0)
 		{
-			selectableItems.Add(GetNode<Node2D>("/root/Root/Cauldron"));
+			selectableItems.Add(GetNode<Node2D>("/root/Game/Cauldron"));
 		}
 		foreach (Table table in GetTree().GetNodesInGroup("table"))
 		{

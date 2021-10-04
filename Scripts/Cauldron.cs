@@ -100,6 +100,10 @@ public class Cauldron : StaticBody2D
 			particles.ColorRamp.SetColor(1, color);
 			particles.ColorRamp.SetColor(2, color);
 		}
+
+		if (instability >= 1.0f) {
+			GetNode<GameOver>("/root/Game/GameOver").Lose();
+		}
 	}
 
 	public Color ParticlesColor
