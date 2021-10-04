@@ -97,6 +97,7 @@ public class Cauldron : StaticBody2D
 			}
 			tables[numberOfPotions].GetNode<Sprite>("SimpleTable").Visible = false;
 			tables[numberOfPotions].GetNode<Sprite>("Sprite").Visible = true;
+			tables[numberOfPotions].GetNode<Sprite>("Board").Visible = true;
 			tables[numberOfPotions].AddToGroup("table");
 			numberOfPotions++;
 		}

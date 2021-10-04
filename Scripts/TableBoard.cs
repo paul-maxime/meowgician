@@ -36,6 +36,5 @@ public class TableBoard : Sprite
 		SmallPotion potion = smallPotion.Instance<SmallPotion>();
 		potion.Init(new Vector2(8.0f, -3.0f), OutputPotionType);
 		AddChild(potion);
-
 	}
 }
