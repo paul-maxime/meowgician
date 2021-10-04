@@ -10,7 +10,8 @@ public class Cauldron : StaticBody2D
 	private PackedScene smallPotion = ResourceLoader.Load<PackedScene>("res://Scenes/SmallPotion.tscn");
 	private PackedScene mathOperator = ResourceLoader.Load<PackedScene>("res://Scenes/MathOperator.tscn");
 	private Array<SmallPotion> neededPotions = new Array<SmallPotion> { };
-	private uint numberOfPotions = 4;
+	private int numberOfPotions = 0;
+	private Array<Table> tables = null;
 	private float minX;
 	private float maxX;
 
@@ -38,6 +39,10 @@ public class Cauldron : StaticBody2D
 			{
 				potion.DropIntoCauldron();
 			}
+			foreach (SmallPotion potion in neededPotions)
+			{
+				potion.QueueFree();
+			}
 			GetParent().GetNode<Hero>("Hero").DropPotions();
 			Instability = Instability - 0.5f;
 			GenerateNeededPotions();
@@ -47,10 +52,23 @@ public class Cauldron : StaticBody2D
 	private void GenerateNeededPotions()
 	{
 		neededPotions = new Array<SmallPotion> { };
+		if (numberOfPotions < 4)
+		{
+			tables[numberOfPotions].GetNode<Sprite>("SimpleTable").Visible = false;
+			tables[numberOfPotions].GetNode<Sprite>("Sprite").Visible = true;
+			tables[numberOfPotions].AddToGroup("table");
+			numberOfPotions++;
+		}
 		for (int i = 0; i < numberOfPotions; i++)
 		{
+			if (i > 0)
+			{
+				MathOperator plusSign = mathOperator.Instance<MathOperator>();
+				plusSign.Position = new Vector2(minX + i * 5.5f - 0.8f, -25f);
+				AddChild(plusSign);
+			}
 			var potion = smallPotion.Instance<SmallPotion>();
-			potion.init(new Vector2(minX + i * 5.5f + 2f, -26f), Godot.GD.Randi() % 4);
+			potion.init(new Vector2(minX + i * 5.5f + 2f, -26f), tables[i].potionIndex /*Godot.GD.Randi() % 4*/);
 			AddChild(potion);
 			neededPotions.Add(potion);
 		}
@@ -59,6 +77,12 @@ public class Cauldron : StaticBody2D
 
 	public override void _Ready()
 	{
+		tables = new Array<Table>{
+			GetParent().GetNode<Table>("Furniture/FireTable"),
+			GetParent().GetNode<Table>("Furniture/MortarTable"),
+			GetParent().GetNode<Table>("Furniture/BookTable"),
+			GetParent().GetNode<Table>("Furniture/CoffeeTable")
+		};
 		particles = GetNode<CPUParticles2D>("CPUParticles2D");
 		sprite = GetNode<Sprite>("Sprite");
 
@@ -67,12 +91,6 @@ public class Cauldron : StaticBody2D
 		minX = -(speachBubbleSize.x / 4f) + 3;
 		maxX = speachBubbleSize.x / 4f - 3;
 
-		for (int i = 1; i < numberOfPotions; i++)
-		{
-			MathOperator plusSign = mathOperator.Instance<MathOperator>();
-			plusSign.Position = new Vector2(minX + i * 5.5f - 0.8f, -25f);
-			AddChild(plusSign);
-		}
 		GenerateNeededPotions();
 
 		initialPosition = this.Position;
@@ -113,7 +131,8 @@ public class Cauldron : StaticBody2D
 			particles.ColorRamp.SetColor(2, color);
 		}
 
-		if (instability >= 1.0f) {
+		if (instability >= 1.0f)
+		{
 			GetNode<GameOver>("/root/Game/GameOver").Lose();
 		}
 	}

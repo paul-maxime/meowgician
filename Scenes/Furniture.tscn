@@ -491,7 +491,14 @@ script = ExtResource( 6 )
 
 [node name="DynamicLayerUpdater" parent="FireTable" instance=ExtResource( 2 )]
 
+[node name="SimpleTable" type="Sprite" parent="FireTable"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Sprite" type="Sprite" parent="FireTable"]
+visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
 hframes = 5
@@ -534,7 +541,14 @@ script = ExtResource( 10 )
 
 [node name="DynamicLayerUpdater" parent="CoffeeTable" instance=ExtResource( 2 )]
 
+[node name="SimpleTable" type="Sprite" parent="CoffeeTable"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Sprite" type="Sprite" parent="CoffeeTable"]
+visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 14 )
 hframes = 2
@@ -574,6 +588,13 @@ position = Vector2( 692, 112 )
 script = ExtResource( 5 )
 
 [node name="DynamicLayerUpdater" parent="BookTable" instance=ExtResource( 2 )]
+
+[node name="SimpleTable" type="Sprite" parent="BookTable"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="Sprite" type="Sprite" parent="BookTable"]
 scale = Vector2( 4, 4 )
@@ -617,7 +638,14 @@ script = ExtResource( 7 )
 
 [node name="DynamicLayerUpdater" parent="MortarTable" instance=ExtResource( 2 )]
 
+[node name="SimpleTable" type="Sprite" parent="MortarTable"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Sprite" type="Sprite" parent="MortarTable"]
+visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 8 )
 hframes = 2
