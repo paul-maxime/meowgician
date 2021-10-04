@@ -42,7 +42,7 @@ position = Vector2( 400, 200 )
 z_index = 2
 
 [node name="Cauldron" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 300 )
+position = Vector2( 512, 350 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.501961, 0.501961, 0.501961, 1 )
@@ -53,19 +53,19 @@ color = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="Torch" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 928, 32 )
+frame = 1
 
 [node name="Torch2" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 96, 32 )
+frame = 1
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 56, 480 )
 animation = "left"
-frame = 1
 
 [node name="Torch4" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 968, 480 )
 animation = "right"
-frame = 1
 
 [node name="Earthquake" type="Node" parent="."]
 script = ExtResource( 7 )

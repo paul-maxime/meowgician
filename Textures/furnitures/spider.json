@@ -146,14 +146,14 @@
  },
  "meta": {
   "app": "http://www.aseprite.org/",
-  "version": "1.2.29-x64",
+  "version": "1.2.29",
   "image": "spider.png",
   "format": "RGBA8888",
   "size": { "w": 576, "h": 32 },
   "scale": "1",
   "frameTags": [
    { "name": "Leaving", "from": 0, "to": 6, "direction": "forward" },
-   { "name": "Idle", "from": 7, "to": 9, "direction": "forward" },
+   { "name": "Waiting", "from": 7, "to": 9, "direction": "forward" },
    { "name": "Empty", "from": 10, "to": 10, "direction": "forward" },
    { "name": "Arriving", "from": 11, "to": 17, "direction": "forward" }
   ],

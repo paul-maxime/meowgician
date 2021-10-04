@@ -1,6 +1,5 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
-[ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/furnitures/furnitures.png" type="Texture" id=3]
 [ext_resource path="res://Textures/furnitures/fire_table.png" type="Texture" id=4]
@@ -29,9 +28,8 @@
 [ext_resource path="res://Textures/furnitures/aquarium_outline.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/TableBoard.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/ApparitionAnimation.tscn" type="PackedScene" id=29]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 10 )
+[ext_resource path="res://Textures/furnitures/spider.png" type="Texture" id=30]
+[ext_resource path="res://Textures/furnitures/spider_outline.png" type="Texture" id=31]
 
 [sub_resource type="Animation" id=2]
 length = 2.25
@@ -574,7 +572,6 @@ extents = Vector2( 15, 8 )
 
 [sub_resource type="Animation" id=25]
 length = 1.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -630,7 +627,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=27]
 length = 1.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -684,7 +680,34 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=34]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -697,7 +720,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1 ]
+"values": [ 10 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -712,8 +735,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=30]
-length = 2.8
+[sub_resource type="Animation" id=36]
+length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -721,10 +744,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -739,8 +762,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=31]
-length = 0.2
+[sub_resource type="Animation" id=37]
+length = 0.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -749,10 +772,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ 7, 8, 9 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -767,22 +790,23 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=32]
-length = 2.8
+[sub_resource type="Animation" id=38]
+length = 0.6
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Outline:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+"values": [ 0, 1, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
+tracks/1/path = NodePath("Outline:offset")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -796,29 +820,11 @@ tracks/1/keys = {
 
 [node name="Furniture" type="Node2D"]
 
-[node name="Bookshelf" type="KinematicBody2D" parent="." groups=[
-"shakable",
-]]
-position = Vector2( 841.944, 74.5943 )
-
-[node name="DynamicLayerUpdater" parent="Bookshelf" instance=ExtResource( 2 )]
-
-[node name="Sprite" type="Sprite" parent="Bookshelf"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 48, 96, 32, 32 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf"]
-position = Vector2( 0, 8 )
-scale = Vector2( 4, 4 )
-shape = SubResource( 1 )
-
 [node name="FireTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
 ]]
-position = Vector2( 160, 96 )
+position = Vector2( 140, 100 )
 script = ExtResource( 6 )
 
 [node name="DynamicLayerUpdater" parent="FireTable" instance=ExtResource( 2 )]
@@ -875,7 +881,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 728, 396 )
+position = Vector2( 884, 400 )
 script = ExtResource( 10 )
 
 [node name="DynamicLayerUpdater" parent="CoffeeTable" instance=ExtResource( 2 )]
@@ -919,7 +925,7 @@ max_distance = 300.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="CoffeeTable" instance=ExtResource( 28 )]
-IngredientType1 = 0
+IngredientType1 = 4
 
 [node name="ApparitionAnimation" parent="CoffeeTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
@@ -928,7 +934,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 692, 112 )
+position = Vector2( 884, 100 )
 script = ExtResource( 5 )
 
 [node name="DynamicLayerUpdater" parent="BookTable" instance=ExtResource( 2 )]
@@ -972,7 +978,7 @@ max_distance = 300.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="BookTable" instance=ExtResource( 28 )]
-IngredientType1 = 0
+IngredientType1 = 4
 IngredientType2 = 1
 OutputPotionType = 0
 
@@ -983,7 +989,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 160, 384 )
+position = Vector2( 140, 400 )
 script = ExtResource( 7 )
 
 [node name="DynamicLayerUpdater" parent="MortarTable" instance=ExtResource( 2 )]
@@ -1039,7 +1045,7 @@ position = Vector2( 0, 20 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 884, 284 )
+position = Vector2( 748, 232 )
 script = ExtResource( 22 )
 ingredientIndex = 1
 
@@ -1086,7 +1092,7 @@ pickupAnimation = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
 hframes = 38
-frame = 2
+frame = 3
 region_enabled = true
 region_rect = Rect2( 0, 0, 608, 16 )
 
@@ -1120,7 +1126,7 @@ anims/Waiting = SubResource( 33 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 584, 412 )
+position = Vector2( 556, 104 )
 script = ExtResource( 22 )
 ingredientIndex = 2
 
@@ -1134,7 +1140,7 @@ one_shot = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 26 )
 hframes = 26
-frame = 9
+frame = 14
 region_enabled = true
 region_rect = Rect2( 0, 0, 832, 32 )
 
@@ -1157,43 +1163,48 @@ anims/Empty = SubResource( 26 )
 anims/Leaving = SubResource( 27 )
 anims/Waiting = SubResource( 28 )
 
-[node name="Plant3" type="KinematicBody2D" parent="." groups=[
+[node name="Spider" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
 ]]
-position = Vector2( 388, 396 )
+position = Vector2( 132, 224 )
 script = ExtResource( 22 )
+ingredientIndex = 4
 
-[node name="Timer" type="Timer" parent="Plant3"]
+[node name="Timer" type="Timer" parent="Spider"]
 wait_time = 3.0
 one_shot = true
 
-[node name="DynamicLayerUpdater" parent="Plant3" instance=ExtResource( 2 )]
+[node name="DynamicLayerUpdater" parent="Spider" instance=ExtResource( 2 )]
 
-[node name="Outline" type="Sprite" parent="Plant3"]
+[node name="Outline" type="Sprite" parent="Spider"]
 visible = false
 scale = Vector2( 4, 4 )
-texture = ExtResource( 25 )
-region_rect = Rect2( 0, 0, 16, 32 )
-
-[node name="Sprite" type="Sprite" parent="Plant3"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 24 )
-hframes = 30
-frame = 1
+texture = ExtResource( 31 )
+hframes = 3
 region_enabled = true
-region_rect = Rect2( 0, 0, 480, 32 )
+region_rect = Rect2( 0, 0, 102, 34 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant3"]
+[node name="Sprite" type="Sprite" parent="Spider"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 30 )
+hframes = 18
+frame = 10
+region_enabled = true
+region_rect = Rect2( 0, 0, 576, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spider"]
 position = Vector2( 0, 36 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 12 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Plant3"]
-anims/Arriving = SubResource( 29 )
-anims/Empty = SubResource( 30 )
-anims/Leaving = SubResource( 31 )
-anims/Waiting = SubResource( 32 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spider"]
+anims/Arriving = SubResource( 34 )
+anims/Empty = SubResource( 35 )
+anims/Leaving = SubResource( 36 )
+anims/Waiting = SubResource( 37 )
+
+[node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Spider"]
+anims/Waiting = SubResource( 38 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
@@ -1205,5 +1216,5 @@ anims/Waiting = SubResource( 32 )
 [connection signal="timeout" from="Window/Timer" to="Window" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Aquarium/Timer" to="Aquarium" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Aquarium/AnimationPlayer" to="Aquarium" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Plant3/Timer" to="Plant3" method="_on_Timer_timeout"]
-[connection signal="animation_finished" from="Plant3/AnimationPlayer" to="Plant3" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Spider/Timer" to="Spider" method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="Spider/AnimationPlayer" to="Spider" method="_on_AnimationPlayer_animation_finished"]
