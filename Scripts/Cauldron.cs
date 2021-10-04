@@ -147,7 +147,7 @@ public class Cauldron : StaticBody2D
 
 		initialPosition = this.Position;
 
-		Instability = 0;
+		SetInstability(0, true);
 
 		AddChild(confettiTimer);
 		confettiTimer.Connect("timeout", this, "ConfettiTimer_Timeout");
@@ -159,7 +159,7 @@ public class Cauldron : StaticBody2D
 
 		if (InstabilityStarted)
 		{
-			Instability += delta / 90f;
+			Instability += delta / 120f;
 		}
 		if (instability > 0.5f)
 		{
@@ -167,7 +167,7 @@ public class Cauldron : StaticBody2D
 		}
 	}
 
-	private void SetInstability(float value)
+	private void SetInstability(float value, bool force = false)
 	{
 		if (value < 0)
 		{
@@ -180,7 +180,7 @@ public class Cauldron : StaticBody2D
 		bubbleParticles.InitialVelocity = Mathf.Lerp(3.5f, 135f, Math.Max(0f, instability - 0.1f) * 10f / 9f);
 		bubbleParticles.ScaleAmount = Mathf.Lerp(0.2f, 0.5f, instability);
 
-		if (Math.Floor(previousLevel * 100f) != Math.Floor(instability * 100f))
+		if (Math.Floor(previousLevel * 100f) != Math.Floor(instability * 100f) || force)
 		{
 			sprite.Modulate = ModulatedColor;
 
