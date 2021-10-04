@@ -16,7 +16,7 @@
     "duration": 100
    },
    "smoke 2.ase": {
-    "frame": { "x": 0, "y": 16, "w": 16, "h": 16 },
+    "frame": { "x": 32, "y": 0, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
     "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
@@ -24,6 +24,14 @@
     "duration": 100
    },
    "smoke 3.ase": {
+    "frame": { "x": 0, "y": 16, "w": 16, "h": 16 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 100
+   },
+   "smoke 4.ase": {
     "frame": { "x": 16, "y": 16, "w": 16, "h": 16 },
     "rotated": false,
     "trimmed": false,
@@ -37,10 +45,10 @@
   "version": "1.2.29-x64",
   "image": "smoke.png",
   "format": "RGBA8888",
-  "size": { "w": 32, "h": 32 },
+  "size": { "w": 48, "h": 32 },
   "scale": "1",
   "frameTags": [
-   { "name": "smoke", "from": 0, "to": 3, "direction": "forward" }
+   { "name": "smoke", "from": 0, "to": 4, "direction": "forward" }
   ],
   "layers": [
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
