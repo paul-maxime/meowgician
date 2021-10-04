@@ -315,7 +315,8 @@
    { "name": "Empty", "from": 0, "to": 0, "direction": "forward" },
    { "name": "Waiting", "from": 1, "to": 2, "direction": "forward" },
    { "name": "Arriving", "from": 3, "to": 16, "direction": "forward" },
-   { "name": "Leaving", "from": 17, "to": 37, "direction": "forward" }
+   { "name": "Throwing", "from": 17, "to": 23, "direction": "forward" },
+   { "name": "Leaving", "from": 24, "to": 37, "direction": "forward" }
   ],
   "layers": [
    { "name": "wall", "opacity": 255, "blendMode": "normal" },

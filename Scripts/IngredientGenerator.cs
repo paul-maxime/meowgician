@@ -5,21 +5,24 @@ public class IngredientGenerator : KinematicBody2D
 	private AnimationPlayer animationPlayer;
 	private AnimationPlayer animationPlayerOutline;
 	private Timer timer;
-	private bool activated = false;
+
+	public void Activate()
+	{
+		WaitAndAppear();
+	}
 
 	public override void _Ready()
 	{
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		animationPlayerOutline = GetNodeOrNull<AnimationPlayer>("AnimationPlayerOutline");
 		timer = GetNode<Timer>("Timer");
-		wait();
 	}
 
-	private void wait()
+	private void WaitAndAppear()
 	{
-		animationPlayer.Play("Empty");
-		timer.WaitTime = GD.Randi() % 10 + 5;
-		timer.Start();
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Empty");
+		GetNode<Timer>("Timer").WaitTime = GD.Randi() % 10 + 5;
+		GetNode<Timer>("Timer").Start();
 	}
 
 	public void _on_Timer_timeout()
@@ -35,7 +38,14 @@ public class IngredientGenerator : KinematicBody2D
 			{
 				animationPlayerOutline.Stop();
 			}
-			animationPlayer.Play("Leaving");
+			if (animationPlayer.HasAnimation("Throwing"))
+			{
+				animationPlayer.Play("Throwing");
+			}
+			else
+			{
+				animationPlayer.Play("Leaving");
+			}
 		}
 	}
 
@@ -52,9 +62,13 @@ public class IngredientGenerator : KinematicBody2D
 			timer.WaitTime = 10;
 			timer.Start();
 		}
+		else if (animationName == "Throwing")
+		{
+			animationPlayer.Play("Leaving");
+		}
 		else if (animationName == "Leaving")
 		{
-			wait();
+			WaitAndAppear();
 		}
 	}
 }

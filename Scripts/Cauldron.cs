@@ -12,6 +12,7 @@ public class Cauldron : StaticBody2D
 	private Array<SmallPotion> neededPotions = new Array<SmallPotion> { };
 	private int numberOfPotions = 0;
 	private Array<Table> tables = null;
+	private Array<IngredientGenerator> ingredientGenerators = null;
 	private float minX;
 	private float maxX;
 
@@ -82,6 +83,14 @@ public class Cauldron : StaticBody2D
 		neededPotions = new Array<SmallPotion> { };
 		if (numberOfPotions < 4)
 		{
+			if (numberOfPotions == 0)
+			{
+				ingredientGenerators[0].Activate();
+			}
+			if (numberOfPotions < 3)
+			{
+				ingredientGenerators[numberOfPotions + 1].Activate();
+			}
 			tables[numberOfPotions].GetNode<Sprite>("SimpleTable").Visible = false;
 			tables[numberOfPotions].GetNode<Sprite>("Sprite").Visible = true;
 			tables[numberOfPotions].AddToGroup("table");
@@ -112,6 +121,12 @@ public class Cauldron : StaticBody2D
 		};
 		bubbleParticles = GetNode<CPUParticles2D>("BubbleParticles");
 		confettiParticles = GetNode<CPUParticles2D>("ConfettiParticles");
+		ingredientGenerators = new Array<IngredientGenerator>{
+			GetParent().GetNode<IngredientGenerator>("Furniture/Window"),
+			GetParent().GetNode<IngredientGenerator>("Furniture/Plant"),
+			GetParent().GetNode<IngredientGenerator>("Furniture/Plant2"),
+			GetParent().GetNode<IngredientGenerator>("Furniture/Plant3")
+		};
 		sprite = GetNode<Sprite>("Sprite");
 
 		var speachBubbleSprite = GetNode<Sprite>("SpeachBubble/Sprite");
