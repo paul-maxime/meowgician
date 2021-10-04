@@ -401,7 +401,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=17]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -428,7 +428,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=18]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -456,7 +456,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=19]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -483,7 +483,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=20]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -510,7 +510,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=21]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -538,25 +538,26 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 32, 28 )
 
-[sub_resource type="Animation" id=22]
-length = 2.8
+[sub_resource type="Animation" id=33]
+length = 0.4
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Outline:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+"values": [ 0, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
+tracks/1/path = NodePath("Outline:offset")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -568,10 +569,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 15, 8 )
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=25]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -599,7 +600,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=26]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -627,7 +628,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=27]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -655,7 +656,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=28]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -683,7 +684,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=29]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -711,7 +712,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=30]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -738,7 +739,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=31]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -766,7 +767,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=32]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1085,20 +1086,20 @@ pickupAnimation = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
 hframes = 38
-frame = 17
+frame = 2
 region_enabled = true
 region_rect = Rect2( 0, 0, 608, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 32 )
-anims/Empty = SubResource( 33 )
-anims/Leaving = SubResource( 34 )
-anims/Throwing = SubResource( 35 )
-anims/Waiting = SubResource( 36 )
+anims/Arriving = SubResource( 17 )
+anims/Empty = SubResource( 18 )
+anims/Leaving = SubResource( 19 )
+anims/Throwing = SubResource( 20 )
+anims/Waiting = SubResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
 position = Vector2( 0, 4 )
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
@@ -1113,7 +1114,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
-anims/Waiting = SubResource( 22 )
+anims/Waiting = SubResource( 33 )
 
 [node name="Aquarium" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1146,15 +1147,15 @@ region_rect = Rect2( 0, 0, 16, 32 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium"]
 position = Vector2( 0, 28 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Aquarium"]
 autoplay = "Empty"
 method_call_mode = 1
-anims/Arriving = SubResource( 24 )
-anims/Empty = SubResource( 25 )
-anims/Leaving = SubResource( 26 )
-anims/Waiting = SubResource( 27 )
+anims/Arriving = SubResource( 25 )
+anims/Empty = SubResource( 26 )
+anims/Leaving = SubResource( 27 )
+anims/Waiting = SubResource( 28 )
 
 [node name="Plant3" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1189,10 +1190,10 @@ scale = Vector2( 4, 4 )
 shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant3"]
-anims/Arriving = SubResource( 28 )
-anims/Empty = SubResource( 29 )
-anims/Leaving = SubResource( 30 )
-anims/Waiting = SubResource( 31 )
+anims/Arriving = SubResource( 29 )
+anims/Empty = SubResource( 30 )
+anims/Leaving = SubResource( 31 )
+anims/Waiting = SubResource( 32 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
