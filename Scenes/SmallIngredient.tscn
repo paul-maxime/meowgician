@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Textures/ingredients/ingredients.png" type="Texture" id=1]
+[ext_resource path="res://Textures/furnitures/ingredients_small.png" type="Texture" id=1]
 
 [node name="SmallIngredient" type="Sprite"]
 light_mask = 4
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 0, 0, 8, 8 )

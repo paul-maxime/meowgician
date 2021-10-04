@@ -14,10 +14,10 @@ public class TableBoard : SpeechBubble
 	public override void _Ready()
 	{
 		base._Ready();
-		
+
 		Sprite ingredient1 = smallIngredient.Instance<Sprite>();
 		ingredient1.Position = new Vector2(-8.0f, -3.0f);
-		ingredient1.RegionRect = new Rect2(IngredientType1 * 16, 0, 16, 16);
+		ingredient1.RegionRect = new Rect2(IngredientType1 * 8, 0, 8, 8);
 		sprite.AddChild(ingredient1);
 
 		Sprite plusOperator = mathOperator.Instance<Sprite>();
@@ -27,7 +27,7 @@ public class TableBoard : SpeechBubble
 
 		Sprite ingredient2 = smallIngredient.Instance<Sprite>();
 		ingredient2.Position = new Vector2(0.0f, -3.0f);
-		ingredient2.RegionRect = new Rect2(IngredientType2 * 16, 0, 16, 16);
+		ingredient2.RegionRect = new Rect2(IngredientType2 * 8, 0, 8, 8);
 		sprite.AddChild(ingredient2);
 
 		Sprite eqOperator = mathOperator.Instance<Sprite>();
