@@ -10,9 +10,7 @@ public class Hero : KinematicBody2D
 	public Vector2 velocity = new Vector2();
 
 	public override void _Ready()
-	{
-		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
-	}
+	{ }
 
 	private Node2D GetClosestItemSelectable()
 	{
