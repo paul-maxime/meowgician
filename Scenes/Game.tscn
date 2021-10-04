@@ -58,14 +58,13 @@ position = Vector2( 928, 32 )
 position = Vector2( 96, 32 )
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 3 )]
-position = Vector2( 56, 480 )
+position = Vector2( 76, 480 )
 animation = "left"
-frame = 1
 
 [node name="Torch4" parent="Torches" instance=ExtResource( 3 )]
-position = Vector2( 968, 480 )
+position = Vector2( 948, 480 )
 animation = "right"
-frame = 1
+frame = 0
 
 [node name="Earthquake" type="Node" parent="."]
 script = ExtResource( 7 )

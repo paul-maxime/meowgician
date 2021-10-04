@@ -7,7 +7,7 @@ public class Cauldron : StaticBody2D
 	private static int GameoverCount = 0;
 
 	public float Instability { get => instability; set => SetInstability(value); }
-	public bool InstabilityStarted { get; set; } = true;
+	public bool InstabilityStarted { get; set; }
 	private float instability;
 
 	private PackedScene smallPotion = ResourceLoader.Load<PackedScene>("res://Scenes/SmallPotion.tscn");
