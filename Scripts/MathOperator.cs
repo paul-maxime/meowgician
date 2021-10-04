@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class MathOperator : StaticBody2D
+public class MathOperator : Node2D
 {
     // Declare member variables here. Examples:
     // private int a = 2;

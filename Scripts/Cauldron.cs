@@ -49,8 +49,8 @@ public class Cauldron : StaticBody2D
 		neededPotions = new Array<SmallPotion> { };
 		for (int i = 0; i < numberOfPotions; i++)
 		{
-			SmallPotion potion = (SmallPotion)smallPotion.Instance();
-			potion.init(new Vector2(minX + i * 7 + 3, 1f), Godot.GD.Randi() % 4);
+			var potion = smallPotion.Instance<SmallPotion>();
+			potion.init(new Vector2(minX + i * 5.5f + 2f, -26f), Godot.GD.Randi() % 4);
 			AddChild(potion);
 			neededPotions.Add(potion);
 		}
@@ -62,14 +62,15 @@ public class Cauldron : StaticBody2D
 		particles = GetNode<CPUParticles2D>("CPUParticles2D");
 		sprite = GetNode<Sprite>("Sprite");
 
-		Vector2 cauldronSize = GetNode<Sprite>("Sprite").Texture.GetSize();
-		minX = -(cauldronSize.x / 4f) + 4;
-		maxX = cauldronSize.x / 4f - 4;
+		var speachBubbleSprite = GetNode<Sprite>("SpeachBubble/Sprite");
+		Vector2 speachBubbleSize = speachBubbleSprite.Texture.GetSize();
+		minX = -(speachBubbleSize.x / 4f) + 3;
+		maxX = speachBubbleSize.x / 4f - 3;
 
 		for (int i = 1; i < numberOfPotions; i++)
 		{
 			MathOperator plusSign = mathOperator.Instance<MathOperator>();
-			plusSign.Position = new Vector2(minX + i * 7 - 0.5f, 2f);
+			plusSign.Position = new Vector2(minX + i * 5.5f - 0.8f, -25f);
 			AddChild(plusSign);
 		}
 		GenerateNeededPotions();

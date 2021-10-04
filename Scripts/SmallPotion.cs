@@ -1,6 +1,6 @@
 using Godot;
 
-public class SmallPotion : StaticBody2D
+public class SmallPotion : Node2D
 {
 	public uint color;
 
