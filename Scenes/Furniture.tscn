@@ -1129,6 +1129,7 @@ anims/Waiting = SubResource( 33 )
 position = Vector2( 556, 104 )
 script = ExtResource( 22 )
 ingredientIndex = 2
+pickupAnimation = true
 
 [node name="Timer" type="Timer" parent="Aquarium"]
 wait_time = 3.0
