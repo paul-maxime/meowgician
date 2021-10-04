@@ -3,6 +3,8 @@ using Godot.Collections;
 
 public class Hero : KinematicBody2D
 {
+	private PackedScene ingredientSolid = ResourceLoader.Load<PackedScene>("res://Scenes/IngredientSolid.tscn");
+	private PackedScene ingredientScene = ResourceLoader.Load<PackedScene>("res://Scenes/Ingredient.tscn");
 	[Export] public int speed = 200;
 
 	private Array<Potion> potions = new Array<Potion> { };
@@ -20,6 +22,13 @@ public class Hero : KinematicBody2D
 		if (potions.Count < 4)
 		{
 			selectableItems = GetTree().GetNodesInGroup("potions");
+		}
+		if (ingredient == null)
+		{
+			foreach (Node2D node in GetTree().GetNodesInGroup("ingredients"))
+			{
+				selectableItems.Add(node);
+			}
 		}
 		if (potions.Count > 0)
 		{
@@ -93,17 +102,36 @@ public class Hero : KinematicBody2D
 		potion.Name = "Potion";
 	}
 
+	private void PickIngredient(IngredientSolid ingredient)
+	{
+		this.ingredient = ingredientScene.Instance<Ingredient>();
+		this.ingredient.Init(new Vector2(0, 4 * -16f), ingredient.IngredientType);
+		AddChild(this.ingredient);
+		ingredient.QueueFree();
+	}
+
 	public void DropPotions()
 	{
 		potions = new Array<Potion> { };
 	}
 
-	private void DropPotionOnGround()
+	private void DropItemOnGround()
 	{
-		var potion = potions[potions.Count - 1];
-		potions.Remove(potion);
-		potion.AddToGroup("potions");
-		potion.GetNode<Node2D>("Sprite/Eyes").Visible = false;
+		if (ingredient != null)
+		{
+			var ingredientSolidInstance = ingredientSolid.Instance<IngredientSolid>();
+			ingredientSolidInstance.Init(ingredient.GlobalPosition, ingredient.IngredientType);
+			GetNode("/root/Game").AddChild(ingredientSolidInstance);
+			ingredient.QueueFree();
+			ingredient = null;
+		}
+		else
+		{
+			var potion = potions[potions.Count - 1];
+			potions.Remove(potion);
+			potion.AddToGroup("potions");
+			potion.GetNode<Node2D>("Sprite/Eyes").Visible = false;
+		}
 	}
 
 	public override void _Input(InputEvent @event)
@@ -118,6 +146,10 @@ public class Hero : KinematicBody2D
 				{
 					PickPotion(potion);
 				}
+				else if (closestItemSelectable is IngredientSolid ingredient)
+				{
+					PickIngredient(ingredient);
+				}
 				else if (closestItemSelectable is Cauldron cauldron)
 				{
 					cauldron.TryToDrop(potions);
@@ -131,9 +163,9 @@ public class Hero : KinematicBody2D
 					ingredientGenerator.Interact();
 				}
 			}
-			else if (potions.Count > 0)
+			else if (potions.Count > 0 || ingredient != null)
 			{
-				DropPotionOnGround();
+				DropItemOnGround();
 			}
 		}
 	}

@@ -980,7 +980,6 @@ script = ExtResource( 16 )
 [node name="Board" parent="BookTable" instance=ExtResource( 28 )]
 IngredientType1 = 4
 IngredientType2 = 1
-OutputPotionType = 0
 
 [node name="ApparitionAnimation" parent="BookTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )

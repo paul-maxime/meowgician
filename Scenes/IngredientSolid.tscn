@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Textures/furnitures/ingredients_small.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/furnitures/ingredients_small_outline.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/IngredientSolid.cs" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.0
+
+[node name="IngredientSolid" type="KinematicBody2D" groups=[
+"ingredients",
+"selectable",
+"shakable",
+]]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 4, 4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 8 )
+
+[node name="DynamicLayerUpdater" parent="." instance=ExtResource( 2 )]
+
+[node name="Outline" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 10 )
