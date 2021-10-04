@@ -7,6 +7,7 @@
 light_mask = 4
 position = Vector2( 0, -32 )
 scale = Vector2( 4, 4 )
+z_index = -16
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 48, 32, 16 )
