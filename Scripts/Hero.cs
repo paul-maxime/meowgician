@@ -79,10 +79,6 @@ public class Hero : KinematicBody2D
 
 	public void DropPotions()
 	{
-		foreach (Potion potion in potions)
-		{
-			potion.QueueFree();
-		}
 		potions = new Array<Potion> { };
 	}
 

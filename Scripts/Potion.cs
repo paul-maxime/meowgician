@@ -7,6 +7,8 @@ public class Potion : KinematicBody2D
 	private Eye leftEye;
 	private Eye rightEye;
 	private Earthquake earthquake;
+	private Node2D cauldron;
+	private Tween tween;
 	public uint color;
 
 	public void init(Vector2 position, uint color)
@@ -38,4 +40,26 @@ public class Potion : KinematicBody2D
 			rightEye.LookAtDirection(direction);
 		}
 	}
+
+	public void DropIntoCauldron()
+	{
+		cauldron = GetNode<Cauldron>("/root/Game/Cauldron");
+		tween = GetNode<Tween>("Tween");
+
+		if (this.IsInGroup("shakeable")) this.RemoveFromGroup("shakable");
+		if (this.IsInGroup("potions")) this.RemoveFromGroup("potions");
+
+		GetNode("CollisionShape2D").QueueFree();
+		GetNode("DynamicLayerUpdater").QueueFree();
+
+		tween.InterpolateProperty(this, "position", this.Position, cauldron.Position, 1.0f);
+		tween.InterpolateProperty(this, "scale", this.Scale, Vector2.Zero, 1.0f);
+		tween.Start();
+	}
+	
+	private void _on_Tween_tween_all_completed()
+	{
+		QueueFree();
+	}
 }
+

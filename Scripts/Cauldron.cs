@@ -34,6 +34,10 @@ public class Cauldron : StaticBody2D
 		}
 		if (copyPotions.Count == 0)
 		{
+			foreach (Potion potion in potions)
+			{
+				potion.DropIntoCauldron();
+			}
 			GetParent().GetNode<Hero>("Hero").DropPotions();
 			Instability = Instability - 0.5f;
 			GenerateNeededPotions();
@@ -71,6 +75,8 @@ public class Cauldron : StaticBody2D
 		GenerateNeededPotions();
 
 		initialPosition = this.Position;
+
+		Instability = 0;
 	}
 
 	public override void _Process(float delta)
