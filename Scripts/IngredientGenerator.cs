@@ -44,6 +44,8 @@ public class IngredientGenerator : KinematicBody2D
 		{
 			WaitAndAppear();
 		}
+
+		GetNode<Cauldron>("/root/Game/Cauldron").InstabilityStarted = true;
 	}
 
 	private void WaitAndAppear()

@@ -5,6 +5,7 @@ using System;
 public class Cauldron : StaticBody2D
 {
 	public float Instability { get => instability; set => SetInstability(value); }
+	public bool InstabilityStarted { get; set; }
 	private float instability;
 
 	private PackedScene smallPotion = ResourceLoader.Load<PackedScene>("res://Scenes/SmallPotion.tscn");
@@ -155,8 +156,11 @@ public class Cauldron : StaticBody2D
 	public override void _Process(float delta)
 	{
 		base._Process(delta);
-		Instability += delta / 60f;
 
+		if (InstabilityStarted)
+		{
+			Instability += delta / 90f;
+		}
 		if (instability > 0.5f)
 		{
 			Position = initialPosition + new Vector2((float)GD.RandRange(-(Instability - 0.5f) * 8, (Instability - 0.5f) * 8), 0);
