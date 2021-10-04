@@ -568,7 +568,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 15, 8 )
+extents = Vector2( 15, 5 )
 
 [sub_resource type="Animation" id=25]
 length = 1.2
@@ -1151,7 +1151,7 @@ texture = ExtResource( 27 )
 region_rect = Rect2( 0, 0, 16, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium"]
-position = Vector2( 0, 28 )
+position = Vector2( 0, 40 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 24 )
 
