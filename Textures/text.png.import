@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/text.png"
+source_file="res://Textures/ui/text.png"
 dest_files=[ "res://.import/text.png-72d1855a59de176aeecd57a9d0b308da.stex" ]
 
 [params]

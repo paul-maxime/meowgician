@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Textures/text.png" type="Texture" id=2]
+[ext_resource path="res://Textures/ui/text.png" type="Texture" id=2]
 
 [sub_resource type="CSharpScript" id=1]
 resource_name = "MathOperator"
