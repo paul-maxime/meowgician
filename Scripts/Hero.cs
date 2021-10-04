@@ -30,18 +30,29 @@ public class Hero : KinematicBody2D
 				selectableItems.Add(table);
 			}
 		}
+		foreach (Node2D node in GetTree().GetNodesInGroup("ingredientHandlers"))
+		{
+			selectableItems.Add(node);
+		}
 
 		if (selectableItems.Count == 0)
 		{
 			return null;
 		}
 		Node2D nearestItem = (Node2D)selectableItems[0];
+		var nearestDistance = nearestItem.GlobalPosition.DistanceTo(this.GlobalPosition);
 		foreach (Node2D item in selectableItems)
 		{
-			if (item.GlobalPosition.DistanceTo(this.GlobalPosition) < nearestItem.GlobalPosition.DistanceTo(this.GlobalPosition))
+			var itemDistance = item.GlobalPosition.DistanceTo(this.GlobalPosition);
+			if (itemDistance < nearestDistance)
 			{
 				nearestItem = item;
+				nearestDistance = itemDistance;
 			}
+		}
+		if (nearestDistance > 80)
+		{
+			return null;
 		}
 		return nearestItem;
 	}
@@ -70,7 +81,6 @@ public class Hero : KinematicBody2D
 		}
 		potions.Add(potion);
 		potion.RemoveFromGroup("potions");
-		potion.GetNode<Sprite>("Outline").Visible = false;
 		potion.GetNode<Node2D>("Sprite/Eyes").Visible = true;
 		potion.Name = "Potion";
 	}
@@ -85,7 +95,6 @@ public class Hero : KinematicBody2D
 		var potion = potions[potions.Count - 1];
 		potions.Remove(potion);
 		potion.AddToGroup("potions");
-		potion.GetNode<Sprite>("Outline").Visible = true;
 		potion.GetNode<Node2D>("Sprite/Eyes").Visible = false;
 	}
 
@@ -95,9 +104,8 @@ public class Hero : KinematicBody2D
 		if (@event.IsActionPressed("ui_accept"))
 		{
 			var closestItemSelectable = GetClosestItemSelectable();
-			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
+			if (closestItemSelectable != null)
 			{
-				HideSelectablesOutline();
 				if (closestItemSelectable is Potion potion)
 				{
 					PickPotion(potion);
@@ -137,12 +145,6 @@ public class Hero : KinematicBody2D
 		var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (velocity != new Vector2())
 		{
-			HideSelectablesOutline();
-			var closestItemSelectable = GetClosestItemSelectable();
-			if (closestItemSelectable != null && closestItemSelectable.GlobalPosition.DistanceTo(this.GlobalPosition) < 80)
-			{
-				closestItemSelectable.GetNode<Sprite>("Outline").Visible = true;
-			}
 			if (velocity.x > 0)
 			{
 				animationPlayer.Play("WalkRight");
@@ -183,8 +185,19 @@ public class Hero : KinematicBody2D
 		velocity = velocity.Normalized() * speed;
 	}
 
+	private void HandleOutlines()
+	{
+		HideSelectablesOutline();
+		var closestItemSelectable = GetClosestItemSelectable();
+		if (closestItemSelectable != null)
+		{
+			closestItemSelectable.GetNode<Sprite>("Outline").Visible = true;
+		}
+	}
+
 	public override void _PhysicsProcess(float delta)
 	{
+		HandleOutlines();
 		GetVelocity();
 		foreach (var potion in potions)
 		{

@@ -4,11 +4,13 @@ using System;
 public class Window : StaticBody2D
 {
 	private AnimationPlayer animationPlayer;
+	private AnimationPlayer animationPlayerOutline;
 	private Timer timer;
 
 	public override void _Ready()
 	{
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		animationPlayerOutline = GetNode<AnimationPlayer>("AnimationPlayerOutline");
 		animationPlayer.Play("Empty");
 		timer = GetNode<Timer>("Timer");
 		timer.Start();
@@ -16,14 +18,14 @@ public class Window : StaticBody2D
 
 	public void _on_Timer_timeout()
 	{
-		GD.Print(animationPlayer.CurrentAnimation);
-		GD.Print(animationPlayer.Name);
 		if (animationPlayer.CurrentAnimation == "Empty")
 		{
 			animationPlayer.Play("Arriving");
 		}
 		else if (animationPlayer.CurrentAnimation == "Waiting")
 		{
+			RemoveFromGroup("ingredientHandlers");
+			animationPlayerOutline.Stop();
 			animationPlayer.Play("Throwing");
 		}
 	}
@@ -32,7 +34,9 @@ public class Window : StaticBody2D
 	{
 		if (animationName == "Arriving")
 		{
+			AddToGroup("ingredientHandlers");
 			animationPlayer.Play("Waiting");
+			animationPlayerOutline.Play("Waiting");
 			timer.WaitTime = 10;
 			timer.Start();
 		}

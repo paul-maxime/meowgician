@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Sounds/493754__dj997__leaves-crunching.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Textures/furnitures/window.png" type="Texture" id=21]
 [ext_resource path="res://Scripts/Window.cs" type="Script" id=22]
+[ext_resource path="res://Textures/furnitures/window_outline.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
@@ -421,6 +422,34 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 32.0039, 32.0036 )
 
+[sub_resource type="Animation" id=18]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Outline:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Outline:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
 [node name="Furniture" type="Node2D"]
 
 [node name="Bookshelf" type="KinematicBody2D" parent="." groups=[
@@ -620,7 +649,9 @@ volume_db = 9.0
 max_distance = 300.0
 script = ExtResource( 16 )
 
-[node name="Window" type="StaticBody2D" parent="."]
+[node name="Window" type="StaticBody2D" parent="." groups=[
+"selectable",
+]]
 position = Vector2( 288, 32 )
 script = ExtResource( 22 )
 
@@ -645,6 +676,17 @@ shape = SubResource( 17 )
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Outline" type="Sprite" parent="Window"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 18, 36 )
+
+[node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
+anims/Waiting = SubResource( 18 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
