@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fishtank_Bubbles-SoundBibleco-amanda-1550139304.ogg-7c7b1eb320de07dbc910d41b00ff5bc0.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Fishtank_Bubbles-SoundBibleco-amanda-1550139304.ogg"
+dest_files=[ "res://.import/Fishtank_Bubbles-SoundBibleco-amanda-1550139304.ogg-7c7b1eb320de07dbc910d41b00ff5bc0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://Textures/furnitures/spell_table_outline.png" type="Texture" id=13]
 [ext_resource path="res://Textures/furnitures/coffee_table.png" type="Texture" id=14]
 [ext_resource path="res://Textures/furnitures/coffee_table_outline.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/PositionalAudio.cs" type="Script" id=16]
+[ext_resource path="res://Sounds/515685__acekat13__adriana-lopez-coffee-machine.ogg" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/Pouring_Hot_Tea-SoundBible.com-887738929.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/467697__lucasduff__invisibility-spell.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Sounds/493754__dj997__leaves-crunching.ogg" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 10 )
@@ -343,6 +348,11 @@ texture = ExtResource( 12 )
 wait_time = 2.0
 one_shot = true
 
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="FireTable"]
+stream = ExtResource( 18 )
+max_distance = 300.0
+script = ExtResource( 16 )
+
 [node name="CoffeeTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
@@ -376,8 +386,13 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 15 )
 
 [node name="Timer" type="Timer" parent="CoffeeTable"]
-wait_time = 2.0
+wait_time = 8.0
 one_shot = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="CoffeeTable"]
+stream = ExtResource( 17 )
+max_distance = 300.0
+script = ExtResource( 16 )
 
 [node name="BookTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -413,8 +428,13 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 13 )
 
 [node name="Timer" type="Timer" parent="BookTable"]
-wait_time = 2.0
+wait_time = 5.5
 one_shot = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="BookTable"]
+stream = ExtResource( 19 )
+max_distance = 300.0
+script = ExtResource( 16 )
 
 [node name="MortarTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -449,8 +469,14 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="MortarTable"]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="MortarTable"]
+stream = ExtResource( 20 )
+volume_db = 9.0
+max_distance = 300.0
+script = ExtResource( 16 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]

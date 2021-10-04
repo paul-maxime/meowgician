@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Earthquake-SoundBible.com-768042906.ogg-63464def8175d079c65f3c943eb4c7aa.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Earthquake-SoundBible.com-768042906.ogg"
+dest_files=[ "res://.import/Earthquake-SoundBible.com-768042906.ogg-63464def8175d079c65f3c943eb4c7aa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

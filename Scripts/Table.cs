@@ -12,6 +12,7 @@ public abstract class Table : KinematicBody2D
 	{
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Working");
 		GetNode<Timer>("Timer").Start();
+		GetNodeOrNull<AudioStreamPlayer2D>("AudioPlayer")?.Play();
 		isWorking = true;
 	}
 
@@ -24,5 +25,6 @@ public abstract class Table : KinematicBody2D
 		potionInstance.AddToGroup("selectable");
 		AddChild(potionInstance);
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Idle");
+		GetNodeOrNull<AudioStreamPlayer2D>("AudioPlayer")?.Stop();
 	}
 }

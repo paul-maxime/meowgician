@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Furniture.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cauldron.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Sounds/music/bensound-jazzyfrenchy.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scripts/GameOver.cs" type="Script" id=11]
 [ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scripts/MusicPlayer.cs" type="Script" id=13]
+[ext_resource path="res://Sounds/Blast-SoundBible.com-2068539061.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/Earthquake-SoundBible.com-768042906.ogg" type="AudioStream" id=15]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 0, 1 )
@@ -50,25 +53,32 @@ color = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="Torch" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 928, 32 )
-frame = 1
 
 [node name="Torch2" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 96, 32 )
-frame = 1
 
 [node name="Torch3" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 56, 480 )
 animation = "left"
+frame = 1
 
 [node name="Torch4" parent="Torches" instance=ExtResource( 3 )]
 position = Vector2( 968, 480 )
 animation = "right"
+frame = 1
 
 [node name="Earthquake" type="Node" parent="."]
 script = ExtResource( 7 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="Earthquake"]
+stream = ExtResource( 15 )
+volume_db = -12.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -18.0
+autoplay = true
+script = ExtResource( 13 )
 
 [node name="GameOver" type="Node" parent="."]
 pause_mode = 2
@@ -115,3 +125,6 @@ color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioBoom" type="AudioStreamPlayer" parent="GameOver"]
+stream = ExtResource( 14 )

@@ -53,6 +53,7 @@ public class GameOver : Node
 		FadeoutScreen();
 		FadeinLabel();
 		restartRect.Visible = true;
+		GetNode<AudioStreamPlayer>("AudioBoom").Play();
 	}
 
 	private void FadeoutScreen()

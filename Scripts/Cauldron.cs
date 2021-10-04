@@ -93,7 +93,7 @@ public class Cauldron : StaticBody2D
 		float previousLevel = instability;
 		instability = value;
 
-		particles.Lifetime = Mathf.Lerp(1.5f, 0.2f, instability);
+		particles.Lifetime = Mathf.Lerp(1.5f, 0.1f, instability);
 		particles.InitialVelocity = Mathf.Lerp(3.5f, 135f, Math.Max(0f, instability - 0.1f) * 10f / 9f);
 		particles.ScaleAmount = Mathf.Lerp(0.2f, 0.5f, instability);
 

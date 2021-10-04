@@ -14,6 +14,8 @@ public class Earthquake : Node
 	public Vector2 Direction { get; private set; }
 
 	private Camera2D camera;
+	private AudioStreamPlayer soundPlayer;
+	private float soundPlayerInitialVolume;
 	private int currentStep;
 	private float rotationTarget;
 
@@ -22,9 +24,11 @@ public class Earthquake : Node
 	public override void _Ready()
 	{
 		Intensity = 0.5f;
-		TimeUntilNextShake = 10.0f;
+		TimeUntilNextShake = 30.0f;
 
 		camera = GetNode<Camera2D>("/root/Game/Camera2D");
+		soundPlayer = GetNode<AudioStreamPlayer>("SoundPlayer");
+		soundPlayerInitialVolume = soundPlayer.VolumeDb;
 	}
 
 	public override void _Process(float delta)
@@ -44,7 +48,7 @@ public class Earthquake : Node
 		TimeUntilNextShake -= delta;
 		if (TimeUntilNextShake <= 0)
 		{
-			TimeUntilNextShake = 10.0f;
+			TimeUntilNextShake = Math.Max(10.0f, 30.0f - Intensity);
 			Intensity += 0.2f;
 			StartShaking();
 		}
@@ -73,11 +77,10 @@ public class Earthquake : Node
 		if (currentStep == 2)
 		{
 			camera.Rotation = Mathf.Lerp(rotationTarget, 0, 1.0f - RemainingDuration);
+			soundPlayer.VolumeDb = Mathf.Lerp(soundPlayerInitialVolume, -64, 1.0f - RemainingDuration);
 			if (RemainingDuration <= 0f)
 			{
-				IsShaking = false;
-				EndMovement();
-				camera.Rotation = 0;
+				EndShake();
 			}
 		}
 
@@ -101,7 +104,10 @@ public class Earthquake : Node
 		IsShaking = true;
 		RemainingDuration = 5.0f;
 		currentStep = 0;
-		
+
+		soundPlayer.Play();
+		soundPlayer.VolumeDb = soundPlayerInitialVolume;
+
 		float quakeType = GD.Randf();
 
 		if (quakeType < 0.5f) // Quake everywhere
@@ -165,8 +171,11 @@ public class Earthquake : Node
 		return Vector2.Up.Rotated((float)GD.RandRange(-Math.PI, Math.PI));
 	}
 
-	private void EndMovement()
+	private void EndShake()
 	{
+		IsShaking = false;
+		soundPlayer.Stop();
+		camera.Rotation = 0;
 		movedKinematics.Clear();
 	}
 }

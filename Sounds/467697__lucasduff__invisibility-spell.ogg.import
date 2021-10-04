@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/467697__lucasduff__invisibility-spell.ogg-b85ee0efd82a0d6da30b9faa3dba2d96.oggstr"
+
+[deps]
+
+source_file="res://Sounds/467697__lucasduff__invisibility-spell.ogg"
+dest_files=[ "res://.import/467697__lucasduff__invisibility-spell.ogg-b85ee0efd82a0d6da30b9faa3dba2d96.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
