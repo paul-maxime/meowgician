@@ -542,8 +542,8 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 15, 8 )
 
-[sub_resource type="Animation" id=23]
-length = 0.2
+[sub_resource type="Animation" id=32]
+length = 1.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -552,10 +552,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ 20, 21, 22, 23, 24, 25 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -570,62 +570,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=24]
-length = 2.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=25]
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 17, 18, 19, 20, 21, 22, 23 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=26]
-length = 0.4
+[sub_resource type="Animation" id=33]
+length = 2.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -634,10 +580,66 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 1, 2 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 14, 15, 16, 17, 18, 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 10, 11, 12, 13 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -884,8 +886,7 @@ max_distance = 300.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="CoffeeTable" instance=ExtResource( 28 )]
-IngredientType1 = 3
-IngredientType2 = 1
+IngredientType1 = 0
 
 [node name="BookTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -936,7 +937,7 @@ max_distance = 300.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="BookTable" instance=ExtResource( 28 )]
-IngredientType1 = 3
+IngredientType1 = 0
 IngredientType2 = 1
 OutputPotionType = 0
 
@@ -989,8 +990,8 @@ max_distance = 300.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="MortarTable" instance=ExtResource( 28 )]
-IngredientType1 = 3
-IngredientType2 = 1
+IngredientType1 = 2
+IngredientType2 = 3
 OutputPotionType = 3
 
 [node name="Plant" type="KinematicBody2D" parent="." groups=[
@@ -999,6 +1000,7 @@ OutputPotionType = 3
 ]]
 position = Vector2( 884, 284 )
 script = ExtResource( 22 )
+ingredientIndex = 1
 
 [node name="Timer" type="Timer" parent="Plant"]
 wait_time = 3.0
@@ -1036,12 +1038,14 @@ anims/Waiting = SubResource( 16 )
 ]]
 position = Vector2( 288, 32 )
 script = ExtResource( 22 )
+ingredientIndex = 3
+pickupAnimation = true
 
 [node name="Sprite" type="Sprite" parent="Window"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
 hframes = 38
-frame = 24
+frame = 37
 region_enabled = true
 region_rect = Rect2( 0, 0, 608, 16 )
 
@@ -1076,6 +1080,7 @@ anims/Waiting = SubResource( 21 )
 ]]
 position = Vector2( 584, 412 )
 script = ExtResource( 22 )
+ingredientIndex = 2
 
 [node name="Timer" type="Timer" parent="Aquarium"]
 wait_time = 3.0
@@ -1087,7 +1092,7 @@ one_shot = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 26 )
 hframes = 26
-frame = 7
+frame = 9
 region_enabled = true
 region_rect = Rect2( 0, 0, 832, 32 )
 
@@ -1104,10 +1109,11 @@ shape = SubResource( 22 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Aquarium"]
 autoplay = "Empty"
-anims/Arriving = SubResource( 23 )
-anims/Empty = SubResource( 24 )
-anims/Leaving = SubResource( 25 )
-anims/Waiting = SubResource( 26 )
+method_call_mode = 1
+anims/Arriving = SubResource( 32 )
+anims/Empty = SubResource( 33 )
+anims/Leaving = SubResource( 34 )
+anims/Waiting = SubResource( 35 )
 
 [node name="Plant3" type="KinematicBody2D" parent="." groups=[
 "selectable",
