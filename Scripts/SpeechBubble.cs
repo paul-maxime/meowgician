@@ -7,7 +7,7 @@ public class SpeechBubble : Node2D
 
 	private Vector2 originalPosition;
 	private Tween tween = new Tween();
-	private Sprite sprite;
+	protected Sprite sprite;
 
 	private AudioStreamPlayer audioPlayer = new AudioStreamPlayer();
 

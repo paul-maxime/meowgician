@@ -95,10 +95,10 @@ public class Cauldron : StaticBody2D
 			{
 				ingredientGenerators[numberOfPotions + 1].Activate();
 			}
-			tables[numberOfPotions].GetNode<Sprite>("SimpleTable").Visible = false;
+			tables[numberOfPotions].GetNode<Node2D>("SimpleTable").Visible = false;
 			tables[numberOfPotions].GetNode<ApparitionAnimation>("ApparitionAnimation").Play();
-			tables[numberOfPotions].GetNode<Sprite>("Sprite").Visible = true;
-			tables[numberOfPotions].GetNode<Sprite>("Board").Visible = true;
+			tables[numberOfPotions].GetNode<Node2D>("Sprite").Visible = true;
+			tables[numberOfPotions].GetNode<Node2D>("Board").Visible = true;
 			tables[numberOfPotions].AddToGroup("table");
 			numberOfPotions++;
 		}

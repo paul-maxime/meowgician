@@ -10,13 +10,29 @@ public abstract class Table : KinematicBody2D
 
 	private Ingredient ingredient = null;
 
+	private TableBoard board;
+
+	public override void _Ready()
+	{
+		base._Ready();
+		board = GetNode<TableBoard>("Board");
+	}
+
 	public virtual void Interact()
 	{
 		var hero = GetNode<Hero>("/root/Game/Hero");
+		uint heroIngredient = hero.ingredient.IngredientType;
+		uint currentIngredient = ingredient?.IngredientType ?? 0xFF;
+		if ((heroIngredient != board.IngredientType1 && heroIngredient != board.IngredientType2) || heroIngredient == currentIngredient)
+		{
+			board.Complain();
+			return;
+		}
+
 		if (ingredient == null)
 		{
 			ingredient = hero.ingredient;
-			ingredient.Position = new Vector2(0, 0);
+			ingredient.Position = Vector2.Zero;
 			hero.ingredient = null;
 			hero.RemoveChild(ingredient);
 			AddChild(ingredient);
