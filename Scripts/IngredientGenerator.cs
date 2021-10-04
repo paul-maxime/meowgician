@@ -1,18 +1,24 @@
 using Godot;
-using System;
 
-public class Window : StaticBody2D
+public class IngredientGenerator : KinematicBody2D
 {
 	private AnimationPlayer animationPlayer;
 	private AnimationPlayer animationPlayerOutline;
 	private Timer timer;
+	private bool activated = false;
 
 	public override void _Ready()
 	{
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		animationPlayerOutline = GetNode<AnimationPlayer>("AnimationPlayerOutline");
-		animationPlayer.Play("Empty");
+		animationPlayerOutline = GetNodeOrNull<AnimationPlayer>("AnimationPlayerOutline");
 		timer = GetNode<Timer>("Timer");
+		wait();
+	}
+
+	private void wait()
+	{
+		animationPlayer.Play("Empty");
+		timer.WaitTime = GD.Randi() % 10 + 5;
 		timer.Start();
 	}
 
@@ -25,8 +31,11 @@ public class Window : StaticBody2D
 		else if (animationPlayer.CurrentAnimation == "Waiting")
 		{
 			RemoveFromGroup("ingredientHandlers");
-			animationPlayerOutline.Stop();
-			animationPlayer.Play("Throwing");
+			if (animationPlayerOutline != null)
+			{
+				animationPlayerOutline.Stop();
+			}
+			animationPlayer.Play("Leaving");
 		}
 	}
 
@@ -36,19 +45,16 @@ public class Window : StaticBody2D
 		{
 			AddToGroup("ingredientHandlers");
 			animationPlayer.Play("Waiting");
-			animationPlayerOutline.Play("Waiting");
+			if (animationPlayerOutline != null)
+			{
+				animationPlayerOutline.Play("Waiting");
+			}
 			timer.WaitTime = 10;
 			timer.Start();
 		}
-		else if (animationName == "Throwing")
-		{
-			animationPlayer.Play("Leaving");
-		}
 		else if (animationName == "Leaving")
 		{
-			animationPlayer.Play("Empty");
-			timer.WaitTime = 5;
-			timer.Start();
+			wait();
 		}
 	}
 }

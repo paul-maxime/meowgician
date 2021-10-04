@@ -21,7 +21,7 @@
 [ext_resource path="res://Sounds/467697__lucasduff__invisibility-spell.ogg" type="AudioStream" id=19]
 [ext_resource path="res://Sounds/493754__dj997__leaves-crunching.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Textures/furnitures/window.png" type="Texture" id=21]
-[ext_resource path="res://Scripts/Window.cs" type="Script" id=22]
+[ext_resource path="res://Scripts/IngredientGenerator.cs" type="Script" id=22]
 [ext_resource path="res://Textures/furnitures/window_outline.png" type="Texture" id=23]
 [ext_resource path="res://Textures/furnitures/plant.png" type="Texture" id=24]
 [ext_resource path="res://Textures/furnitures/plant_outline.png" type="Texture" id=25]
@@ -287,9 +287,8 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 6, 2 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=27]
 length = 2.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -315,7 +314,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=28]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -343,7 +342,34 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=29]
+length = 2.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -371,7 +397,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=23]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -383,7 +409,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ]
+"values": [ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -398,7 +424,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=24]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -426,8 +452,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
-length = 2.8
+[sub_resource type="Animation" id=25]
+length = 4.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -435,10 +461,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 ]
+"values": [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -453,34 +479,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=19]
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 1, 2, 3, 4, 5, 6, 7 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=26]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -767,6 +766,11 @@ script = ExtResource( 16 )
 "shakable",
 ]]
 position = Vector2( 884, 284 )
+script = ExtResource( 22 )
+
+[node name="Timer" type="Timer" parent="Plant"]
+wait_time = 3.0
+one_shot = true
 
 [node name="DynamicLayerUpdater" parent="Plant" instance=ExtResource( 2 )]
 
@@ -774,13 +778,14 @@ position = Vector2( 884, 284 )
 visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 16, 32 )
 
 [node name="Sprite" type="Sprite" parent="Plant"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 24 )
-hframes = 16
+hframes = 30
 region_enabled = true
-region_rect = Rect2( 0, 0, 256, 32 )
+region_rect = Rect2( 0, 0, 480, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant"]
 position = Vector2( 0, 36 )
@@ -788,11 +793,12 @@ scale = Vector2( 4, 4 )
 shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
-anims/Growing = SubResource( 13 )
-anims/IdleEmpty = SubResource( 14 )
-anims/IdleGrown = SubResource( 15 )
+anims/Arriving = SubResource( 27 )
+anims/Empty = SubResource( 28 )
+anims/Leaving = SubResource( 29 )
+anims/Waiting = SubResource( 30 )
 
-[node name="Window" type="StaticBody2D" parent="." groups=[
+[node name="Window" type="KinematicBody2D" parent="." groups=[
 "selectable",
 ]]
 position = Vector2( 288, 32 )
@@ -801,17 +807,16 @@ script = ExtResource( 22 )
 [node name="Sprite" type="Sprite" parent="Window"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 21 )
-hframes = 6
-vframes = 6
+hframes = 38
+frame = 17
 region_enabled = true
-region_rect = Rect2( 0, 0, 96, 96 )
+region_rect = Rect2( 0, 0, 608, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 16 )
-anims/Empty = SubResource( 17 )
-anims/Leaving = SubResource( 18 )
-anims/Throwing = SubResource( 19 )
-anims/Waiting = SubResource( 20 )
+anims/Arriving = SubResource( 23 )
+anims/Empty = SubResource( 24 )
+anims/Leaving = SubResource( 25 )
+anims/Waiting = SubResource( 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
 shape = SubResource( 21 )
@@ -835,5 +840,7 @@ anims/Waiting = SubResource( 22 )
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="BookTable/Timer" to="BookTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="MortarTable/Timer" to="MortarTable" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Plant/Timer" to="Plant" method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="Plant/AnimationPlayer" to="Plant" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="Window/AnimationPlayer" to="Window" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Window/Timer" to="Window" method="_on_Timer_timeout"]
