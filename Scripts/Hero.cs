@@ -67,7 +67,14 @@ public class Hero : KinematicBody2D
 				nearestDistance = itemDistance;
 			}
 		}
-		if (nearestDistance > 80)
+		if (nearestItem is Cauldron || nearestItem is Table)
+		{
+			if (nearestDistance > 100)
+			{
+				return null;
+			}
+		}
+		else if (nearestDistance > 80)
 		{
 			return null;
 		}
