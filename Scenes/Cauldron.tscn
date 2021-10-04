@@ -89,7 +89,6 @@ light_mask = 4
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 2
-frame = 1
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
