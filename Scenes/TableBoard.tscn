@@ -6,7 +6,7 @@
 
 [node name="TableBoard" type="Node2D"]
 visible = false
-z_index = -16
+z_index = 1000
 script = ExtResource( 1 )
 ComplainSound = ExtResource( 3 )
 
