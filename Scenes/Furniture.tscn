@@ -484,7 +484,6 @@ region_rect = Rect2( -0.196388, 40.9754, 32.3374, 22.1595 )
 [node name="FireTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
-"table",
 ]]
 position = Vector2( 160, 96 )
 script = ExtResource( 6 )
@@ -534,7 +533,6 @@ script = ExtResource( 16 )
 [node name="CoffeeTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
-"table",
 ]]
 position = Vector2( 728, 396 )
 script = ExtResource( 10 )
@@ -582,7 +580,6 @@ script = ExtResource( 16 )
 [node name="BookTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
-"table",
 ]]
 position = Vector2( 692, 112 )
 script = ExtResource( 5 )
@@ -590,13 +587,13 @@ script = ExtResource( 5 )
 [node name="DynamicLayerUpdater" parent="BookTable" instance=ExtResource( 2 )]
 
 [node name="SimpleTable" type="Sprite" parent="BookTable"]
-visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="Sprite" type="Sprite" parent="BookTable"]
+visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 11 )
 hframes = 3
@@ -631,7 +628,6 @@ script = ExtResource( 16 )
 [node name="MortarTable" type="KinematicBody2D" parent="." groups=[
 "selectable",
 "shakable",
-"table",
 ]]
 position = Vector2( 160, 384 )
 script = ExtResource( 7 )
