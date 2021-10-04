@@ -2,9 +2,12 @@ using Godot;
 
 public class IngredientGenerator : KinematicBody2D
 {
+	private PackedScene ingredient = ResourceLoader.Load<PackedScene>("res://Scenes/Ingredient.tscn");
 	private AnimationPlayer animationPlayer;
 	private AnimationPlayer animationPlayerOutline;
 	private Timer timer;
+	[Export]
+	public uint ingredientIndex;
 
 	public void Activate()
 	{
@@ -16,6 +19,21 @@ public class IngredientGenerator : KinematicBody2D
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		animationPlayerOutline = GetNodeOrNull<AnimationPlayer>("AnimationPlayerOutline");
 		timer = GetNode<Timer>("Timer");
+	}
+
+	public void Interact()
+	{
+		RemoveFromGroup("ingredientHandlers");
+		if (animationPlayerOutline != null)
+		{
+			animationPlayerOutline.Stop();
+		}
+		animationPlayer.Play("Leaving");
+		var ingredientInstance = ingredient.Instance<Ingredient>();
+		ingredientInstance.Init(new Vector2(0, 4 * -16f), ingredientIndex);
+		var hero = GetNode<Hero>("/root/Game/Hero");
+		hero.AddChild(ingredientInstance);
+		hero.ingredient = ingredientInstance;
 	}
 
 	private void WaitAndAppear()

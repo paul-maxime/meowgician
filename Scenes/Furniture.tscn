@@ -397,7 +397,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=17]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -424,7 +424,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=18]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -452,7 +452,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=19]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -479,7 +479,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=20]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -506,7 +506,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=21]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -534,10 +534,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 32.0039, 32.0036 )
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=23]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -565,7 +565,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=24]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -592,7 +592,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=25]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -620,7 +620,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=26]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -647,7 +647,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=27]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -675,7 +675,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=28]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -702,7 +702,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=29]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -730,7 +730,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=30]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -757,7 +757,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=31]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -1014,6 +1014,7 @@ script = ExtResource( 16 )
 ]]
 position = Vector2( 884, 284 )
 script = ExtResource( 22 )
+ingredientIndex = 1
 
 [node name="Timer" type="Timer" parent="Plant"]
 wait_time = 3.0
@@ -1051,6 +1052,7 @@ anims/Waiting = SubResource( 16 )
 ]]
 position = Vector2( 288, 32 )
 script = ExtResource( 22 )
+ingredientIndex = 2
 
 [node name="Sprite" type="Sprite" parent="Window"]
 scale = Vector2( 4, 4 )
@@ -1061,14 +1063,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 608, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 31 )
-anims/Empty = SubResource( 32 )
-anims/Leaving = SubResource( 33 )
-anims/Throwing = SubResource( 34 )
-anims/Waiting = SubResource( 35 )
+anims/Arriving = SubResource( 17 )
+anims/Empty = SubResource( 18 )
+anims/Leaving = SubResource( 19 )
+anims/Throwing = SubResource( 20 )
+anims/Waiting = SubResource( 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
@@ -1083,7 +1085,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
-anims/Waiting = SubResource( 22 )
+anims/Waiting = SubResource( 23 )
 
 [node name="Plant2" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1091,6 +1093,7 @@ anims/Waiting = SubResource( 22 )
 ]]
 position = Vector2( 584, 412 )
 script = ExtResource( 22 )
+ingredientIndex = 1
 
 [node name="Timer" type="Timer" parent="Plant2"]
 wait_time = 3.0
@@ -1118,10 +1121,10 @@ scale = Vector2( 4, 4 )
 shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant2"]
-anims/Arriving = SubResource( 23 )
-anims/Empty = SubResource( 24 )
-anims/Leaving = SubResource( 25 )
-anims/Waiting = SubResource( 26 )
+anims/Arriving = SubResource( 24 )
+anims/Empty = SubResource( 25 )
+anims/Leaving = SubResource( 26 )
+anims/Waiting = SubResource( 27 )
 
 [node name="Plant3" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1129,6 +1132,7 @@ anims/Waiting = SubResource( 26 )
 ]]
 position = Vector2( 388, 396 )
 script = ExtResource( 22 )
+ingredientIndex = 1
 
 [node name="Timer" type="Timer" parent="Plant3"]
 wait_time = 3.0
@@ -1156,10 +1160,10 @@ scale = Vector2( 4, 4 )
 shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant3"]
-anims/Arriving = SubResource( 27 )
-anims/Empty = SubResource( 28 )
-anims/Leaving = SubResource( 29 )
-anims/Waiting = SubResource( 30 )
+anims/Arriving = SubResource( 28 )
+anims/Empty = SubResource( 29 )
+anims/Leaving = SubResource( 30 )
+anims/Waiting = SubResource( 31 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]

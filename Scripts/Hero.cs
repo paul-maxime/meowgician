@@ -7,6 +7,8 @@ public class Hero : KinematicBody2D
 
 	private Array<Potion> potions = new Array<Potion> { };
 
+	public Ingredient ingredient = null;
+
 	public Vector2 velocity = new Vector2();
 
 	public override void _Ready()
@@ -30,9 +32,12 @@ public class Hero : KinematicBody2D
 				selectableItems.Add(table);
 			}
 		}
-		foreach (Node2D node in GetTree().GetNodesInGroup("ingredientHandlers"))
+		if (ingredient == null)
 		{
-			selectableItems.Add(node);
+			foreach (Node2D node in GetTree().GetNodesInGroup("ingredientHandlers"))
+			{
+				selectableItems.Add(node);
+			}
 		}
 
 		if (selectableItems.Count == 0)
@@ -117,6 +122,10 @@ public class Hero : KinematicBody2D
 				else if (closestItemSelectable is Table table)
 				{
 					table.Interact();
+				}
+				else if (closestItemSelectable is IngredientGenerator ingredientGenerator)
+				{
+					ingredientGenerator.Interact();
 				}
 			}
 			else if (potions.Count > 0)
