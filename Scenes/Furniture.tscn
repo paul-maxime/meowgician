@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -567,6 +567,9 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 15, 8 )
+
 [sub_resource type="Animation" id=32]
 length = 1.2
 tracks/0/type = "value"
@@ -1097,6 +1100,7 @@ anims/Waiting = SubResource( 23 )
 position = Vector2( 584, 412 )
 script = ExtResource( 22 )
 ingredientIndex = 2
+pickupAnimation = true
 
 [node name="Timer" type="Timer" parent="Aquarium"]
 wait_time = 3.0
@@ -1108,7 +1112,7 @@ one_shot = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 26 )
 hframes = 26
-frame = 4
+frame = 7
 region_enabled = true
 region_rect = Rect2( 0, 0, 832, 32 )
 
@@ -1119,10 +1123,9 @@ texture = ExtResource( 27 )
 region_rect = Rect2( 0, 0, 16, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium"]
-visible = false
-position = Vector2( 0, 36 )
+position = Vector2( 0, 28 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 12 )
+shape = SubResource( 36 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Aquarium"]
 autoplay = "Empty"
