@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/Cauldron.cs" type="Script" id=7]
 [ext_resource path="res://Sounds/Fishtank_Bubbles-SoundBibleco-amanda-1550139304.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Scripts/PositionalAudio.cs" type="Script" id=9]
-[ext_resource path="res://Textures/ui/dialog.png" type="Texture" id=10]
+[ext_resource path="res://Textures/ui/dialog_wide.png" type="Texture" id=10]
 [ext_resource path="res://Sounds/397355__plasterbrain__tada-fanfare-a.ogg" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -141,10 +141,10 @@ autoplay = true
 max_distance = 300.0
 script = ExtResource( 9 )
 
-[node name="SpeachBubble" type="Node2D" parent="."]
+[node name="SpeechBubble" type="Node2D" parent="."]
 position = Vector2( 9, -24 )
 
-[node name="Sprite" type="Sprite" parent="SpeachBubble"]
+[node name="Sprite" type="Sprite" parent="SpeechBubble"]
 texture = ExtResource( 10 )
 
 [node name="ConfettiParticles" type="CPUParticles2D" parent="."]

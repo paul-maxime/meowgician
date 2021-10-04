@@ -13,13 +13,12 @@ public class Cauldron : StaticBody2D
 	private int numberOfPotions = 0;
 	private Array<Table> tables = null;
 	private Array<IngredientGenerator> ingredientGenerators = null;
-	private float minX;
-	private float maxX;
 
 	private CPUParticles2D bubbleParticles;
 	private CPUParticles2D confettiParticles;
 	private Sprite sprite;
 	private Vector2 initialPosition;
+	private Node2D speechBubble;
 
 	private Timer confettiTimer = new Timer { WaitTime = 3.0f };
 
@@ -65,7 +64,7 @@ public class Cauldron : StaticBody2D
 		Instability = 0;
 		confettiParticles.Emitting = true;
 		bubbleParticles.Emitting = false;
-		GetNode<Node2D>("SpeachBubble").Visible = false;
+		speechBubble.Visible = false;
 		GetNode<AudioStreamPlayer2D>("AudioBubbles").Stop();
 		GetNode<AudioStreamPlayer>("/root/Game/MusicPlayer").Stop();
 		GetNode<AudioStreamPlayer>("ConfettiParticles/AudioStreamPlayer").Play();
@@ -96,18 +95,23 @@ public class Cauldron : StaticBody2D
 			tables[numberOfPotions].AddToGroup("table");
 			numberOfPotions++;
 		}
+		float bubbleWidth = speechBubble.GetNode<Sprite>("Sprite").GetRect().Size.x;
+		float requiredSize = (numberOfPotions * 2 - 2) * 3.7f;
+		float delta = -bubbleWidth / 2f + (bubbleWidth - requiredSize) / 2f;
 		for (int i = 0; i < numberOfPotions; i++)
 		{
 			if (i > 0)
 			{
 				MathOperator plusSign = mathOperator.Instance<MathOperator>();
-				plusSign.Position = new Vector2(minX + i * 5.5f - 0.8f, -25f);
-				AddChild(plusSign);
+				plusSign.Position = new Vector2(delta, -2.0f);
+				speechBubble.AddChild(plusSign);
+				delta += 3.7f;
 			}
 			var potion = smallPotion.Instance<SmallPotion>();
-			potion.init(new Vector2(minX + i * 5.5f + 2f, -26f), tables[i].potionIndex /*Godot.GD.Randi() % 4*/);
-			AddChild(potion);
+			potion.init(new Vector2(delta, -2.0f), tables[i].potionIndex);
+			speechBubble.AddChild(potion);
 			neededPotions.Add(potion);
+			delta += 3.7f;
 		}
 	}
 
@@ -129,10 +133,7 @@ public class Cauldron : StaticBody2D
 		};
 		sprite = GetNode<Sprite>("Sprite");
 
-		var speachBubbleSprite = GetNode<Sprite>("SpeachBubble/Sprite");
-		Vector2 speachBubbleSize = speachBubbleSprite.Texture.GetSize();
-		minX = -(speachBubbleSize.x / 4f) + 3;
-		maxX = speachBubbleSize.x / 4f - 3;
+		speechBubble = GetNode<Node2D>("SpeechBubble");
 
 		GenerateNeededPotions();
 
