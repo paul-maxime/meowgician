@@ -1,16 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/TableBoard.cs" type="Script" id=1]
-[ext_resource path="res://Textures/furnitures/furnitures.png" type="Texture" id=2]
+[ext_resource path="res://Textures/ui/dialog.png" type="Texture" id=2]
 
 [node name="Board" type="Sprite"]
 light_mask = 4
-position = Vector2( 0, -32 )
+position = Vector2( 40, -56 )
 scale = Vector2( 4, 4 )
 z_index = -16
 texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 0, 48, 32, 16 )
+offset = Vector2( 4, -1 )
 script = ExtResource( 1 )
 IngredientType1 = 1
 IngredientType2 = 2
