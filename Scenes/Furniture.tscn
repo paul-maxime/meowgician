@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Textures/tilesetformattedupdate1_16x16.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/DynamicLayerUpdater.tscn" type="PackedScene" id=2]
@@ -114,7 +114,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 7, 5 )
+extents = Vector2( 15, 5 )
 
 [sub_resource type="Animation" id=6]
 length = 0.1
@@ -284,7 +284,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 6, 2 )
+
+[sub_resource type="Animation" id=13]
 length = 2.8
 loop = true
 tracks/0/type = "value"
@@ -312,7 +315,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -340,7 +343,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -368,7 +371,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -395,7 +398,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -423,7 +426,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -450,7 +453,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -477,7 +480,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -505,10 +508,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 32.0039, 32.0036 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=22]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -598,7 +601,7 @@ anims/Idle = SubResource( 3 )
 anims/Working = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireTable"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 5 )
 
@@ -645,7 +648,7 @@ anims/Idle = SubResource( 6 )
 anims/Working = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeeTable"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 5 )
 
@@ -693,7 +696,7 @@ anims/Idle = SubResource( 8 )
 anims/Working = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BookTable"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 5 )
 
@@ -740,7 +743,7 @@ anims/Idle = SubResource( 10 )
 anims/Working = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MortarTable"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 5 )
 
@@ -763,7 +766,7 @@ script = ExtResource( 16 )
 "selectable",
 "shakable",
 ]]
-position = Vector2( 924, 284 )
+position = Vector2( 884, 284 )
 
 [node name="DynamicLayerUpdater" parent="Plant" instance=ExtResource( 2 )]
 
@@ -780,14 +783,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 256, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant"]
-position = Vector2( 0, 44 )
+position = Vector2( 0, 36 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
-anims/Growing = SubResource( 12 )
-anims/IdleEmpty = SubResource( 13 )
-anims/IdleGrown = SubResource( 14 )
+anims/Growing = SubResource( 13 )
+anims/IdleEmpty = SubResource( 14 )
+anims/IdleGrown = SubResource( 15 )
 
 [node name="Window" type="StaticBody2D" parent="." groups=[
 "selectable",
@@ -804,14 +807,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 96, 96 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 15 )
-anims/Empty = SubResource( 16 )
-anims/Leaving = SubResource( 17 )
-anims/Throwing = SubResource( 18 )
-anims/Waiting = SubResource( 19 )
+anims/Arriving = SubResource( 16 )
+anims/Empty = SubResource( 17 )
+anims/Leaving = SubResource( 18 )
+anims/Throwing = SubResource( 19 )
+anims/Waiting = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
@@ -826,7 +829,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
-anims/Waiting = SubResource( 21 )
+anims/Waiting = SubResource( 22 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
