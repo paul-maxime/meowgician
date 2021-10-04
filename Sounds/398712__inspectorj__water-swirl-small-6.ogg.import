@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/398712__inspectorj__water-swirl-small-6.ogg-42aac0e05ae423184b63d449c5fd4cf9.oggstr"
+
+[deps]
+
+source_file="res://Sounds/398712__inspectorj__water-swirl-small-6.ogg"
+dest_files=[ "res://.import/398712__inspectorj__water-swirl-small-6.ogg-42aac0e05ae423184b63d449c5fd4cf9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -36,7 +36,7 @@ public class Cauldron : StaticBody2D
 				}
 			}
 		}
-		if (copyPotions.Count == 0)
+		if (copyPotions.Count == 0 && potions.Count == neededPotions.Count)
 		{
 			foreach (Potion potion in potions)
 			{
@@ -55,7 +55,12 @@ public class Cauldron : StaticBody2D
 			else
 			{
 				GenerateNeededPotions();
+				GetNode<SpeechBubble>("SpeechBubble").Praise();
 			}
+		}
+		else
+		{
+			GetNode<SpeechBubble>("SpeechBubble").Complain();
 		}
 	}
 
