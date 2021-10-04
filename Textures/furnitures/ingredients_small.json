@@ -1,51 +1,51 @@
 { "frames": {
-   "ingredients 0.ase": {
-    "frame": { "x": 0, "y": 0, "w": 16, "h": 16 },
+   "ingredients_small 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 8, "h": 8 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
-    "sourceSize": { "w": 16, "h": 16 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 8 },
+    "sourceSize": { "w": 8, "h": 8 },
     "duration": 100
    },
-   "ingredients 1.ase": {
-    "frame": { "x": 16, "y": 0, "w": 16, "h": 16 },
+   "ingredients_small 1.ase": {
+    "frame": { "x": 8, "y": 0, "w": 8, "h": 8 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
-    "sourceSize": { "w": 16, "h": 16 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 8 },
+    "sourceSize": { "w": 8, "h": 8 },
     "duration": 100
    },
-   "ingredients 2.ase": {
-    "frame": { "x": 32, "y": 0, "w": 16, "h": 16 },
+   "ingredients_small 2.ase": {
+    "frame": { "x": 16, "y": 0, "w": 8, "h": 8 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
-    "sourceSize": { "w": 16, "h": 16 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 8 },
+    "sourceSize": { "w": 8, "h": 8 },
     "duration": 100
    },
-   "ingredients 3.ase": {
-    "frame": { "x": 48, "y": 0, "w": 16, "h": 16 },
+   "ingredients_small 3.ase": {
+    "frame": { "x": 24, "y": 0, "w": 8, "h": 8 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
-    "sourceSize": { "w": 16, "h": 16 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 8 },
+    "sourceSize": { "w": 8, "h": 8 },
     "duration": 100
    },
-   "ingredients 4.ase": {
-    "frame": { "x": 64, "y": 0, "w": 16, "h": 16 },
+   "ingredients_small 4.ase": {
+    "frame": { "x": 32, "y": 0, "w": 8, "h": 8 },
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
-    "sourceSize": { "w": 16, "h": 16 },
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 8 },
+    "sourceSize": { "w": 8, "h": 8 },
     "duration": 100
    }
  },
  "meta": {
   "app": "http://www.aseprite.org/",
   "version": "1.2.29-x64",
-  "image": "ingredients.png",
+  "image": "ingredients_small.png",
   "format": "RGBA8888",
-  "size": { "w": 80, "h": 16 },
+  "size": { "w": 40, "h": 8 },
   "scale": "1",
   "frameTags": [
    { "name": "Mushroom", "from": 0, "to": 0, "direction": "forward" },
