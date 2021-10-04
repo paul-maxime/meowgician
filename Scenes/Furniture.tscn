@@ -572,7 +572,6 @@ extents = Vector2( 15, 8 )
 
 [sub_resource type="Animation" id=25]
 length = 1.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -628,7 +627,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=27]
 length = 1.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 0
@@ -1142,7 +1140,7 @@ one_shot = true
 scale = Vector2( 4, 4 )
 texture = ExtResource( 26 )
 hframes = 26
-frame = 9
+frame = 14
 region_enabled = true
 region_rect = Rect2( 0, 0, 832, 32 )
 
