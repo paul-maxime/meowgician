@@ -31,7 +31,7 @@
 [ext_resource path="res://Textures/furnitures/spider.png" type="Texture" id=30]
 [ext_resource path="res://Textures/furnitures/spider_outline.png" type="Texture" id=31]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 2.25
 loop = true
 tracks/0/type = "value"
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.25
 loop = true
 tracks/0/type = "value"
@@ -87,7 +87,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 2.5
 loop = true
 tracks/0/type = "value"
@@ -115,10 +115,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 15, 5 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -146,7 +146,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -174,7 +174,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -202,7 +202,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -230,7 +230,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -258,7 +258,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -286,10 +286,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 6, 2 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -316,7 +316,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -344,7 +344,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -371,7 +371,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -399,7 +399,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=16]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -426,7 +426,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=17]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -454,7 +454,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=18]
 length = 2.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -481,7 +481,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=19]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -508,7 +508,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -536,10 +536,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 32, 28 )
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=22]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -567,10 +567,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 15, 5 )
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=24]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -597,7 +597,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=25]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -625,7 +625,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=26]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -652,7 +652,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=27]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -680,7 +680,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=28]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -707,7 +707,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=29]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -735,7 +735,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=30]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -762,7 +762,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=31]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -790,7 +790,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=32]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -846,14 +846,14 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 160, 128 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FireTable"]
-anims/Alert = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Working = SubResource( 4 )
+anims/Alert = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Working = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireTable"]
 position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Outline" type="Sprite" parent="FireTable"]
 visible = false
@@ -902,13 +902,13 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CoffeeTable"]
-anims/Idle = SubResource( 6 )
-anims/Working = SubResource( 7 )
+anims/Idle = SubResource( 5 )
+anims/Working = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeeTable"]
 position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Outline" type="Sprite" parent="CoffeeTable"]
 visible = false
@@ -956,13 +956,13 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 96, 96 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTable"]
-anims/Idle = SubResource( 8 )
-anims/Working = SubResource( 9 )
+anims/Idle = SubResource( 7 )
+anims/Working = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BookTable"]
 position = Vector2( 0, 16 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Outline" type="Sprite" parent="BookTable"]
 visible = false
@@ -1010,13 +1010,13 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MortarTable"]
-anims/Idle = SubResource( 10 )
-anims/Working = SubResource( 11 )
+anims/Idle = SubResource( 9 )
+anims/Working = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MortarTable"]
 position = Vector2( 0, 15.2826 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Outline" type="Sprite" parent="MortarTable"]
 visible = false
@@ -1072,13 +1072,13 @@ region_rect = Rect2( 0, 0, 480, 32 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant"]
 position = Vector2( 0, 36 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plant"]
-anims/Arriving = SubResource( 13 )
-anims/Empty = SubResource( 14 )
-anims/Leaving = SubResource( 15 )
-anims/Waiting = SubResource( 16 )
+anims/Arriving = SubResource( 12 )
+anims/Empty = SubResource( 13 )
+anims/Leaving = SubResource( 14 )
+anims/Waiting = SubResource( 15 )
 
 [node name="Window" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1097,15 +1097,15 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 608, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window"]
-anims/Arriving = SubResource( 17 )
-anims/Empty = SubResource( 18 )
-anims/Leaving = SubResource( 19 )
-anims/Throwing = SubResource( 20 )
-anims/Waiting = SubResource( 21 )
+anims/Arriving = SubResource( 16 )
+anims/Empty = SubResource( 17 )
+anims/Leaving = SubResource( 18 )
+anims/Throwing = SubResource( 19 )
+anims/Waiting = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
 position = Vector2( 0, 4 )
-shape = SubResource( 22 )
+shape = SubResource( 21 )
 
 [node name="Timer" type="Timer" parent="Window"]
 wait_time = 3.0
@@ -1120,7 +1120,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
-anims/Waiting = SubResource( 33 )
+anims/Waiting = SubResource( 22 )
 
 [node name="Aquarium" type="KinematicBody2D" parent="." groups=[
 "selectable",
@@ -1154,19 +1154,18 @@ region_rect = Rect2( 0, 0, 16, 32 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium"]
 position = Vector2( 0, 40 )
 scale = Vector2( 4, 4 )
-shape = SubResource( 24 )
+shape = SubResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Aquarium"]
 autoplay = "Empty"
 method_call_mode = 1
-anims/Arriving = SubResource( 25 )
-anims/Empty = SubResource( 26 )
-anims/Leaving = SubResource( 27 )
-anims/Waiting = SubResource( 28 )
+anims/Arriving = SubResource( 24 )
+anims/Empty = SubResource( 25 )
+anims/Leaving = SubResource( 26 )
+anims/Waiting = SubResource( 27 )
 
 [node name="Spider" type="KinematicBody2D" parent="." groups=[
 "selectable",
-"shakable",
 ]]
 position = Vector2( 132, 224 )
 script = ExtResource( 22 )
@@ -1194,18 +1193,14 @@ frame = 10
 region_enabled = true
 region_rect = Rect2( 0, 0, 576, 32 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spider"]
-position = Vector2( 0, 36 )
-scale = Vector2( 4, 4 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spider"]
-anims/Arriving = SubResource( 34 )
-anims/Empty = SubResource( 35 )
-anims/Leaving = SubResource( 36 )
-anims/Waiting = SubResource( 37 )
+anims/Arriving = SubResource( 28 )
+anims/Empty = SubResource( 29 )
+anims/Leaving = SubResource( 30 )
+anims/Waiting = SubResource( 31 )
 
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Spider"]
-anims/Waiting = SubResource( 38 )
+anims/Waiting = SubResource( 32 )
 
 [connection signal="timeout" from="FireTable/Timer" to="FireTable" method="_on_Timer_timeout"]
 [connection signal="timeout" from="CoffeeTable/Timer" to="CoffeeTable" method="_on_Timer_timeout"]
