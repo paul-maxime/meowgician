@@ -78,9 +78,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[node name="Cauldron" type="StaticBody2D" groups=[
-"selectable",
-]]
+[node name="Cauldron" type="StaticBody2D" groups=["selectable"]]
 scale = Vector2( 4, 4 )
 script = ExtResource( 7 )
 

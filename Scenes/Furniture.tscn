@@ -820,10 +820,7 @@ tracks/1/keys = {
 
 [node name="Furniture" type="Node2D"]
 
-[node name="FireTable" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="FireTable" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 140, 100 )
 script = ExtResource( 6 )
 
@@ -866,7 +863,7 @@ one_shot = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="FireTable"]
 stream = ExtResource( 18 )
-max_distance = 300.0
+max_distance = 500.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="FireTable" instance=ExtResource( 28 )]
@@ -877,10 +874,7 @@ OutputPotionType = 1
 [node name="ApparitionAnimation" parent="FireTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
 
-[node name="CoffeeTable" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="CoffeeTable" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 884, 400 )
 script = ExtResource( 10 )
 
@@ -921,7 +915,7 @@ one_shot = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="CoffeeTable"]
 stream = ExtResource( 17 )
-max_distance = 300.0
+max_distance = 500.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="CoffeeTable" instance=ExtResource( 28 )]
@@ -932,10 +926,7 @@ OutputPotionType = 2
 [node name="ApparitionAnimation" parent="CoffeeTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
 
-[node name="BookTable" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="BookTable" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 884, 100 )
 script = ExtResource( 5 )
 
@@ -976,7 +967,7 @@ one_shot = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="BookTable"]
 stream = ExtResource( 19 )
-max_distance = 300.0
+max_distance = 500.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="BookTable" instance=ExtResource( 28 )]
@@ -986,10 +977,7 @@ IngredientType2 = 1
 [node name="ApparitionAnimation" parent="BookTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
 
-[node name="MortarTable" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="MortarTable" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 140, 400 )
 script = ExtResource( 7 )
 
@@ -1031,7 +1019,7 @@ one_shot = true
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="MortarTable"]
 stream = ExtResource( 20 )
 volume_db = 9.0
-max_distance = 300.0
+max_distance = 500.0
 script = ExtResource( 16 )
 
 [node name="Board" parent="MortarTable" instance=ExtResource( 28 )]
@@ -1042,10 +1030,7 @@ OutputPotionType = 3
 [node name="ApparitionAnimation" parent="MortarTable" instance=ExtResource( 29 )]
 position = Vector2( 0, 20 )
 
-[node name="Plant" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="Plant" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 748, 232 )
 script = ExtResource( 22 )
 ingredientIndex = 1
@@ -1081,9 +1066,7 @@ anims/Empty = SubResource( 13 )
 anims/Leaving = SubResource( 14 )
 anims/Waiting = SubResource( 15 )
 
-[node name="Window" type="KinematicBody2D" parent="." groups=[
-"selectable",
-]]
+[node name="Window" type="KinematicBody2D" parent="." groups=["selectable"]]
 position = Vector2( 288, 32 )
 script = ExtResource( 22 )
 ingredientIndex = 3
@@ -1123,10 +1106,7 @@ region_rect = Rect2( 0, 0, 18, 36 )
 [node name="AnimationPlayerOutline" type="AnimationPlayer" parent="Window"]
 anims/Waiting = SubResource( 22 )
 
-[node name="Aquarium" type="KinematicBody2D" parent="." groups=[
-"selectable",
-"shakable",
-]]
+[node name="Aquarium" type="KinematicBody2D" parent="." groups=["selectable", "shakable"]]
 position = Vector2( 556, 104 )
 script = ExtResource( 22 )
 ingredientIndex = 2
@@ -1165,9 +1145,7 @@ anims/Empty = SubResource( 25 )
 anims/Leaving = SubResource( 26 )
 anims/Waiting = SubResource( 27 )
 
-[node name="Spider" type="KinematicBody2D" parent="." groups=[
-"selectable",
-]]
+[node name="Spider" type="KinematicBody2D" parent="." groups=["selectable"]]
 position = Vector2( 132, 224 )
 script = ExtResource( 22 )
 ingredientIndex = 4

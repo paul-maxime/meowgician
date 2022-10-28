@@ -47,6 +47,10 @@ texture={
 "svg/scale": 1.0
 }
 
+[mono]
+
+project/assembly_name="Meowgician"
+
 [physics]
 
 common/enable_pause_aware_picking=true

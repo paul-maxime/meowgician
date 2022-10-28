@@ -122,9 +122,7 @@ tracks/1/keys = {
 [sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( -16, 18, 12, 18, 12, 12, -16, 12 )
 
-[node name="Hero" type="KinematicBody2D" groups=[
-"shakable",
-]]
+[node name="Hero" type="KinematicBody2D" groups=["shakable"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
